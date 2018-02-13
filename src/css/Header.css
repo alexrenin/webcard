@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+}
+
+.headerTitle {
+    display: flex;
+}
+
+.headerTitle .logo {
+    flex-shrink: 0;
+}
+
+.nameProf {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+}
+
+.nameProf .name,
+.nameProf .profession {
+    display: flex;
+    align-items: center;
+}
+
+.nameProf .name {
+    font-size: 40px;
+    margin-right: 10px;
+
+}
+
+.nameProf .profession {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+    .nameProf .name {
+        border-bottom: 1px solid black;
+    }
+}

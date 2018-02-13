@@ -13,6 +13,7 @@
 .nameProf {
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
     align-content: stretch;
 }
 
@@ -23,9 +24,10 @@
 }
 
 .nameProf .name {
+    height: 60px;
+
     font-size: 40px;
     margin-right: 10px;
-
 }
 
 .nameProf .profession {

@@ -8,7 +8,11 @@ const sourse = {
         subTitle: 'develop'
     },
     name: 'Александр',
-    profession: 'Front-end developer'
+    profession: 'Front-end developer',
+    stackTehn: [
+        'HTML5', 'JS2015+', 'CSS3.1',
+        'React', 'Redux'
+    ]
 }
 
 
@@ -17,9 +21,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header
-            logo={sourse.logo}
-            name={sourse.name}
-            profession={sourse.profession}
+            logo = {sourse.logo}
+            name = {sourse.name}
+            profession = {sourse.profession}
+            stackTehn = {sourse.stackTehn}
         />
       </div>
     );

@@ -7,20 +7,22 @@ const Header = ({logo, name='name', profession='profession', stackTehn=[]}) => {
     const { subTitle, title } = logo;
     return (
         <div className="header">
-            <div className="headerTitle">
-                <Logo title={title} subTitle={subTitle}/>
-                <div className="nameProf">
-                    <div className="name"> {name} </div>
-                    <div className="profession"> {profession} </div>
-                </div>
+            <div>
+                <div className="headerTitle">
+                    <Logo title={title} subTitle={subTitle}/>
+                    <div className="nameProf">
+                        <div className="name"> {name} </div>
+                        <div className="profession"> {profession} </div>
+                    </div>
 
-            </div>
-            <div className="stackTechnologies">
-                {
-                    stackTehn.reduce((sum, current, i, arr) =>
-                        sum += (" / " + current)
-                    )
-                }
+                </div>
+                <div className="stackTechnologies">
+                    {
+                        stackTehn.reduce((sum, current, i, arr) =>
+                            sum += (" / " + current)
+                        )
+                    }
+                </div>
             </div>
         </div>
     )

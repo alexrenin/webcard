@@ -1,6 +1,5 @@
 .header {
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
+    display: flex;
 }
 .headerTitle {
     display: flex;
@@ -39,12 +38,45 @@
 
 }
 
+/*"телефон"*/
+@media screen and (max-height: 700px) and (max-width: 700px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/*"телефон" вертикальная ориентация*/
+@media screen and (max-height: 700px) and (max-width: 500px) {
+    .headerTitle {
+        justify-content: center;
+    }
+    .nameProf {
+        width: min-content;
+    }
+}
+
+/*"телефон" лэндскейп*/
+@media screen and (max-height: 500px) and (max-width: 700px) {
+    .headerTitle {
+        justify-content: center;
+    }
+    .nameProf {
+        width: min-content;
+    }
+}
+
+/*режим 1 для стека технологий*/
 @media screen and (max-width: 500px) {
     .nameProf .name {
         border-bottom: 1px solid black;
     }
 }
-
+/*режим 2 для стека технологий*/
 @media screen and (min-width: 520px) {
     .stackTechnologies {
         max-width: 500px;

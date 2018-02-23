@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import Header from "./Header";
+import Header from './Header';
+import Menu from './Menu'
 
 const sourse = {
     logo: {
@@ -20,6 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Menu/>
         <Header
             logo = {sourse.logo}
             name = {sourse.name}

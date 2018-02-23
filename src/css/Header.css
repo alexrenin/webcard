@@ -62,12 +62,7 @@
 
 /*"телефон" лэндскейп*/
 @media screen and (max-height: 500px) and (max-width: 700px) {
-    .headerTitle {
-        justify-content: center;
-    }
-    .nameProf {
-        width: min-content;
-    }
+
 }
 
 /*режим 1 для стека технологий*/

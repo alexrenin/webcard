@@ -21,13 +21,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Menu/>
+        <Menu
+            onClick={() => {}} />
         <Header
             logo = {sourse.logo}
             name = {sourse.name}
             profession = {sourse.profession}
-            stackTehn = {sourse.stackTehn}
-        />
+            stackTehn = {sourse.stackTehn} />
       </div>
     );
   }

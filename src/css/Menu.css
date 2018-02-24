@@ -6,26 +6,54 @@
 
     width: 60px;
     height: 40px;
-
-    background-color: #000000;
 }
 
-.menuButton span {
+.menuButton .menuInput {
+    display: none;
+}
+.menuButton .menuLabel {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+}
+
+.menuButton .menuLabel::after,
+.menuButton .menuLabel::before {
+    display: block;
     position: absolute;
-    top: 25px;
     left: 16px;
     right: 16px;
     height: 4px;
     background: white;
 }
-
-.menuButton span::before {
-    position: absolute;
-    display: block;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #fff;
+.menuButton .menuLabel::after {
     content: "";
-    top: -13px;
+    top: 12px;
+}
+.menuButton .menuLabel::before {
+    content: "";
+    top: 25px;
+}
+
+/* "x" animation */
+.menuButton .menuLabel::after,
+.menuButton .menuLabel::before {
+    transition-duration: 0.3s;
+}
+
+/* active state, i.e. menu open */
+.menuButton .menuInput:checked + .menuLabel {
+    /*background-color: #cb0032;*/
+}
+
+.menuButton .menuInput:checked + .menuLabel::after,
+.menuButton .menuInput:checked + .menuLabel::before {
+    top: 18px;
+}
+.menuButton .menuInput:checked + .menuLabel::after {
+    transform: rotate(45deg);
+}
+.menuButton .menuInput:checked + .menuLabel::before {
+    transform: rotate(-45deg);
 }

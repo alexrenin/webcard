@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import './css/Header.css';
 import Logo from './logo';
 
-const Header = ({logo, name='name', profession='profession', stackTehn=[]}) => {
-    const { subTitle, title } = logo;
+const Header = ({ logo, name='name', profession='profession', stackTehn=[] }) => {
     return (
         <div className="header">
             <div>
                 <div className="headerTitle">
-                    <Logo title={title} subTitle={subTitle}/>
+                    <Logo {...logo}/>
                     <div className="nameProf">
                         <div className="name"> {name} </div>
                         <div className="profession"> {profession} </div>

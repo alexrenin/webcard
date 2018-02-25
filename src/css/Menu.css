@@ -1,3 +1,4 @@
+/*------------ menu button style ------------*/
 .menuButton {
     display: block;
     position: fixed;
@@ -56,4 +57,13 @@
 }
 .menuButton .menuInput:checked + .menuLabel::before {
     transform: rotate(-45deg);
+}
+
+/*------------ list menu style ------------*/
+.menuList {
+    display: none;
+}
+/* menu is open*/
+.open .menuList {
+    display: block;
 }

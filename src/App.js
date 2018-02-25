@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { v4 } from 'uuid'
 import './css/App.css';
+
 import Header from './Header';
 import Menu from './Menu'
 
@@ -13,6 +15,28 @@ const sourse = {
     stackTehn: [
         'HTML5', 'JS2015+', 'CSS3.1',
         'React', 'Redux'
+    ],
+    listItems: [
+        {
+            title: 'Главная',
+            href: '',
+            key: v4(),
+        },
+        {
+            title: 'Резюме',
+            href: '',
+            key:  v4()
+        },
+        {
+            title: 'Портфолио',
+            href: '',
+            key:  v4()
+        },
+        {
+            title: 'Контакты',
+            href: '',
+            key:  v4()
+        },
     ]
 }
 
@@ -22,12 +46,12 @@ class App extends Component {
     return (
       <div className="App">
         <Menu
-            onClick={() => {}} />
-        <Header
-            logo = {sourse.logo}
-            name = {sourse.name}
-            profession = {sourse.profession}
-            stackTehn = {sourse.stackTehn} />
+            onClick = { event => {
+
+            }}
+            {...sourse}
+        />
+        <Header {...sourse} />
       </div>
     );
   }

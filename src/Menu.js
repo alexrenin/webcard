@@ -13,7 +13,7 @@ const Menu = ({ listItems, onClick=f=>f }) => {
             menuDiv.classList.remove('open') :
             menuDiv.classList.add('open')
 
-        onClick(event)
+        onClick(event, inputIsChecked)
     }
     return (
         <div className="menu"
@@ -43,7 +43,8 @@ const MenuItem = ({ title='title', href, selected, onClick=f=>f}) => {
     return (
         <div className={className}
              onClick={onClick}>
-            <a href={href}>
+            <a href={href}
+               onClick={onClick}>
                 {title}
             </a>
         </div>

@@ -46,12 +46,18 @@ class App extends Component {
     return (
       <div className="App">
         <Menu
-            onClick = { event => {
-
+            onClick = { (event, inputIsChecked) => {
+                let appDiv = document.querySelector('.App');
+                inputIsChecked ?
+                    appDiv.classList.remove('menuOpen') :
+                    appDiv.classList.add('menuOpen')
             }}
             {...sourse}
         />
-        <Header {...sourse} />
+        <div className="contentContainer">
+            <Header {...sourse} />
+        </div>
+
       </div>
     );
   }

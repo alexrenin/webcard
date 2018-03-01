@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './css/Menu.css';
 
-const Menu = ({ listItems, onClick=f=>f }) => {
+const Menu = ({ contentList, onClick=f=>f }) => {
     const click = event => {
         let menuButton = event.target.parentNode,
             menuDiv = menuButton.parentNode,
@@ -15,11 +15,12 @@ const Menu = ({ listItems, onClick=f=>f }) => {
 
         onClick(event, inputIsChecked)
     }
+
     return (
         <div className="menu"
              /*id = {menuid}*/>
             <MenuButton onClick={click}/>
-            <MenuList listItems={listItems}/>
+            <MenuList listItems={contentList}/>
         </div>
     )
 }

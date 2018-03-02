@@ -6,7 +6,7 @@
     right: 20px;
 
     width: 60px;
-    height: 40px;
+    height: 60px;
 }
 
 .menuButton .menuInput {
@@ -17,6 +17,8 @@
     width: 100%;
     height: 100%;
     background: #000000;
+
+    border-radius: 50%;
 }
 
 .menuButton .menuLabel::after,
@@ -30,11 +32,11 @@
 }
 .menuButton .menuLabel::after {
     content: "";
-    top: 12px;
+    top: 21px;
 }
 .menuButton .menuLabel::before {
     content: "";
-    top: 25px;
+    top: 34px;
 }
 
 /* "x" animation */
@@ -50,7 +52,7 @@
 
 .menuButton .menuInput:checked + .menuLabel::after,
 .menuButton .menuInput:checked + .menuLabel::before {
-    top: 18px;
+    top: 28px;
 }
 .menuButton .menuInput:checked + .menuLabel::after {
     transform: rotate(45deg);

@@ -44,7 +44,7 @@ const MenuItem = ({ title='title', href, selected, onClick=f=>f}) => {
     return (
         <div className={className}
              onClick={onClick}>
-            <a href={href}
+            <a href={'#'+href}
                onClick={onClick}>
                 {title}
             </a>

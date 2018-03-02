@@ -8,7 +8,7 @@ body,
     transition-duration: 0.3s;
 }
 .contentContainer {
-    background: url('image/background.png') center;
+
 }
 
 .menuOpen .contentContainer {

@@ -1,0 +1,98 @@
+/*------------ menu button style ------------*/
+.menuButton {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    width: 60px;
+    height: 60px;
+}
+
+.menuButton .menuInput {
+    display: none;
+}
+.menuButton .menuLabel {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+
+    border-radius: 50%;
+}
+
+.menuButton .menuLabel::after,
+.menuButton .menuLabel::before {
+    display: block;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    height: 4px;
+    background: white;
+}
+.menuButton .menuLabel::after {
+    content: "";
+    top: 21px;
+}
+.menuButton .menuLabel::before {
+    content: "";
+    top: 34px;
+}
+
+/* "x" animation */
+.menuButton .menuLabel::after,
+.menuButton .menuLabel::before {
+    transition-duration: 0.3s;
+}
+
+/* active state, i.e. menu open */
+.menuButton .menuInput:checked + .menuLabel {
+    /*background-color: #cb0032;*/
+}
+
+.menuButton .menuInput:checked + .menuLabel::after,
+.menuButton .menuInput:checked + .menuLabel::before {
+    top: 28px;
+}
+.menuButton .menuInput:checked + .menuLabel::after {
+    transform: rotate(45deg);
+}
+.menuButton .menuInput:checked + .menuLabel::before {
+    transform: rotate(-45deg);
+}
+
+/*------------ list menu style ------------*/
+.menuList {
+    display: none;
+}
+.menuItem {
+    display: block;
+    height: 20%;
+    width: 100%;
+
+}
+.menuItem a {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    font-family: Raleway, sans-serif;
+    color: black;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+/* menu is open*/
+.open .menuList {
+    display: block;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    height: 40%;
+}
+
+.menu.open {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}

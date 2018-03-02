@@ -1,20 +1,19 @@
+html,
+body,
+#root,
+.App,
+.contentContainer {
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.3s;
+}
+.contentContainer {
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
+.menuOpen .contentContainer {
+    transform:
+            scale(0.7)
+            translate(-90%);
+    border: 1px solid #000000;
 }

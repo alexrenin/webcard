@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { v4 } from 'uuid'
 import './css/App.css';
-
-import Menu from './Menu'
 import Home from './Home';
 
 const PAGES_CODE = {
@@ -57,15 +55,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Menu
-            {...sourse}
-            onClick = { (event, inputIsChecked) => {
-                let appDiv = document.querySelector('.App');
-                inputIsChecked ?
-                    appDiv.classList.remove('menuOpen') :
-                    appDiv.classList.add('menuOpen')
-            }}
-        />
+
         <div className="contentContainer">
             <Home {...sourse.contentList[0]} />
         </div>

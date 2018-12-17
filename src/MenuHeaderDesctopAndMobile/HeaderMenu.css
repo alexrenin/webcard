@@ -5,32 +5,36 @@
     align-items: center;
     justify-content: space-between;
 
+    font-family: sans-serif;
+    font-size: 16px;
+
     position: fixed;
     top: 0;
-    height: 7vh;
+    height: 4em;
     width: 100%;
 
     background-color: #BBBBBB;
     z-index: 99;
 }
 .headerMenu ul {
+    margin-block-end: 0;
     padding-inline-start: 0;
-    margin-block-start: 1em;
+    margin-block-start: 0;
 }
 
 /*------------ list menu style ------------*/
 .menuList {
     display: flex;
     flex-direction: row;
-    height: 100%;
+    flex-wrap: wrap;
     margin-left: 2vw;
 }
 .menuItem {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0.2em 0.5em;
-    height: auto;
+    margin: 0.3em 0.3em;
+    height: 3em;
     width: 7em;
     background: #AAAAAA;
     transform: skewX(170deg);
@@ -56,8 +60,8 @@
     display: none;
 
     position: fixed;
-    top: 7vh;
-    right: 2vw;
+    top: 4.5em;
+    right: 0.5em;
     background: #BBBBBB;
 }
 /* menu is expand*/
@@ -69,8 +73,8 @@
 .pullDownMenu .menuButton {
     display: block;
 
-    width: 38px;
-    height: 38px;
+    width: 2.375em;
+    height: 2.375em;
 }
 .pullDownMenu  .menuButton .menuInput {
     display: none;
@@ -112,4 +116,15 @@
     position: fixed;
     height: 100%;
     width: 100%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .headerMenu {
+        font-size: 3.2vw;
+    }
+    .menuItem {
+        margin: 0.3em 0.2em;
+        width: 6em;
+    }
 }

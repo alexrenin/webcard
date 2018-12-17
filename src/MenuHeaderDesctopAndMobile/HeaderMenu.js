@@ -85,7 +85,7 @@ const MenuItem = ({ title='title', href, selected, onClick=f=>f}) => {
                onClick={onClick}>
                 {title}
             </a>
-        </li>
+		</li>
     )
 }
 MenuItem.propTypes = {

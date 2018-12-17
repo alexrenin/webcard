@@ -5,15 +5,9 @@ body,
 .contentContainer {
     height: 100%;
     width: 100%;
-    transition-duration: 0.3s;
+    margin-top: 3vh;
 }
 .contentContainer {
 
 }
 
-.menuOpen .contentContainer {
-    transform:
-            scale(0.7)
-            translate(-90%);
-    border: 1px solid #000000;
-}

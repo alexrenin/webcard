@@ -13,60 +13,75 @@
     background-color: #BBBBBB;
     z-index: 99;
 }
-
+.headerMenu ul {
+    padding-inline-start: 0;
+    margin-block-start: 1em;
+}
 
 /*------------ list menu style ------------*/
 .menuList {
     display: flex;
     flex-direction: row;
-
+    height: 100%;
     margin-left: 2vw;
-    padding-inline-start: 0;
 }
 .menuItem {
-    display: block;
-    margin: 0 1vw;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.2em 0.5em;
+    height: auto;
+    width: 7em;
+    background: #AAAAAA;
+    transform: skewX(170deg);
+ }
+.menuItem:hover {
+    transform: skewX(170deg) scale(1.1);
+    border: 1px solid black;
 }
-
+.headerMenu a {
+    text-decoration: none;
+    color: black;
+}
 
 /*----- PullDowmMenu -----*/
-.pullDowmMenu {
-
+.pullDownMenu {
+    margin-right: 2vw;
 }
 
-.pullDowmMenu .pullDownMenuButton {
+.pullDownMenu .pullDownMenuButton {
 
 }
-.pullDowmMenu .pullDownMenuList {
+.pullDownMenu .pullDownMenuList {
     display: none;
+
+    position: fixed;
+    top: 7vh;
+    right: 2vw;
+    background: #BBBBBB;
 }
 /* menu is expand*/
-.pullDowmMenu .pullDownMenuButton expand{
-
-}
-.pullDowmMenu .pullDownMenuList expand{
-
+.pullDownMenu .menuButton input:checked ~ .pullDownMenuList {
+    display: block;
 }
 
 /*----- PullDowmMenu Button-----*/
-.pullDowmMenu .menuButton {
+.pullDownMenu .menuButton {
     display: block;
 
     width: 38px;
     height: 38px;
 }
-
-.pullDowmMenu  .menuButton .menuInput {
+.pullDownMenu  .menuButton .menuInput {
     display: none;
 }
-.pullDowmMenu  .menuButton .menuLabel {
+.pullDownMenu  .menuButton .menuLabel {
     display: flex;
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid #919191;
-
+    border: 1px solid #717070;
+    color:  #717070;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
@@ -74,7 +89,15 @@
     background: transparent;
     cursor: pointer;
 }
-
+.pullDownMenu  .menuButton .menuLabel:hover {
+    border: 1px solid black;
+    color:  black;
+}
+/* menu is expand*/
+.pullDownMenu .menuButton input:checked + .menuLabel {
+    border: 1px solid green;
+    color:  green;
+}
 
 /* menu is open*/
 .open .menuList {

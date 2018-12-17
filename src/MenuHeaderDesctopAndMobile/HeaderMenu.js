@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './HeaderMenu.css';
+import { v4 } from 'uuid'
 
 /* ---- Example add to App ---- */
 
@@ -30,52 +31,39 @@ HeaderMenu.propTypes = {
 }
 
 const PullDowmMenu = ({currentItem=0, listItems=[]}) => {
-    const onBtnClick = event => {
-		let menuButton = event.target.parentNode,
-			pullDowmMenuDiv = menuButton.parentNode,
-			inputElement = menuButton.querySelector('input'),
-			inputIsChecked = inputElement.checked;
+    const onClick = event => {
+		let clickedItem = event.target.parentNode,
+			menuButton = clickedItem.parentNode.parentNode,
+			inputElement = menuButton.querySelector('input');
 
-		inputIsChecked ?
-			pullDowmMenuDiv.classList.remove('expand') :
-			pullDowmMenuDiv.classList.add('expand')
+		inputElement.checked = false;
 	},
-		btnText = listItems[currentItem].text;
+		btnText = listItems[currentItem].text,
+		id=v4();
 
     return (
-		<div className='pullDowmMenu'>
-			<MenuButtonWithText
-				   onClick={onBtnClick}
-				   btnText={btnText}
-			/>
-			<ul className='pullDownMenuList'>
-				{listItems.map ( item =>
-					<MenuItem {...item} />
-				)}
-            </ul>
+		<div className='pullDownMenu'>
+			<div className="menuButton">
+				<input type="checkbox" id = {id} className="menuInput">
+				</input>
+				<label
+					htmlFor={id}
+					className="menuLabel"
+					>
+					{btnText}
+				</label>
+				<ul className='pullDownMenuList'>
+					{listItems.map ( item =>
+						<MenuItem {...{...item, onClick}} />
+					)}
+				</ul>
+			</div>
 		</div>
 	)
 }
 PullDowmMenu.propTypes = {
 	currentItem: PropTypes.number,
 	listItems: PropTypes.array,
-}
-
-const MenuButtonWithText  = ({ id='inputId', onClick=f=>f, btnText="BtnText"}) =>
-	<div className="menuButton">
-		<input type="checkbox" id = {id} className="menuInput">
-		</input>
-		<label
-			htmlFor={id}
-			className="menuLabel"
-			onClick={onClick}>
-			{btnText}
-		</label>
-	</div>
-MenuButtonWithText.propTypes = {
-	id: PropTypes.string,
-	onClick: PropTypes.func,
-	bntText: PropTypes.string,
 }
 
 const MenuList = ({ listItems=[] }) =>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { v4 } from 'uuid'
 import './css/App.css';
 import Home from './Home';
+import HeaderMenu from './MenuHeaderDesctopAndMobile/HeaderMenu';
 
 const PAGES_CODE = {
     home: 'home',
@@ -48,20 +49,42 @@ const sourse = {
             key: v4(),
         }
     ],
+	language: {
+		currentItem: 0,
+		listItems: [
+			{
+				title: 'Русский',
+				text: 'RU',
+				key: v4(),
+			},
+			{
+				title: 'English',
+				text: 'EN',
+				key: v4(),
+			}
+		]
+    }
+
 }
 
 
 class App extends Component {
+
+
   render() {
+	  let sourse2 = {
+		  contentList: sourse.contentList,
+		  pullDownMenuContent: sourse.language
+		}
     return (
       <div className="App">
-
+        <HeaderMenu {...sourse2}/>
         <div className="contentContainer">
             <Home {...sourse.contentList[0]} />
         </div>
 
       </div>
-    );
+    )
   }
 }
 

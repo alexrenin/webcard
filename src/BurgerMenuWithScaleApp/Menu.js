@@ -12,7 +12,7 @@ import './Menu.css';
 			{/*appDiv.classList.remove('menuOpen') :*/}
 			{/*appDiv.classList.add('menuOpen')*/}
 	{/*}}*/}
-{/*/>*/}
+{/*!/>*/}
 
 const Menu = ({ contentList, onClick=f=>f }) => {
     const click = event => {

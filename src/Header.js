@@ -16,11 +16,12 @@ const Header = ({ logo, name='name', profession='profession', stackTehn=[] }) =>
 
                 </div>
                 <div className="stackTechnologies">
-                    {
-                        stackTehn.reduce((sum, current, i, arr) =>
-                            sum += (" / " + current)
-                        )
-                    }
+                    { (stackTehn.length === 0) ?
+						"" :
+						stackTehn.reduce((sum, current, i, arr) =>
+						 	sum += (" / " + current)
+							)
+					}
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import './css/App.css';
 import {MainMenu, HomePage} from './containers'
+import {HashRouter,	Route, Switch} from 'react-router-dom'
 
 const PAGES_CODE = {
     home: 'home',
@@ -32,13 +33,14 @@ class App extends Component {
 
 	render() {
 		return (
-		  <div className="App">
+		<div className="App">
 			<MainMenu />
 			<div className="contentContainer">
-				<HomePage />
+				<Switch>
+					<Route exact path={"/"+PAGES_CODE.home} component={HomePage} />
+				</Switch>
 			</div>
-
-		  </div>
+		</div>
 		)
 	}
 }

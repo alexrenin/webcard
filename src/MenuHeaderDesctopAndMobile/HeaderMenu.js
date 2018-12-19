@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './HeaderMenu.css';
 import { v4 } from 'uuid'
+import { NavLink } from 'react-router-dom'
 
 const HeaderMenu = ({contentList, pullDownMenuContent, pullDownMenuClick=f=>f,
 					}) => {
@@ -55,11 +56,11 @@ PullDowmMenu.propTypes = {
 }
 
 const MenuList = ({ listItems=[] }) =>
-    <ul className="menuList">
+    <nav className="menuList">
         {listItems.map ( item =>
             <MenuItem {...item} />
         )}
-    </ul>
+    </nav>
 MenuList.propTypes = {
     listItems: PropTypes.array,
 }
@@ -69,10 +70,10 @@ const MenuItem = ({ title='title', href, selected, onClick=f=>f}) => {
     return (
         <li className={className}
              onClick={onClick}>
-            <a href={'#'+href}
+            <NavLink  to={"/"+href}
                onClick={onClick}>
                 {title}
-            </a>
+            </NavLink >
 		</li>
     )
 }

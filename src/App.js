@@ -20,15 +20,15 @@ class App extends Component {
 		}
 	}
 
-	// componentWillMount() {
-	// 	this.unsubscribe = store.subscribe(
-	// 		() => this.forceUpdate()
-	// 	)
-	// }
-	//
-	// componentWillUnmount() {
-	// 	this.unsubscribe()
-	// }
+	componentWillMount() {
+		this.unsubscribe = window.store.subscribe(
+			() => this.forceUpdate()
+		)
+	}
+
+	componentWillUnmount() {
+		this.unsubscribe()
+	}
 
 	render() {
 		return (

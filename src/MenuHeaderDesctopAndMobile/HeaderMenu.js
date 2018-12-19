@@ -3,18 +3,6 @@ import PropTypes from 'prop-types';
 import './HeaderMenu.css';
 import { v4 } from 'uuid'
 
-/* ---- Example add to App ---- */
-
-/*<Menu
-	{...sourse}
-	onClick = { (event, inputIsChecked) => {
-		let appDiv = document.querySelector('.App');
-		inputIsChecked ?
-			appDiv.classList.remove('menuOpen') :
-			appDiv.classList.add('menuOpen')
-	}}
-/>*/
-
 const HeaderMenu = ({contentList, pullDownMenuContent, pullDownMenuClick=f=>f,
 					}) => {
 	return (

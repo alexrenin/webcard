@@ -5,7 +5,6 @@ import HeaderMenu from './MenuHeaderDesctopAndMobile/HeaderMenu';
 
 export const  HomePage = (props, { store }) =>
 	<Home hpSourse={store.getState().contentList[0]} />
-
 HomePage.contextTypes = {
 	store: PropTypes.object
 }

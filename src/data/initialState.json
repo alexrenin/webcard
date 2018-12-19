@@ -1,0 +1,54 @@
+{
+  "contentList": [
+    {
+      "title": "Главная",
+      "href": "home",
+      "key": "8658c1d0-9eda-4a90-95e1-8001e8eb6036",
+      "logo": {
+        "title": "AR",
+        "subTitle": "develop"
+      },
+      "name": "Александр",
+      "profession": "Front-end developer",
+      "stackTehn": [
+        "HTML5",
+        "JS2015+",
+        "CSS3.1",
+        "React",
+        "Redux"
+      ],
+      "aboutText": "Привет! Меня зовут Александр и я Front-end разработчик. \n Вникать в проблемы, тонкости новой сферы, а затем воплощать это в четкий и понятный код - вот что мне нравится в программировании. \n Это стало моей основной деятельностью 3 года назад, а последний год я специализируюсь на разработке и доработке сайтов.\n Я предпочтитаю исплользовать последние стандарты JS, а также React + Redux. \n",
+      "aboutTitle": "Немного о себе"
+    },
+    {
+      "title": "Резюме",
+      "href": "summary",
+      "key": "f9005b4e-975e-433d-a646-79df172e1dbb"
+    },
+    {
+      "title": "Портфолио",
+      "href": "portfolio",
+      "key": "58d9caee-6ea6-4d7b-9984-65b145031979"
+    },
+    {
+      "title": "Контакты",
+      "href": "contacts",
+      "key": "a5685c39-6bdc-4727-9188-6c9a00bf7f95"
+    }
+  ],
+  "language": {
+    "currentItem": 0,
+    "listItems": [
+      {
+        "title": "Русский",
+        "text": "RU",
+        "key": "ru001"
+      },
+      {
+        "title": "English",
+        "text": "EN",
+        "key": "en001"
+      }
+    ]
+  }
+}

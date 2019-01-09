@@ -9,7 +9,7 @@ const HeaderMenu = ({contentList, pullDownMenuContent, pullDownMenuClick=f=>f, t
         <div className="headerMenu">
             <MenuList listItems={contentList}
 					  t={t}/>
-			<PullDowmMenu {... {...pullDownMenuContent, t}}
+			<PullDowmMenu {... {...pullDownMenuContent, pullDownMenuClick, t}}
 			/>
         </div>
     )
@@ -20,15 +20,19 @@ HeaderMenu.propTypes = {
 	t: PropTypes.func,
 }
 
-const PullDowmMenu = ({currentItem=0, listItems=[], t=f=>f}) => {
+const PullDowmMenu = ({currentItem=0, listItems=[], pullDownMenuClick=f=>f, t=f=>f}) => {
 	const onClick = event => {
-		let clickedItem = event.target.parentNode,
+		event.preventDefault()
+		let clickedItem = event.target.nodeName === "LI" ? event.target : event.target.parentNode,
 			menuButton = clickedItem.parentNode.parentNode,
-			inputElement = menuButton.querySelector('input');
+			inputElement = menuButton.querySelector('input'),
+			clickedItemId = clickedItem.id;
 
 		inputElement.checked = false;
+
+		pullDownMenuClick(clickedItemId)
 	},
-		btnText = listItems[currentItem].text,
+		btnText = t(listItems[currentItem].text),
 		id=v4();
 
     return (
@@ -40,11 +44,13 @@ const PullDowmMenu = ({currentItem=0, listItems=[], t=f=>f}) => {
 					htmlFor={id}
 					className="menuLabel"
 					>
-					{t(btnText)}
+					{btnText}
 				</label>
 				<ul className='pullDownMenuList'>
-					{listItems.map ( item =>
-						<MenuItem {...{...item, onClick, t}} />
+					{listItems.map ( item => {
+										let key = v4()
+										return <MenuItem {...{...item, onClick, t, key}} />
+									}
 					)}
 				</ul>
 			</div>
@@ -54,6 +60,7 @@ const PullDowmMenu = ({currentItem=0, listItems=[], t=f=>f}) => {
 PullDowmMenu.propTypes = {
 	currentItem: PropTypes.number,
 	listItems: PropTypes.array,
+	pullDownMenuClick: PropTypes.func,
 	t: PropTypes.func,
 }
 
@@ -67,16 +74,16 @@ MenuList.propTypes = {
     listItems: PropTypes.array,
 }
 
-const MenuItem = ({ title='title', href, selected, onClick=f=>f, t=str=>str}) => {
+const MenuItem = ({ title='title', href, selected, onClick=f=>f, id='', t=str=>str }) => {
     let className = 'menuItem' + (selected ? ' selected' : '');
 
     title = t(title);
-
 	return (
         <li className={className}
-             onClick={onClick}>
+            onClick={onClick}
+			id={id}>
             <a href={'#'+href}
-               onClick={onClick}>
+               /*onClick={onClick}*/>
                 {title}
             </a>
 		</li>
@@ -86,6 +93,7 @@ MenuItem.propTypes = {
     href: PropTypes.string,
     title: PropTypes.string,
     onClick: PropTypes.func,
+	id: PropTypes.string,
 	t: PropTypes.func,
 }
 

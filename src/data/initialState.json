@@ -42,12 +42,12 @@
       {
         "title": "Русский",
         "text": "RU",
-        "key": "ru001"
+        "id": "ru001"
       },
       {
         "title": "English",
         "text": "EN",
-        "key": "en001"
+        "id": "en101"
       }
     ]
   }

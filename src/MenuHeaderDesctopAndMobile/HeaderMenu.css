@@ -38,6 +38,7 @@
     width: 7em;
     background: #AAAAAA;
     transform: skewX(170deg);
+    cursor: pointer;
  }
 .menuItem:hover {
     transform: skewX(170deg) scale(1.1);

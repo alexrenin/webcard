@@ -4,18 +4,21 @@ import './css/Home.css';
 
 import Header from './Header';
 
-const Home = ({hpSourse}) => {
+const Home = ({hpSourse, t=str=>str}) => {
+	let aboutTitle = t(hpSourse.aboutTitle),
+		aboutText = t(hpSourse.aboutText);
+
 	return (
 		<div className="homePage">
 			<a name={hpSourse.href}></a>
-			<Header {...hpSourse} />
+			<Header {...{...hpSourse, t}} />
 			<div className="about">
 				<div className="text">
 					<h1>
-						{hpSourse.aboutTitle}
+						{aboutTitle}
 					</h1>
 					<p>
-						{hpSourse.aboutText}
+						{aboutText}
 					</p>
 				</div>
 			</div>
@@ -24,7 +27,7 @@ const Home = ({hpSourse}) => {
 }
 Home.propTypes = {
     hpSourse: PropTypes.object,
-
+	t: PropTypes.func,
 }
 
 export default Home

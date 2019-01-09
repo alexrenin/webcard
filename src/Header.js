@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import './css/Header.css';
 import Logo from './logo';
 
-const Header = ({ logo, name='name', profession='profession', stackTehn=[] }) => {
+const Header = ({ logo, name='name', profession='profession', stackTehn=[], t=str=>str}) => {
+    name = t(name)
+    profession = t(profession)
+
     return (
         <div className="header">
             <div>
@@ -32,7 +35,8 @@ const Header = ({ logo, name='name', profession='profession', stackTehn=[] }) =>
 Header.propTypes = {
     name: PropTypes.string,
     profession: PropTypes.string,
-    stackTehn: PropTypes.array
+    stackTehn: PropTypes.array,
+	t: PropTypes.func,
 }
 
 export default Header

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './HeaderMenu.css';
 import { v4 } from 'uuid';
-import { withNamespaces } from 'react-i18next';
+
 const HeaderMenu = ({contentList, pullDownMenuContent, pullDownMenuClick=f=>f, t=f=>f
 					}) => {
 	return (
@@ -89,4 +89,4 @@ MenuItem.propTypes = {
 	t: PropTypes.func,
 }
 
-export default withNamespaces()(HeaderMenu)
+export default HeaderMenu

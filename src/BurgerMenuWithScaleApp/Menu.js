@@ -1,6 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './css/Menu.css';
+import './Menu.css';
+
+/* ----Example add to App---- */
+
+{/*<Menu*/}
+	{/*{...sourse}*/}
+	{/*onClick = { (event, inputIsChecked) => {*/}
+		{/*let appDiv = document.querySelector('.App');*/}
+		{/*inputIsChecked ?*/}
+			{/*appDiv.classList.remove('menuOpen') :*/}
+			{/*appDiv.classList.add('menuOpen')*/}
+	{/*}}*/}
+{/*!/>*/}
 
 const Menu = ({ contentList, onClick=f=>f }) => {
     const click = event => {

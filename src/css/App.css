@@ -6,8 +6,13 @@ body,
     height: 100%;
     width: 100%;
     font-size: 16px;
-    margin-top: calc(4em - 1px);
     background-color: #ffdd59;
+}
+body {
+    height: calc(100% - 4em + 1px);
+}
+.contentContainer {
+    margin-top: calc(4em - 1px);
 }
 @media screen and (max-width: 600px) {
     html,

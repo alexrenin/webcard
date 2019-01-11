@@ -31,12 +31,10 @@
 	width: 56vh;
 
 	margin: 1vh;
-	/*display: flex;*/
 }
 .portfolioItemImage {
 	height: 100%;
-
-	/*margin: auto;*/
+	width: 100%;
 
 	background-repeat: no-repeat, no-repeat;
 	background-position: 50% 50%, 50% 15%;
@@ -45,6 +43,25 @@
 .portfolioItemMip {
 	background-image: url('image/desktop.png'),
 	             	  url('image/mip.png');
+}
+.portfolioItemFigcaption {
+	position: relative;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 80%;
+
+	display: flex;
+}
+.portfolioItemFigcaption h3 {
+	display: block;
+	max-width: 80%;
+	margin: auto;
+	text-align: center;
+}
+.portfolioItemContainer:hover > .portfolioItemFigcaption {
+	background: rgba(210, 218, 226, 0.71);
+
 }
 
 /*"телефон"*/

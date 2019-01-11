@@ -30,11 +30,13 @@ Portfolio.propTypes = {
 
 const PortfolioItem = ({classNamePI="", alt="", t=str=>str}) => {
 	return (
-		<figure className="portfolioItemContainer">
+		<figure className="portfolioItemContainer effect-bubba">
 			<div className={"portfolioItemImage " + classNamePI}>
 			</div>
 			<figcaption className="portfolioItemFigcaption">
-				{t(alt)}
+				<h3 className="portfolioFigcaptionTitle">
+					{t(alt)}
+				</h3>
 			</figcaption>
 		</figure>
 	)

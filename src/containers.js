@@ -3,19 +3,20 @@ import PropTypes from 'prop-types'
 import { withNamespaces } from 'react-i18next';
 import Home from './Home';
 import HeaderMenu from './MenuHeaderDesctopAndMobile/HeaderMenu';
+import Portfolio from "./PortfolioPage/Portfolio";
 import i18n from "./i18n";
 import changeLanguage from "./actions";
 
-const MultiLengHome = withNamespaces()(Home);
+const MultiLangHome = withNamespaces()(Home);
 export const  HomePage = (props, { store }) =>
-	<MultiLengHome hpSourse={store.getState().contentList[0]} />
+	<MultiLangHome hpSourse={store.getState().contentList[0]} />
 HomePage.contextTypes = {
 	store: PropTypes.object
 }
 
-const MultiLengHeaderMenu = withNamespaces()(HeaderMenu);
+const MultiLangHeaderMenu = withNamespaces()(HeaderMenu);
 export const MainMenu = (props, { store }) =>
-	<MultiLengHeaderMenu contentList={store.getState().contentList}
+	<MultiLangHeaderMenu contentList={store.getState().contentList}
 				pullDownMenuContent={store.getState().language}
 				pullDownMenuClick={lngId => {
 					let selectedLanguages = lngId.slice(0, 2),
@@ -30,3 +31,9 @@ MainMenu.contextTypes = {
 	store: PropTypes.object
 }
 
+const MultiLangPortfolio = withNamespaces()(Portfolio);
+export const PortfolioPage = (props, { store }) =>
+	<MultiLangPortfolio {...store.getState().contentList[1]} />
+PortfolioPage.contextTypes = {
+	store: PropTypes.object
+}

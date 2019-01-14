@@ -45,7 +45,24 @@
       "key": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
       "contactList": [
         {
-          "title": ""
+          "title": "mail",
+          "classNameCI": "far fa-envelope",
+          "href": ""
+        },
+        {
+          "title": "github",
+          "classNameCI": "fab fa-github",
+          "href": "https://github.com/SanyaRenin"
+        },
+        {
+          "title": "vkontakte",
+          "classNameCI": "fab fa-vk",
+          "href": ""
+        },
+        {
+          "title": "telegram",
+          "classNameCI": "fab fa-telegram-plane",
+          "href": "https://t.me/SanyaRenin"
         }
       ]
     }

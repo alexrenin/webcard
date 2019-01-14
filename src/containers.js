@@ -42,6 +42,6 @@ PortfolioPage.contextTypes = {
 const MultiLangContact = withNamespaces()(Contact);
 export const ContactPage = (props, { store }) =>
 	<MultiLangContact {...store.getState().contentList[2]} />
-Contact.contextTypes = {
+ContactPage.contextTypes = {
 	store: PropTypes.object
 }

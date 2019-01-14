@@ -1,40 +1,9 @@
 .logo {
-    height: 100px;
-    width: 100px;
+    height: 130px;
+    width: 130px;
     min-height: 5%;
     min-width: 5%;
 
-    border: 2px solid #555555;
-    border-radius: 50% 50% 50% 50%;
-    margin: 10px;
-}
-
-.logo .circle {
-    height: 100%;
-    width: 100%;
-
-    border: 3px solid #2222ff;
-    border-radius: 50% 0 50% 0;
-
-    font-family: Roboto;
-
-    transform: translate(-2px, -2px);
-}
-
-.logo .title,
-.logo .subTitle {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    height: 65%;
-    width: 100%;
-
-    font-size: 45px;
-}
-
-.logo .subTitle {
-    align-items: flex-start;
-    height: 35%;
-    font-size: 17px;
+    background: url('image/Logo.png') no-repeat center;
+    background-size: contain;
 }

@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import './css/App.css';
-import {MainMenu, HomePage} from './containers'
-
-const PAGES_CODE = {
-    home: 'home',
-    summary: 'summary',
-    portfolio: 'portfolio',
-    contacts: 'contacts',
-}
-
-
+import {MainMenu, HomePage, PortfolioPage, ContactPage} from './containers'
 
 class App extends Component {
 
@@ -36,6 +27,8 @@ class App extends Component {
 			<MainMenu />
 			<div className="contentContainer">
 				<HomePage />
+				<PortfolioPage />
+				<ContactPage />
 			</div>
 
 		  </div>

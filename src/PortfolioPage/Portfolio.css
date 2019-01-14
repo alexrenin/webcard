@@ -1,0 +1,83 @@
+.portfolioPage {
+	min-height: 100%;
+	padding: 0 5vw;
+	border-bottom: 1.5px solid #808e9b;
+}
+
+.portfolioTitle {
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+
+	min-height: 10%;
+	width: 100%;
+}
+
+.portfolioContainer {
+	min-height: 90%;
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+/*----- potfolioItem -----*/
+
+.portfolioItemContainer {
+	height: 40vh;
+	width: 56vh;
+
+	margin: 1vh;
+}
+.portfolioItemImage {
+	height: 100%;
+	width: 100%;
+
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 50%, 50% 15%;
+	background-size: contain, 87% 69%;
+}
+.portfolioItemMip {
+	background-image: url('image/desktop.png'),
+	             	  url('image/mip.png');
+}
+.portfolioItemFigcaption {
+	position: relative;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 80%;
+
+	display: flex;
+}
+.portfolioItemFigcaption h3 {
+	display: block;
+	max-width: 80%;
+	margin: auto;
+	text-align: center;
+}
+.portfolioItemContainer:hover > .portfolioItemFigcaption {
+	background: rgba(210, 218, 226, 0.71);
+
+}
+
+/*"телефон"*/
+@media screen and (max-height: 700px) and (max-width: 700px) {
+
+}
+
+/*"телефон" вертикальная ориентация*/
+@media screen and (max-height: 850px) and (max-width: 500px) {
+	.portfolioItemContainer {
+		height: 50vw;
+		width: 75vw;
+	}
+}
+
+/*"телефон" лэндскейп*/
+@media screen and (max-height: 500px) and (max-width: 850px) {
+
+}

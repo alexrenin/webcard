@@ -5,9 +5,10 @@ import { v4 } from 'uuid';
 
 const Portfolio = ({href="", subTitle="subTitle", portfolioList=[], t=str=>str}) => {
 	return (
-		<div className="portfolioPage">
-			<a name={href} />
-			<h1 className="portfolioTitle">{t(subTitle)}</h1>
+		<div className="portfolioPage" id={href}>
+			<h1 className="portfolioTitle">
+				{t(subTitle)}
+			</h1>
 			<div className="portfolioContainer">
 				{portfolioList.map(
 					item => {
@@ -19,7 +20,6 @@ const Portfolio = ({href="", subTitle="subTitle", portfolioList=[], t=str=>str})
 					}
 				)}
 			</div>
-
 		</div>
 	)
 }

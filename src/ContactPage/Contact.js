@@ -6,8 +6,7 @@ import { v4 } from 'uuid';
 
 const Contact = ({title="title", href="", contactList=[], t=str=>str}) => {
 	return (
-		<div className="contactPage">
-			<a name={href}></a>
+		<div className="contactPage" id={href}>
 			<h1 className="contactTitle">{t(title)}</h1>
 			<ul className="socialContainer">
 			{contactList.map(
@@ -16,7 +15,6 @@ const Contact = ({title="title", href="", contactList=[], t=str=>str}) => {
 					return (
 						<ContactItem {...{...item, key, t}}/>
 					)
-
 				}
 			)}
 			</ul>
@@ -33,7 +31,7 @@ Contact.propTypes = {
 const ContactItem = ({href="", classNameCI="", title="", t=str=>str}) => {
 	return (
 		<li className="socialLinkContainer">
-			<a href={href} className="socialLink" target="_blank">
+			<a href={href} className="socialLink" target="_blank" rel="noopener noreferrer" >
 			<i className={classNameCI}></i>
 			<h3 className="portfolioFigcaptionTitle">
 					{t(title)}

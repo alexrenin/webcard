@@ -6,6 +6,7 @@ import HeaderMenu from './MenuHeaderDesctopAndMobile/HeaderMenu';
 import Portfolio from "./PortfolioPage/Portfolio";
 import i18n from "./i18n";
 import changeLanguage from "./actions";
+import Contact from "./ContactPage/Contact";
 
 const MultiLangHome = withNamespaces()(Home);
 export const  HomePage = (props, { store }) =>
@@ -35,5 +36,12 @@ const MultiLangPortfolio = withNamespaces()(Portfolio);
 export const PortfolioPage = (props, { store }) =>
 	<MultiLangPortfolio {...store.getState().contentList[1]} />
 PortfolioPage.contextTypes = {
+	store: PropTypes.object
+}
+
+const MultiLangContact = withNamespaces()(Contact);
+export const ContactPage = (props, { store }) =>
+	<MultiLangContact {...store.getState().contentList[2]} />
+Contact.contextTypes = {
 	store: PropTypes.object
 }

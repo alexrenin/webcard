@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import './css/App.css';
 import {MainMenu, HomePage, PortfolioPage} from './containers'
+import Contact from "./ContactPage/Contact";
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
 			<div className="contentContainer">
 				<HomePage />
 				<PortfolioPage />
+				<Contact />
 			</div>
 
 		  </div>

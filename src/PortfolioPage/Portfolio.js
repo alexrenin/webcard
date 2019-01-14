@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import './Portfolio.css';
 import { v4 } from 'uuid';
 
-const Portfolio = ({subTitle="subTitle", portfolioList=[], t=str=>str}) => {
+const Portfolio = ({href="", subTitle="subTitle", portfolioList=[], t=str=>str}) => {
 	return (
 		<div className="portfolioPage">
+			<a name={href} />
 			<h1 className="portfolioTitle">{t(subTitle)}</h1>
 			<div className="portfolioContainer">
 				{portfolioList.map(
@@ -23,6 +24,7 @@ const Portfolio = ({subTitle="subTitle", portfolioList=[], t=str=>str}) => {
 	)
 }
 Portfolio.propTypes = {
+	href: PropTypes.string,
 	subTitle: PropTypes.string,
 	portfolioList: PropTypes.array,
 	t: PropTypes.func,

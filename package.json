@@ -2,6 +2,7 @@
   "name": "webcard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://SanyaRenin.github.io/webcard",
   "dependencies": {
     "i18next": "^13.1.0",
     "react": "^16.7.0",

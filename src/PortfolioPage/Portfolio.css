@@ -31,6 +31,8 @@
 	width: 56vh;
 
 	margin: 1vh;
+
+	cursor: pointer;
 }
 .portfolioItemImage {
 	height: 100%;
@@ -40,28 +42,154 @@
 	background-position: 50% 50%, 50% 15%;
 	background-size: contain, 87% 69%;
 }
+
+/*----- potfolioItem IMAGE-----*/
 .portfolioItemMip {
 	background-image: url('image/desktop.png'),
 	             	  url('image/mip.png');
 }
+.portfolioItemJrss {
+	background-image: 	url('image/desktop.png'),
+						url('image/jrss.png');
+}
+.portfolioItemPchelyprosto {
+	background-image: 	url('image/desktop.png'),
+						url('image/pchelyprosto.png');
+}
+/*----- ---- -----*/
 .portfolioItemFigcaption {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 	position: relative;
 	top: -100%;
 	left: 0;
 	width: 100%;
 	height: 80%;
 
-	display: flex;
 }
 .portfolioItemFigcaption h3 {
 	display: block;
 	max-width: 80%;
 	margin: auto;
 	text-align: center;
+
+	box-shadow: inset 0 0 60px 0 rgb(210, 218, 226);
+	border: none;
+	border-radius: 2px;
 }
+.portfolioItemStackTehn {
+	width: 80%;
+	margin-bottom: 2em;
+	text-align: center;
+
+	transition: all 0.5s ease-out;
+	transform: translateY(3em);
+	opacity: 0;
+}
+.portfolioItemDescription {
+	display: none;
+}
+
+/*----- potfolioItemContainer hover-----*/
+
 .portfolioItemContainer:hover > .portfolioItemFigcaption {
 	background: rgba(210, 218, 226, 0.71);
+}
+.portfolioItemContainer:hover > .portfolioItemFigcaption h3 {
+	box-shadow: none;
+}
+.portfolioItemContainer:hover > .portfolioItemFigcaption .portfolioItemStackTehn{
+	transform:  none;
+	opacity: 1;
+}
 
+/*----- potfolioItemContainer expand -----*/
+.portfolioItemContainer.expand {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+
+	z-index: 101;
+}
+.portfolioItemContainer.expand:before {
+	content: "";
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	z-index: -2;
+
+	background: rgba(128, 142, 155, 0.7);
+}
+.portfolioItemContainer.expand:after {
+	content: "";
+
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	z-index:-1;
+
+	background: #ffdd59;
+}
+.portfolioItemContainer.expand .portfolioItemImage {
+	flex-shrink: 0;
+	height: 55vh;
+	width: 77vh;
+}
+.portfolioItemContainer.expand .portfolioItemFigcaption {
+	position: static;
+	top: auto;
+	left: auto;
+	width: auto;
+	height: auto;
+	margin-top: 1em;
+}
+.portfolioItemContainer.expand .portfolioItemFigcaption h3 {
+	display: block;
+	margin: 0;
+	text-align: center;
+
+	box-shadow: none;
+
+	font-size: 3vw;
+}
+.portfolioItemContainer.expand .portfolioItemStackTehn {
+	width: 80%;
+	margin-bottom: 2em;
+	text-align: center;
+
+	transition: none;
+	transform: none;
+	opacity: 1;
+}
+.portfolioItemContainer.expand .portfolioItemDescription  {
+	display: block;
+}
+/*----- potfolioItemContainer expand hover-----*/
+
+.portfolioItemContainer.expand:hover > .portfolioItemFigcaption {
+	background: none;
+}
+.portfolioItemContainer.expand:hover > .portfolioItemFigcaption h3 {
+	box-shadow: none;
+}
+.portfolioItemContainer.expand:hover > .portfolioItemFigcaption .portfolioItemStackTehn{
+	transform:  none;
+	opacity: 1;
 }
 
 /*"телефон"*/
@@ -71,10 +199,14 @@
 
 /*"телефон" вертикальная ориентация*/
 @media screen and (max-height: 850px) and (max-width: 500px) {
-	.portfolioItemContainer {
+	.portfolioItemContainer,
+	.portfolioItemContainer.expand .portfolioItemImage {
 		height: 50vw;
 		width: 75vw;
 	}
+
+	/*----- potfolioItemContainer expand -----*/
+
 }
 
 /*"телефон" лэндскейп*/

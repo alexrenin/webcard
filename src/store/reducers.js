@@ -3,7 +3,9 @@ const C = {
 }
 
 export const contentList = (state = {}, action) => {
-
+	return state
+}
+export const version = (state = {}, action) => {
 	return state
 }
 

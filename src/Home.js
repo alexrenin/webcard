@@ -6,10 +6,8 @@ import Header from './Header';
 
 const Home = ({hpSourse, t=str=>str}) => {
 	return (
-		<div className="homePage">
-			<a name={hpSourse.href}></a>
+		<div className="homePage" id={hpSourse.href}>
 			<Header {...{...hpSourse, t}} />
-
 		</div>
 	)
 }

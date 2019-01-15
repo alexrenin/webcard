@@ -46,7 +46,8 @@
             "CSS3.1",
             "Java",
             "Git"
-          ]
+          ],
+          "description": "portfolioJrssDescription"
         },
         {
           "classNamePI": "portfolioItemPchelyprosto",
@@ -57,7 +58,8 @@
             "JS2015+",
             "CSS3.1",
             "Git"
-          ]
+          ],
+          "description": "portfolioPchelyprostoDescription"
         }
       ]
     },
@@ -70,7 +72,7 @@
         {
           "title": "mail",
           "classNameCI": "far fa-envelope",
-          "href": ""
+          "href": "mailto:sanya_renin@mail.ru"
         },
         {
           "title": "github",

@@ -33,7 +33,8 @@
             "JS2015+",
             "CSS3.1",
             "Php"
-          ]
+          ],
+          "description": "portfolioMipDescription"
         },
         {
           "classNamePI": "portfolioItemJrss",

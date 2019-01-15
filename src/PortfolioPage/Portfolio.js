@@ -30,9 +30,18 @@ Portfolio.propTypes = {
 	t: PropTypes.func,
 }
 
-const PortfolioItem = ({classNamePI="", alt="", stackTehn=[], t=str=>str}) => {
+const PortfolioItem = ({classNamePI="", alt="", stackTehn=[], description="", t=str=>str}) => {
+	let portItemContClass = "portfolioItemContainer";
+
+	const onClick = (event) => {
+		event.preventDefault()
+		let portItemContNode = findParentNodeByClass(event.target, portItemContClass);
+
+		portItemContNode.classList.toggle("expand");
+	}
+
 	return (
-		<figure className="portfolioItemContainer">
+		<figure className={portItemContClass} onClick={onClick}>
 			<div className={"portfolioItemImage " + classNamePI}>
 			</div>
 			<figcaption className="portfolioItemFigcaption">
@@ -48,6 +57,9 @@ const PortfolioItem = ({classNamePI="", alt="", stackTehn=[], t=str=>str}) => {
 					}
 				</p>
 			</figcaption>
+			<p	className="portfolioItemDescription">
+				{t(description)}
+			</p>
 		</figure>
 	)
 }
@@ -55,7 +67,20 @@ PortfolioItem.propTypes = {
 	classNamePI: PropTypes.string,
 	alt: PropTypes.string,
 	stackTehn: PropTypes.array,
+	description: PropTypes.string,
 	t: PropTypes.func,
 }
 
+const findParentNodeByClass = (node, className) => {
+	if (node.nodeName == "html")
+		return
+
+	if (node.classList.contains(className)) {
+		return	node
+	} else {
+		return findParentNodeByClass(node.parentNode, className)
+	}
+}
+
 export default Portfolio
+

@@ -11,11 +11,12 @@
       "name": "homeName",
       "profession": "profession",
       "stackTehn": [
+        "React",
+        "Redux",
         "HTML5",
         "JS2015+",
         "CSS3.1",
-        "React",
-        "Redux"
+        "Git"
       ]
     },
     {
@@ -26,15 +27,35 @@
       "portfolioList": [
         {
           "classNamePI": "portfolioItemMip",
-          "alt": "altMip"
+          "alt": "altMip",
+          "stackTehn": [
+            "HTML5",
+            "JS2015+",
+            "CSS3.1",
+            "Php"
+          ]
         },
         {
           "classNamePI": "portfolioItemJrss",
-          "alt": "altJrss"
+          "alt": "altJrss",
+          "stackTehn": [
+            "HTML5",
+            "JS2015+",
+            "CSS3.1",
+            "Java",
+            "Git"
+          ]
         },
         {
           "classNamePI": "portfolioItemPchelyprosto",
-          "alt": "altPchelyprosto"
+          "alt": "altPchelyprosto",
+          "stackTehn": [
+            "WordPress",
+            "HTML5",
+            "JS2015+",
+            "CSS3.1",
+            "Git"
+          ]
         }
       ]
     },

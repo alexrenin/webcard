@@ -30,7 +30,7 @@ Portfolio.propTypes = {
 	t: PropTypes.func,
 }
 
-const PortfolioItem = ({classNamePI="", alt="", t=str=>str}) => {
+const PortfolioItem = ({classNamePI="", alt="", stackTehn=[], t=str=>str}) => {
 	return (
 		<figure className="portfolioItemContainer">
 			<div className={"portfolioItemImage " + classNamePI}>
@@ -39,13 +39,22 @@ const PortfolioItem = ({classNamePI="", alt="", t=str=>str}) => {
 				<h3 className="portfolioFigcaptionTitle">
 					{t(alt)}
 				</h3>
+				<p	className="portfolioItemStackTehn">
+					{ (stackTehn.length === 0) ?
+						"" :
+						stackTehn.reduce((sum, current, i, arr) =>
+							sum += (" / " + current)
+						)
+					}
+				</p>
 			</figcaption>
 		</figure>
 	)
 }
 PortfolioItem.propTypes = {
 	classNamePI: PropTypes.string,
-	alt:PropTypes.string,
+	alt: PropTypes.string,
+	stackTehn: PropTypes.array,
 	t: PropTypes.func,
 }
 

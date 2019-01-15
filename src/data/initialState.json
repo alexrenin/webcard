@@ -29,12 +29,12 @@
           "alt": "altMip"
         },
         {
-          "classNamePI": "portfolioItemMip",
-          "alt": "altMip"
+          "classNamePI": "portfolioItemJrss",
+          "alt": "altJrss"
         },
         {
-          "classNamePI": "portfolioItemMip",
-          "alt": "altMip"
+          "classNamePI": "portfolioItemPchelyprosto",
+          "alt": "altPchelyprosto"
         }
       ]
     },

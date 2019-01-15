@@ -1,4 +1,5 @@
 {
+  "version": "1.0.0",
   "contentList": [
     {
       "title": "homeTitle",
@@ -79,7 +80,7 @@
         {
           "title": "vkontakte",
           "classNameCI": "fab fa-vk",
-          "href": ""
+          "href": "https://vk.com/id138616117"
         },
         {
           "title": "telegram",

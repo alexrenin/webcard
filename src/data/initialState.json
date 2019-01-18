@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "contentList": [
     {
       "title": "homeTitle",
@@ -28,6 +28,7 @@
       "portfolioList": [
         {
           "classNamePI": "portfolioItemMip",
+          "subHref": "mip",
           "alt": "altMip",
           "stackTehn": [
             "HTML5",
@@ -35,10 +36,16 @@
             "CSS3.1",
             "Php"
           ],
-          "description": "portfolioMipDescription"
+          "description": {
+            "id": "mipDescID",
+            "text": "portfolioMipDescription",
+            "aHref": "https://yadi.sk/i/n431lx3GcAZFcg",
+            "aText": "portfolioJrssDescription1"
+          }
         },
         {
           "classNamePI": "portfolioItemJrss",
+          "subHref": "jrss",
           "alt": "altJrss",
           "stackTehn": [
             "HTML5",
@@ -47,10 +54,16 @@
             "Java",
             "Git"
           ],
-          "description": "portfolioJrssDescription"
+          "description": {
+            "id": "jrssDescID",
+            "text": "portfolioJrssDescription",
+            "aHref": "https://elibrary.ru/item.asp?id=27297986",
+            "aText": "portfolioJrssDescription1"
+          }
         },
         {
           "classNamePI": "portfolioItemPchelyprosto",
+          "subHref": "pchelyprosto",
           "alt": "altPchelyprosto",
           "stackTehn": [
             "WordPress",
@@ -59,7 +72,10 @@
             "CSS3.1",
             "Git"
           ],
-          "description": "portfolioPchelyprostoDescription"
+          "description": {
+            "id": "ppDescID",
+            "text": "portfolioPchelyprostoDescription"
+          }
         }
       ]
     },

@@ -10,7 +10,9 @@
   "github": "github",
   "altJrss": "Приложение бурильной установки",
   "altPchelyprosto": "WordPress Блог",
-  "portfolioMipDescription": "По данной работе написана научная статья https://yadi.sk/i/n431lx3GcAZFcg",
-  "portfolioJrssDescription": "По данной работе написана научная статья https://elibrary.ru/item.asp?id=27297986",
+  "portfolioMipDescription": "По данной работе написана ",
+  "portfolioMipDescription1": " научная статья ",
+  "portfolioJrssDescription": "По данной работе написана ",
+  "portfolioJrssDescription1": " научная статья ",
   "portfolioPchelyprostoDescription": "Произведена стилизация и брендирование с изменением верстки"
 }

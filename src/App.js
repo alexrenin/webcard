@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import './css/App.css';
-import {MainMenu, HomePage, PortfolioPage, ContactPage} from './containers'
+import {MainMenu, HomePage, PortfolioPage, ResumePage, ContactPage} from './containers'
 
 class App extends Component {
 
@@ -27,6 +27,7 @@ class App extends Component {
 			<MainMenu />
 			<div className="contentContainer">
 				<HomePage />
+				<ResumePage />
 				<PortfolioPage />
 				<ContactPage />
 			</div>

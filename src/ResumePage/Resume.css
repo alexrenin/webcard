@@ -1,0 +1,85 @@
+.resumePage {
+	min-height: 100%;
+	padding: 0 5vw;
+	border-bottom: 1.5px solid #808e9b;
+}
+
+.resumeTitle {
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
+
+	min-height: 10%;
+	width: 100%;
+}
+
+.resumeContainer {
+	min-height: 90%;
+	width: 100%;
+
+}
+
+.resumeSubContainer1 {
+	width: 100%;
+	min-height: 65%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.resumeItemContainer {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2.1vh;
+	margin: 2.1vh;
+	border: 0.3em solid #485460;
+}
+.resumeItem {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+.resumeItem.big {
+	height: 40vh;
+	width: 30vh;
+}
+.resumeItem.small {
+	height: 20vh;
+	width: 15vh;
+
+	font-size: 0.8em;
+}
+
+/*----- baclground image -----*/
+.diplom {
+	background-image: url('image/diplom.jpg');
+}
+
+/*"телефон"*/
+@media screen and (max-height: 700px) and (max-width: 700px) {
+
+}
+
+/*"телефон" вертикальная ориентация*/
+@media screen and (max-height: 850px) and (max-width: 500px) {
+	.diplom {
+		height: 50vw;
+	}
+
+	/*----- potfolioItemContainer expand -----*/
+
+}
+
+/*"телефон" лэндскейп*/
+@media screen and (max-height: 500px) and (max-width: 850px) {
+
+}

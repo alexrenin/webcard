@@ -95,6 +95,16 @@
             }
           ]
         }
+      ],
+      "skillList": [
+        {
+          "title": "JS ES6+",
+          "level": "95"
+        },
+        {
+          "title": "HTML5",
+          "level": "96"
+        }
       ]
     },
     {

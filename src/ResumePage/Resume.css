@@ -17,8 +17,9 @@
 .resumeContainer {
 	min-height: 90%;
 	width: 100%;
-
 }
+
+/*----- experience -----*/
 
 .resumeSubContainer1 {
 	width: 100%;
@@ -26,15 +27,19 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: flex-start;
 }
 
 .resumeItemContainer {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 2.1vh;
-	margin: 2.1vh;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	grid-gap: 2vh;
+	grid-auto-rows: minmax(50px, auto);
+	grid-auto-flow: dense;
+
+	padding: 2vh;
+	margin: 1vh;
 	border: 0.3em solid #485460;
 }
 .resumeItem {
@@ -49,8 +54,9 @@
 	background-position: center;
 }
 .resumeItem.big {
-	height: 40vh;
-	width: 30vh;
+	grid-row: span 2;
+	height: 42vh;
+	width: 31.5vh;
 }
 .resumeItem.small {
 	height: 20vh;
@@ -58,10 +64,67 @@
 
 	font-size: 0.8em;
 }
+.resumeItemTitle {
+	grid-column: 1 / -1;
 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+
+	color: #1e272e;
+
+	background: #ffc048;
+	border: 1px solid #1e272e;
+}
+.resumeItemTitle:hover {
+
+}
 /*----- baclground image -----*/
 .diplom {
 	background-image: url('image/diplom.jpg');
+}
+
+/*----- skills -----*/
+
+.resumeSubContainer2 {
+	width: 100%;
+	min-height: 35%;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	border: 0.3em solid #485460;
+
+	margin: 0.5em 0;
+}
+
+.resumeSkillContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1.33em;
+}
+.resumeSkillContainer .resumeSkillCircleContainer {
+	position: relative;
+}
+.resumeSkillContainer .resumeSkillCircleContainer span{
+	font-size: 25px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.resumeSkillContainer h4 {
+	margin: 1.33em 0;
+
 }
 
 /*"телефон"*/

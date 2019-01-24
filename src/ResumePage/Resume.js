@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Resume.css';
+import '../css/fonts/fontawesome-free-5.6.3-web/css/all.css'
 import { v4 } from 'uuid';
 import C from '../Constant'
 
-const Resume = ({href="", subTitle="subTitle", resumeList=[], t=str=>str}) => {
+import CanvasCircle from "./CanvasCircle/CanvscCircle"
+
+const Resume = ({href="", subTitle="subTitle", resumeList=[], skillList=[], t=str=>str}) => {
 	return (
 		<div className="resumePage" id={href}>
 			<h1 className="resumeTitle">
@@ -22,7 +25,14 @@ const Resume = ({href="", subTitle="subTitle", resumeList=[], t=str=>str}) => {
 					)}
 				</div>
 				<div className="resumeSubContainer2">
-
+					{skillList.map(
+						item => {
+							let key = v4()
+							return (
+								<ResumeSkill {...{...item, key, t}}/>
+							)
+						}
+					)}
 				</div>
 			</div>
 		</div>
@@ -47,6 +57,9 @@ const ResumeItemContainer = ({title="", itemList=[], t=str=>str}) => {
 					)
 				}
 			)}
+			<h2 className="resumeItemTitle">
+				{t(title)}
+			</h2>
 		</div>
 	)
 }
@@ -69,6 +82,40 @@ const ResumeItem = ({title="title", imageCSS="", subTitle="subTitle", sizeCSS=""
 			</h4>
 		</div>
 	)
+}
+ResumeItem.propTypes = {
+	title: PropTypes.string,
+	imageCSS: PropTypes.string,
+	subTitle: PropTypes.string,
+	sizeCSS: PropTypes.string,
+	itemList: PropTypes.array,
+	t: PropTypes.func,
+}
+
+const ResumeSkill = ({title="", level=50, t=str=>str}) => {
+	let whSize = 150
+
+	return (
+		<div className="resumeSkillContainer">
+			<div className="resumeSkillCircleContainer">
+				<CanvasCircle {...{whSize, level}}/>
+				<span>
+					{level + "%"}
+				</span>
+			</div>
+			<h4>
+				{t(title)}
+			</h4>
+		</div>
+	)
+}
+ResumeSkill.propTypes = {
+	level: PropTypes.number,
+	title: PropTypes.string,
+	subTitle: PropTypes.string,
+	sizeCSS: PropTypes.string,
+	itemList: PropTypes.array,
+	t: PropTypes.func,
 }
 
 export default Resume

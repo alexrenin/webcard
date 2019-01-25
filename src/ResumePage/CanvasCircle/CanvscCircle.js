@@ -1,6 +1,5 @@
 import React from 'react'
 import { Component } from 'react'
-import { render } from 'react-dom'
 import PropTypes from 'prop-types';
 
 export default class CanvscCircle extends Component {
@@ -14,7 +13,7 @@ export default class CanvscCircle extends Component {
 	}
 
 	drawZones (props) {
-		const {whSize, level} = props
+		const {level} = props
 		const canvas = this.refs.canvas
 		const ctx = canvas.getContext('2d')
 		ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -31,9 +30,14 @@ export default class CanvscCircle extends Component {
 
 		var sectionOptions = [
 			{
+				startAngle: 0,
+				endAngle: 2 * Math.PI,
+				color: "#d2dae2"
+			},
+			{
 				startAngle: startAngle,
 				endAngle: endAngle,
-				color: "#090"
+				color: "#05c46b"
 			}
 		];
 

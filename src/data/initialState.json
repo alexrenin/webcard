@@ -36,16 +36,10 @@
               "imageCSS": "diplom"
             },
             {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
+              "title": "resumeCourses",
+              "subTitle": "resumeHtmlacademy",
               "sizeCSS": "small",
-              "imageCSS": "diplom"
-            },
-            {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
-              "sizeCSS": "small",
-              "imageCSS": "diplom"
+              "imageCSS": "htmlacademy"
             }
           ]
         },
@@ -53,45 +47,27 @@
           "title": "works",
           "itemList": [
             {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
+              "title": "resumeUtipPosition",
+              "subTitle": "resumeUTIP",
               "sizeCSS": "big",
-              "imageCSS": "diplom"
-            },
-            {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
-              "sizeCSS": "small",
-              "imageCSS": "diplom"
-            },
-            {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
-              "sizeCSS": "small",
-              "imageCSS": "diplom"
+              "imageCSS": "utip"
             }
           ]
         },
         {
-          "title": "sсience",
+          "title": "science",
           "itemList": [
             {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
+              "title": "resumeNeft",
+              "subTitle": "resumeNeftJurn",
               "sizeCSS": "big",
-              "imageCSS": "diplom"
+              "imageCSS": "neft"
             },
             {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
+              "title": "resumeMIP",
+              "subTitle": "resumeMIPJurn",
               "sizeCSS": "small",
-              "imageCSS": "diplom"
-            },
-            {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
-              "sizeCSS": "small",
-              "imageCSS": "diplom"
+              "imageCSS": "mip"
             }
           ]
         }
@@ -104,6 +80,18 @@
         {
           "title": "HTML5",
           "level": "96"
+        },
+        {
+          "title": "CSS3",
+          "level": "95"
+        },
+        {
+          "title": "React",
+          "level": "76"
+        },
+        {
+          "title": "Php",
+          "level": "23"
         }
       ]
     },

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './Resume.css';
 import '../css/fonts/fontawesome-free-5.6.3-web/css/all.css'
 import { v4 } from 'uuid';
-import C from '../Constant'
 
 import CanvasCircle from "./CanvasCircle/CanvscCircle"
 
@@ -27,9 +26,10 @@ const Resume = ({href="", subTitle="subTitle", resumeList=[], skillList=[], t=st
 				<div className="resumeSubContainer2">
 					{skillList.map(
 						item => {
-							let key = v4()
+							let key = v4(),
+								level = parseInt(item.level)
 							return (
-								<ResumeSkill {...{...item, key, t}}/>
+								<ResumeSkill {...{...item, level, key, t}}/>
 							)
 						}
 					)}
@@ -88,7 +88,6 @@ ResumeItem.propTypes = {
 	imageCSS: PropTypes.string,
 	subTitle: PropTypes.string,
 	sizeCSS: PropTypes.string,
-	itemList: PropTypes.array,
 	t: PropTypes.func,
 }
 
@@ -112,9 +111,6 @@ const ResumeSkill = ({title="", level=50, t=str=>str}) => {
 ResumeSkill.propTypes = {
 	level: PropTypes.number,
 	title: PropTypes.string,
-	subTitle: PropTypes.string,
-	sizeCSS: PropTypes.string,
-	itemList: PropTypes.array,
 	t: PropTypes.func,
 }
 

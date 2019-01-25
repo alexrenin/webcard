@@ -80,11 +80,26 @@
 .resumeItemTitle:hover {
 
 }
+.resumeSubContainer1 .resumeItem h3,
+.resumeSubContainer1 .resumeItem h4 {
+	background: rgba(210, 218, 226, 0.71);
+}
 /*----- baclground image -----*/
 .diplom {
 	background-image: url('image/diplom.jpg');
 }
-
+.htmlacademy {
+	background-image: url('image/htmlacademy.jpg');
+}
+.utip {
+	background-image: url('image/utip.jpg');
+}
+.neft {
+	background-image: url('image/neft2.jpg');
+}
+.mip {
+	background-image: url('image/mip.png');
+}
 /*----- skills -----*/
 
 .resumeSubContainer2 {

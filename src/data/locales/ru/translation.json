@@ -1,7 +1,29 @@
 {
   "resume": "Резюме",
+  "resumeSubtitle": "Александр Белоногов",
+  "diploms": "образование",
+  "resumeATPP": "АТПП",
+  "resumePNIPU": "ПИНПУ",
+  "resumeCourses": "Курсы",
+  "resumeHtmlacademy": "Htmlacademy",
+  "works": "работа",
+  "resumeUtipPosition": "Front-end developer",
+  "resumeUTIP": "UTIP технологии",
+  "science": "научная работа",
+  "resumeNeft": "Программно-аппаратный комплекс",
+  "resumeNeftJurn": "Журнал Нефтяное хойзяйство",
+  "resumeMIP": "МИП",
+  "resumeMIPJurn": "Информационно-измерительные системы",
+  "JS ES6+": "JS ES6+",
+  "HTML5": "HTML5",
+  "CSS3": "CSS3",
+  "React": "React",
+  "Php": "Php",
+
+
   "homeTitle": "Главная",
   "homeName": "Александр",
+
   "profession": "Front-end developer",
   "portfolio": "Портфолио",
   "portfolioSubtitle": "Мои работы",
@@ -10,7 +32,9 @@
   "github": "github",
   "altJrss": "Приложение бурильной установки",
   "altPchelyprosto": "WordPress Блог",
-  "portfolioMipDescription": "По данной работе написана научная статья https://yadi.sk/i/n431lx3GcAZFcg",
-  "portfolioJrssDescription": "По данной работе написана научная статья https://elibrary.ru/item.asp?id=27297986",
+  "portfolioMipDescription": "По данной работе написана ",
+  "portfolioMipDescription1": " научная статья ",
+  "portfolioJrssDescription": "По данной работе написана ",
+  "portfolioJrssDescription1": " научная статья ",
   "portfolioPchelyprostoDescription": "Произведена стилизация и брендирование с изменением верстки"
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "contentList": [
     {
       "title": "homeTitle",
@@ -21,6 +21,81 @@
       ]
     },
     {
+      "title": "resume",
+      "href": "resume",
+      "key": "58d9caee-6ea6-4d7b-9984-65c145031000",
+      "subTitle": "resumeSubtitle",
+      "resumeList": [
+        {
+          "title": "diploms",
+          "itemList": [
+            {
+              "title": "resumeATPP",
+              "subTitle": "resumePNIPU",
+              "sizeCSS": "big",
+              "imageCSS": "diplom"
+            },
+            {
+              "title": "resumeCourses",
+              "subTitle": "resumeHtmlacademy",
+              "sizeCSS": "small",
+              "imageCSS": "htmlacademy"
+            }
+          ]
+        },
+        {
+          "title": "works",
+          "itemList": [
+            {
+              "title": "resumeUtipPosition",
+              "subTitle": "resumeUTIP",
+              "sizeCSS": "big",
+              "imageCSS": "utip"
+            }
+          ]
+        },
+        {
+          "title": "science",
+          "itemList": [
+            {
+              "title": "resumeNeft",
+              "subTitle": "resumeNeftJurn",
+              "sizeCSS": "big",
+              "imageCSS": "neft"
+            },
+            {
+              "title": "resumeMIP",
+              "subTitle": "resumeMIPJurn",
+              "sizeCSS": "small",
+              "imageCSS": "mip"
+            }
+          ]
+        }
+      ],
+      "skillList": [
+        {
+          "title": "JS ES6+",
+          "level": "95"
+        },
+        {
+          "title": "HTML5",
+          "level": "96"
+        },
+        {
+          "title": "CSS3",
+          "level": "95"
+        },
+        {
+          "title": "React",
+          "level": "76"
+        },
+        {
+          "title": "Php",
+          "level": "23"
+        }
+      ]
+    },
+    {
       "title": "portfolio",
       "href": "portfolio",
       "key": "58d9caee-6ea6-4d7b-9984-65b145031979",
@@ -28,6 +103,7 @@
       "portfolioList": [
         {
           "classNamePI": "portfolioItemMip",
+          "subHref": "mip",
           "alt": "altMip",
           "stackTehn": [
             "HTML5",
@@ -35,10 +111,16 @@
             "CSS3.1",
             "Php"
           ],
-          "description": "portfolioMipDescription"
+          "description": {
+            "id": "mipDescID",
+            "text": "portfolioMipDescription",
+            "aHref": "https://yadi.sk/i/n431lx3GcAZFcg",
+            "aText": "portfolioJrssDescription1"
+          }
         },
         {
           "classNamePI": "portfolioItemJrss",
+          "subHref": "jrss",
           "alt": "altJrss",
           "stackTehn": [
             "HTML5",
@@ -47,10 +129,16 @@
             "Java",
             "Git"
           ],
-          "description": "portfolioJrssDescription"
+          "description": {
+            "id": "jrssDescID",
+            "text": "portfolioJrssDescription",
+            "aHref": "https://elibrary.ru/item.asp?id=27297986",
+            "aText": "portfolioJrssDescription1"
+          }
         },
         {
           "classNamePI": "portfolioItemPchelyprosto",
+          "subHref": "pchelyprosto",
           "alt": "altPchelyprosto",
           "stackTehn": [
             "WordPress",
@@ -59,7 +147,10 @@
             "CSS3.1",
             "Git"
           ],
-          "description": "portfolioPchelyprostoDescription"
+          "description": {
+            "id": "ppDescID",
+            "text": "portfolioPchelyprostoDescription"
+          }
         }
       ]
     },

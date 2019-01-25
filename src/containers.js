@@ -7,6 +7,7 @@ import Portfolio from "./PortfolioPage/Portfolio";
 import i18n from "./i18n";
 import changeLanguage from "./actions";
 import Contact from "./ContactPage/Contact";
+import Resume from "./ResumePage/Resume";
 
 const MultiLangHome = withNamespaces()(Home);
 export const  HomePage = (props, { store }) =>
@@ -32,16 +33,24 @@ MainMenu.contextTypes = {
 	store: PropTypes.object
 }
 
+const MultiLangResume = withNamespaces()(Resume);
+export const ResumePage = (props, { store }) =>
+	<MultiLangResume {...store.getState().contentList[1]} />
+ResumePage.contextTypes = {
+	store: PropTypes.object
+}
+
 const MultiLangPortfolio = withNamespaces()(Portfolio);
 export const PortfolioPage = (props, { store }) =>
-	<MultiLangPortfolio {...store.getState().contentList[1]} />
+	<MultiLangPortfolio {...store.getState().contentList[2]} />
 PortfolioPage.contextTypes = {
 	store: PropTypes.object
 }
 
 const MultiLangContact = withNamespaces()(Contact);
 export const ContactPage = (props, { store }) =>
-	<MultiLangContact {...store.getState().contentList[2]} />
+	<MultiLangContact {...store.getState().contentList[3]} />
 ContactPage.contextTypes = {
 	store: PropTypes.object
 }
+

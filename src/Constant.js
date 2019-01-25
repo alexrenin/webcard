@@ -1,10 +1,14 @@
-const PAGES_CODE = {
+const constants = {
 	home: 'home',
 	summary: 'summary',
 	portfolio: 'portfolio',
 	contacts: 'contacts',
+	SITE_URL: "http://localhost:3000",
+	DEVELOP_FLAG: true,
+	MIP_DESC_ID: "mipDescID",
+	JRSS_DESC_ID: "jrssDescID",
+	PP_DESC_ID: "ppDescID",
 }
 
-export const SITE_URL = "http://localhost:3000"
+export default constants;
 
-export default PAGES_CODE

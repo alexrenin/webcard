@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { contentList, language, version } from './reducers'
 import stateData from '../data/initialState'
+import C from '../Constant'
 
 const logger = store => next => action => {
 	let result
@@ -20,10 +21,9 @@ const saver = store => next => action => {
 }
 
 const storeFactory = (initialState=stateData) => {
-	let localStorageStage = (localStorage['redux-store']) ?
+	let localStorageStage = (localStorage['redux-store'] && !C.DEVELOP_FLAG) ?
 								JSON.parse(localStorage['redux-store']) :
 								undefined;
-
 	return (
 		applyMiddleware(logger, saver)(createStore)(
 			combineReducers({contentList, language, version}),

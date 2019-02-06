@@ -44,7 +44,6 @@
 }
 .resumeItem {
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -83,6 +82,34 @@
 .resumeSubContainer1 .resumeItem h3,
 .resumeSubContainer1 .resumeItem h4 {
 	background: rgba(210, 218, 226, 0.71);
+
+	max-width: 80%;
+	overflow: hidden;
+	position: relative;
+	line-height: 1.2em;
+	max-height: 3.6em;
+	text-align: justify;
+	margin-right: -1em;
+	padding-right: 1em;
+}
+
+.resumeSubContainer1 .resumeItem h3:before,
+.resumeSubContainer1 .resumeItem h4:before {
+	content: '...';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.resumeSubContainer1 .resumeItem h3:after,
+.resumeSubContainer1 .resumeItem h4:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	width: 1em;
+	height: 0.5em;
+	margin-top: 0.2em;
+	background: rgb(210, 218, 226);
+	box-shadow: -1em 1em 1em 1em rgba(210, 218, 226, 0.75);
 }
 /*----- baclground image -----*/
 .diplom {
@@ -143,16 +170,25 @@
 }
 
 /*"телефон"*/
-@media screen and (max-height: 700px) and (max-width: 700px) {
+@media screen and (max-height: 850px) and (max-width: 850px) {
 
 }
 
 /*"телефон" вертикальная ориентация*/
 @media screen and (max-height: 850px) and (max-width: 500px) {
-	.diplom {
-		height: 50vw;
+	.resumeItem.big {
+		height: 70vw;
+		width: 52.5vw;
+		font-size: 5vw;
 	}
-
+	.resumeItem.small {
+		height: 34vw;
+		width: 25.5vw;
+		font-size: 2vw;
+	}
+	.resumeItemContainer {
+		grid-gap: 2vw;
+	}
 	/*----- potfolioItemContainer expand -----*/
 
 }

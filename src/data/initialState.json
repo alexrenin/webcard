@@ -1,5 +1,5 @@
 {
-  "version": "1.1.1",
+  "version": "1.2.0",
   "contentList": [
     {
       "title": "homeTitle",
@@ -150,6 +150,22 @@
           "description": {
             "id": "ppDescID",
             "text": "portfolioPchelyprostoDescription"
+          }
+        },
+        {
+          "classNamePI": "portfolioItemIrlndMap",
+          "subHref": "irlndMap",
+          "alt": "altIrlndMap",
+          "stackTehn": [
+            "d3.js",
+            "HTML5",
+            "JS2015+",
+            "CSS3.1",
+            "Git"
+          ],
+          "description": {
+            "id": "irlndMapDescID",
+            "text": "portfolioIrlndMapDescription"
           }
         }
       ]

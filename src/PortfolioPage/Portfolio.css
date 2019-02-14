@@ -54,6 +54,10 @@
 	background-image: 	url('image/desktop.png'),
 						url('image/pchelyprosto.png');
 }
+.portfolioItemIrlndMap {
+	 background-image: 	url('image/desktop.png'),
+	 					url('image/irlndMap.jpg');
+ }
 /*----- ---- -----*/
 .portfolioItemFigcaption {
 	display: flex;

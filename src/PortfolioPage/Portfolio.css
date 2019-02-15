@@ -58,6 +58,10 @@
 	 background-image: 	url('image/desktop.png'),
 	 					url('image/irlndMap.jpg');
  }
+.portfolioImageEditor {
+	background-image: 	url('image/desktop.png'),
+						url('image/ImageEditor.png');
+}
 /*----- ---- -----*/
 .portfolioItemFigcaption {
 	display: flex;

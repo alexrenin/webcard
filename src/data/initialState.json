@@ -167,6 +167,22 @@
             "id": "irlndMapDescID",
             "text": "portfolioIrlndMapDescription"
           }
+        },
+        {
+          "classNamePI": "portfolioImageEditor",
+          "subHref": "imageEditor",
+          "alt": "altImageEditor",
+          "stackTehn": [
+            "React.js",
+            "React-Konva.js",
+            "HTML5",
+            "JS2015+",
+            "Git"
+          ],
+          "description": {
+            "id": "ImageEditorDescID",
+            "text": "portfolioImageEditorDescription"
+          }
         }
       ]
     },

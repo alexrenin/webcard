@@ -88,7 +88,7 @@
 	position: relative;
 	line-height: 1.2em;
 	max-height: 3.6em;
-	text-align: justify;
+	text-align: center;
 	margin-right: -1em;
 	padding-right: 1em;
 }
@@ -106,10 +106,9 @@
 	position: absolute;
 	right: 0;
 	width: 1em;
-	height: 0.5em;
-	margin-top: 0.2em;
+	height: 0.2em;
+	margin-top: 0.75em;
 	background: rgb(210, 218, 226);
-	box-shadow: -1em 1em 1em 1em rgba(210, 218, 226, 0.75);
 }
 /*----- baclground image -----*/
 .diplom {

@@ -113,9 +113,7 @@
           ],
           "description": {
             "id": "mipDescID",
-            "text": "portfolioMipDescription",
-            "aHref": "https://yadi.sk/i/n431lx3GcAZFcg",
-            "aText": "portfolioJrssDescription1"
+            "innerHtml": "portfolioMipDescription"
           }
         },
         {
@@ -131,9 +129,7 @@
           ],
           "description": {
             "id": "jrssDescID",
-            "text": "portfolioJrssDescription",
-            "aHref": "https://elibrary.ru/item.asp?id=27297986",
-            "aText": "portfolioJrssDescription1"
+            "innerHtml": "portfolioJrssDescription"
           }
         },
         {
@@ -149,7 +145,7 @@
           ],
           "description": {
             "id": "ppDescID",
-            "text": "portfolioPchelyprostoDescription"
+            "innerHtml": "portfolioPchelyprostoDescription"
           }
         },
         {
@@ -165,7 +161,7 @@
           ],
           "description": {
             "id": "irlndMapDescID",
-            "text": "portfolioIrlndMapDescription"
+            "innerHtml": "portfolioIrlndMapDescription"
           }
         },
         {
@@ -181,7 +177,7 @@
           ],
           "description": {
             "id": "ImageEditorDescID",
-            "text": "portfolioImageEditorDescription"
+            "innerHtml": "portfolioImageEditorDescription"
           }
         }
       ]

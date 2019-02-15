@@ -32,13 +32,11 @@
   "github": "github",
   "altJrss": "Приложение бурильной установки",
   "altPchelyprosto": "WordPress Блог",
-  "portfolioMipDescription": "По данной работе написана ",
-  "portfolioMipDescription1": " научная статья ",
-  "portfolioJrssDescription": "По данной работе написана ",
-  "portfolioJrssDescription1": " научная статья ",
+  "portfolioMipDescription": "<div>По данной работе написана <a target='_blank' rel='noopener noreferrer' href='https://yadi.sk/i/n431lx3GcAZFcg'>научная статья</a></div>",
+  "portfolioJrssDescription": "По данной работе написана <a target='_blank' rel='noopener noreferrer' href='https://elibrary.ru/item.asp?id=27297986'>научная статья</a>",
   "portfolioPchelyprostoDescription": "Произведена стилизация и брендирование с изменением верстки",
   "altIrlndMap": "Статистическая карта Ирландии",
   "portfolioIrlndMapDescription": "Это был мой первый проект с англоязычным заказчиком - было познавательно.",
   "altImageEditor": "Обработка изображения",
-  "portfolioImageEditorDescription": "В данном проекте я хорошо освоил библиотеку React-Konva.js"
+  "portfolioImageEditorDescription": "<div>В данном <h1>проекте</h1> я хорошо освоил библиотеку React-Konva.js</div>"
 }

@@ -65,15 +65,8 @@ const PortfolioItem = ({classNamePI="", alt="", stackTehn=[], description={}, t=
 				</p>
 			</figcaption>
 			<div className="portfolioItemDescription">
-				{ (()=>{
-					switch (description.id) {
-						case C.MIP_DESC_ID:
-						default:
-							return ( <MipDescription {...{...description, t}}/> )
-					}
-					})()
-				}
-		</div>
+				<MipDescription {...{...description, t}}/>
+			</div>
 		</figure>
 	)
 }
@@ -85,20 +78,15 @@ PortfolioItem.propTypes = {
 	t: PropTypes.func,
 }
 
-const MipDescription = ({text="", aText="", aHref="",t=str=>str}) => {
-	return (
-		<div>
-			<p>
-				{t(text)}
-				<a href={aHref} target="_blank" rel="noopener noreferrer" >{t(aText)}</a>
-			</p>
-		</div>
-	)
-}
+const MipDescription = ({
+	innerHtml = "",
+	t = str=>str
+}) =>
+	<div dangerouslySetInnerHTML = {{__html: t(innerHtml)}} />
+
 MipDescription.propTypes = {
-	text: PropTypes.string,
-	aText: PropTypes.string,
-	aHref: PropTypes.string,
+	innerHtml: PropTypes.string,
+	t: PropTypes.func
 }
 
 const findParentNodeByClass = (node, className) => {

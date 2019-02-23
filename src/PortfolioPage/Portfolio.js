@@ -2,9 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Portfolio.css';
 import { v4 } from 'uuid';
-import C from '../Constant'
+import { withRouter } from 'react-router'
 
-const Portfolio = ({href="", subTitle="subTitle", portfolioList=[], t=str=>str}) => {
+const Portfolio = ({href="", subTitle="subTitle", portfolioList=[], t=str=>str, history, location}) => {
+	const pathname = location.pathname || "",
+		pathArray = pathname.split("/"),
+		pathHref = pathArray[1],
+		portfolioName = (pathHref === href) ? pathArray[2] : ""
+
+	const historySetSubHref = subHrefString => {
+		history.push("/" + href + "/" + subHrefString)
+	}
 	return (
 		<div className="portfolioPage" id={href}>
 			<h1 className="portfolioTitle">
@@ -13,9 +21,9 @@ const Portfolio = ({href="", subTitle="subTitle", portfolioList=[], t=str=>str})
 			<div className="portfolioContainer">
 				{portfolioList.map(
 					item => {
-						let key = v4()
+						const key = v4()
 						return (
-								<PortfolioItem {...{...item, key, t}}/>
+								<PortfolioItem {...{...item, key, t, portfolioName, historySetSubHref}}/>
 							)
 
 					}
@@ -31,24 +39,31 @@ Portfolio.propTypes = {
 	t: PropTypes.func,
 }
 
-const PortfolioItem = ({classNamePI="", alt="", stackTehn=[], description={}, t=str=>str}) => {
-	let portItemContClass = "portfolioItemContainer";
+const PortfolioItem = ({
+	classNamePI="",
+	alt="",
+	subHref="",
+	stackTehn=[],
+	description={},
+	portfolioName="",
+	historySetSubHref = f => f,
+	t=str=>str
+}) => {
+	let expandClass = (portfolioName === subHref) ? " expand" : "",
+		portItemContClass = "portfolioItemContainer" + expandClass;
 
 	const onClick = (event) => {
 			event.preventDefault()
-			let portItemContNode = findParentNodeByClass(event.target, portItemContClass);
-
-			portItemContNode.classList.add("expand");
+			historySetSubHref(subHref)
 		},
-		onClickButtonClouse = (event) => {
+		onClickButtonClose = (event) => {
 			event.preventDefault()
-			let portItemContNode = findParentNodeByClass(event.target, portItemContClass);
-			portItemContNode.classList.remove("expand");
+			historySetSubHref("")
 		}
 
 	return (
 		<figure className={portItemContClass} >
-			<button className="closeButton" onClick={onClickButtonClouse}></button>
+			<button className="closeButton" onClick={onClickButtonClose}></button>
 			<div className={"portfolioItemImage " + classNamePI}>
 			</div>
 			<figcaption className="portfolioItemFigcaption" onClick={onClick}>
@@ -89,16 +104,5 @@ MipDescription.propTypes = {
 	t: PropTypes.func
 }
 
-const findParentNodeByClass = (node, className) => {
-	if (node.nodeName == "html")
-		return
-
-	if (node.classList.contains(className)) {
-		return	node
-	} else {
-		return findParentNodeByClass(node.parentNode, className)
-	}
-}
-
-export default Portfolio
+export default withRouter(Portfolio)
 

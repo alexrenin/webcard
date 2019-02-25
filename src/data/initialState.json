@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "contentList": [
     {
       "title": "homeTitle",
@@ -14,6 +14,9 @@
       "stackTehn": [
         "React",
         "Redux",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
         "HTML5",
         "JS2015+",
         "CSS3.1",
@@ -74,6 +77,14 @@
       ],
       "skillList": [
         {
+          "title": "React",
+          "level": "83"
+        },
+        {
+          "title": "Node.js",
+          "level": "27"
+        },
+        {
           "title": "JS ES6+",
           "level": "95"
         },
@@ -84,10 +95,6 @@
         {
           "title": "CSS3",
           "level": "95"
-        },
-        {
-          "title": "React",
-          "level": "83"
         },
         {
           "title": "Php",
@@ -212,7 +219,7 @@
     }
   ],
   "language": {
-    "currentItem": 0,
+    "currentItem": 1,
     "listItems": [
       {
         "title": "Русский",

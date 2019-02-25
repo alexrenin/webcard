@@ -21,13 +21,21 @@
   "Php": "Php",
 
   "homeTitle": "Home",
-  "homeName": "Sorry, ",
+  "homeName": "Alex",
 
-  "profession": "translation in process",
+  "profession": "Front-end developer",
   "portfolio": "Portfolio",
-  "portfolioSubtitle": "...",
   "portfolioSubtitle": "My works",
   "altMip": "Robot control server",
   "contacts": "Contacts",
-  "github": "github"
+  "github": "github",
+  "altJrss": "Application for drilling systems",
+  "altPchelyprosto": "WordPress blog",
+  "portfolioMipDescription": "<div>According to this work <a target='_blank' rel='noopener noreferrer' href='https://yadi.sk/i/n431lx3GcAZFcg'>scientific article</a> was written</div>",
+  "portfolioJrssDescription": "<div>According to this work <a target='_blank' rel='noopener noreferrer' href='https://elibrary.ru/item.asp?id=27297986'>scientific article</a> was written</div>",
+  "portfolioPchelyprostoDescription": "It was done: styling and branding with a change in layout.",
+  "altIrlndMap": "Statistical Map of Ireland",
+  "portfolioIrlndMapDescription": "It was my first project with an English-speaking customer - it was informative.",
+  "altImageEditor": "Image processing",
+  "portfolioImageEditorDescription": "<div>In this project I have mastered the React-Konva.js library well.</div>"
 }

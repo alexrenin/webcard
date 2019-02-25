@@ -20,7 +20,6 @@
   "React": "React",
   "Php": "Php",
 
-
   "homeTitle": "Главная",
   "homeName": "Александр",
 
@@ -38,5 +37,5 @@
   "altIrlndMap": "Статистическая карта Ирландии",
   "portfolioIrlndMapDescription": "Это был мой первый проект с англоязычным заказчиком - было познавательно.",
   "altImageEditor": "Обработка изображения",
-  "portfolioImageEditorDescription": "<div>В данном <h1>проекте</h1> я хорошо освоил библиотеку React-Konva.js</div>"
+  "portfolioImageEditorDescription": "<div>В данном проекте я хорошо освоил библиотеку React-Konva.js</div>"
 }

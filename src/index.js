@@ -6,7 +6,7 @@ import i18n from "./i18n";
 import App from './App';
 import { HashRouter } from 'react-router-dom'
 import storeFactory from './store/index'
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 const store = storeFactory()
 
@@ -23,4 +23,4 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-registerServiceWorker();
+// registerServiceWorker();

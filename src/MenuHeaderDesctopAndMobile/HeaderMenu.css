@@ -126,7 +126,7 @@
     width: 100%;
 }
 
-
+/*TODO menu on mobile problem!!!!*/
 @media screen and (max-width: 600px) {
     .headerMenu {
         font-size: 3.2vw;

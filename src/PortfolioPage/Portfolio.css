@@ -62,6 +62,10 @@
 	background-image: 	url('image/desktop.png'),
 						url('image/ImageEditor.png');
 }
+.portfolioMovieStatistic {
+	 background-image: 	url('image/desktop.png'),
+	 					url('image/movieStat1.png');
+ }
 /*----- ---- -----*/
 .portfolioItemFigcaption {
 	display: flex;

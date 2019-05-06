@@ -37,5 +37,8 @@
   "altIrlndMap": "Статистическая карта Ирландии",
   "portfolioIrlndMapDescription": "Это был мой первый проект с англоязычным заказчиком - было познавательно.",
   "altImageEditor": "Обработка изображения",
-  "portfolioImageEditorDescription": "<div>В данном проекте я хорошо освоил библиотеку React-Konva.js</div>"
+  "portfolioImageEditorDescription": "<div>В данном проекте я хорошо освоил библиотеку React-Konva.js</div>",
+
+  "altMovieStat": "Статистика фильмов",
+  "portfolioMovieStDescription": "<div>Помимо внешнего вида в этой работе так же большое знчение имеет скрытая организанция и связывание данных</div>"
 }

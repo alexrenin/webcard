@@ -8,7 +8,7 @@
   "resumeHtmlacademy": "Htmlacademy",
   "works": "Job",
   "resumeUtipPosition": "Front-end developer",
-  "resumeUTIP": "TIP Technologies Ltd",
+  "resumeUTIP": "UTIP Technologies Ltd",
   "science": "Research papers",
   "resumeNeft": "Hardware and software system",
   "resumeNeftJurn": "Oil Industry Journal",
@@ -37,5 +37,9 @@
   "altIrlndMap": "Statistical Map of Ireland",
   "portfolioIrlndMapDescription": "It was my first project with an English-speaking customer - it was informative.",
   "altImageEditor": "Image processing",
-  "portfolioImageEditorDescription": "<div>In this project I have mastered the React-Konva.js library well.</div>"
+  "portfolioImageEditorDescription": "<div>In this project I have mastered the React-Konva.js library well.</div>",
+
+  "altMovieStat": "Movie statistics",
+  "portfolioMovieStDescription": "<div>In addition to the appearance in this work is also of great importance hidden organization and data binding</div>"
+
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "contentList": [
     {
       "title": "homeTitle",
@@ -78,7 +78,7 @@
       "skillList": [
         {
           "title": "React",
-          "level": "83"
+          "level": "91"
         },
         {
           "title": "Node.js",
@@ -86,11 +86,11 @@
         },
         {
           "title": "JS ES6+",
-          "level": "95"
+          "level": "97"
         },
         {
           "title": "HTML5",
-          "level": "96"
+          "level": "98"
         },
         {
           "title": "CSS3",
@@ -140,6 +140,20 @@
           }
         },
         {
+          "classNamePI": "portfolioMovieStatistic",
+          "subHref": "moviestat",
+          "alt": "altMovieStat",
+          "stackTehn": [
+            "D3.js",
+            "JS ES6",
+            "CSS 3"
+          ],
+          "description": {
+            "id": "movStDescID",
+            "innerHtml": "portfolioMovieStDescription"
+          }
+        },
+        {
           "classNamePI": "portfolioItemPchelyprosto",
           "subHref": "pchelyprosto",
           "alt": "altPchelyprosto",
@@ -160,7 +174,7 @@
           "subHref": "irlndMap",
           "alt": "altIrlndMap",
           "stackTehn": [
-            "d3.js",
+            "D3.js",
             "HTML5",
             "JS2015+",
             "CSS3.1",

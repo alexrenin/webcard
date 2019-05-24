@@ -1,41 +1,47 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './css/Header.css';
-import Logo from './logo';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './css/Header.css'
+import Logo from './logo'
 
-const Header = ({ logo, name='name', profession='profession', stackTehn=[], t=str=>str}) => {
-    name = t(name)
-    profession = t(profession)
+const Header = ({
+	logo,
+	name = 'name',
+	profession = 'profession',
+	stackTehn = [],
+	t = str => str,
+}) => {
+	name = t(name)
+	profession = t(profession)
 
-    return (
-        <div className="header">
-            <div>
-                <div className="headerTitle">
-                    <Logo {...logo}/>
-                    <div className="nameProf">
-                        <div className="name"> {name} </div>
-                        <div className="profession"> {profession} </div>
-                    </div>
+	return (
+		<div className="header">
+			<div>
+				<div className="headerTitle">
+					<Logo {...logo}/>
+					<div className="nameProf">
+						<div className="name"> {name} </div>
+						<div className="profession"> {profession} </div>
+					</div>
 
-                </div>
-                <div className="stackTechnologies">
-                    { (stackTehn.length === 0) ?
+				</div>
+				<div className="stackTechnologies">
+					{(stackTehn.length === 0) ?
 						"" :
 						stackTehn.reduce((sum, current, i, arr) =>
-						 	sum += (" / " + current)
-							)
+							sum += (" / " + current),
+						)
 					}
-                </div>
-            </div>
-        </div>
-    )
+				</div>
+			</div>
+		</div>
+	)
 }
 
 
 Header.propTypes = {
-    name: PropTypes.string,
-    profession: PropTypes.string,
-    stackTehn: PropTypes.array,
+	name: PropTypes.string,
+	profession: PropTypes.string,
+	stackTehn: PropTypes.array,
 	t: PropTypes.func,
 }
 

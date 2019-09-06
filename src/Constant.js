@@ -4,7 +4,7 @@ const constants = {
 	portfolio: 'portfolio',
 	contacts: 'contacts',
 	SITE_URL: "http://localhost:3000",
-	DEVELOP_FLAG: false,
+	DEVELOP_FLAG: true,
 	MIP_DESC_ID: "mipDescID",
 	JRSS_DESC_ID: "jrssDescID",
 	PP_DESC_ID: "ppDescID",

@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 import SimpleButton from '../../atoms/simpleButton/simpleButton'
+import './style.css'
 
 const propTypesPullDownMenu = {
 	currentItem: PropTypes.number,

@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './style.css'
 
 const propTypesSimpleButton = {
 	name: PropTypes.string,
@@ -12,7 +13,7 @@ function SimpleButton ({
 	selected = false,
 	onClick = f=>f,
 }) {
-	const className = 'menuItem' + (selected ? ' selected' : '');
+	const className = 'simpleButton' + (selected ? ' selected' : '');
 
 	return (
 		<button

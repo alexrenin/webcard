@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 import HyperlinkButton from '../../atoms/hyperlinkButton/hyperlinkButton'
+import './style.css'
 
 const propTypesMenuList = {
 	listItems: PropTypes.array,

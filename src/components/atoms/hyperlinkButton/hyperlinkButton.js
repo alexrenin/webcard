@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './style.css'
 
 const propTypesHyperlinkButton = {
 	href: PropTypes.string,
@@ -9,7 +10,7 @@ const propTypesHyperlinkButton = {
 }
 
 function HyperlinkButton ({
-	name = '',
+	title = '',
 	selected = false,
 	href = '',
 	onClick = f=>f,
@@ -25,7 +26,7 @@ function HyperlinkButton ({
 				href={href}
 			   	onClick={onClick}
 			>
-				{name}
+				{title}
 			</a>
 		</div>
 	)

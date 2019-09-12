@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
 import MenuList from '../../molecules/menuList/menuList'
 import PullDownMenu from '../../molecules/pullDownMenu/pullDownMenu'
+import './style.css'
 
 const propTypesHeaderMenu = {
 	onClick: PropTypes.func,

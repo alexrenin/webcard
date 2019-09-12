@@ -16,7 +16,8 @@ function PullDownMenu ({
 	pullDownMenuClick = f => f,
 }) {
 	const inputCheckBox = useRef()
-	const btnText = listItems[currentItem].text,
+	const { text = '' } = listItems[currentItem] || {},
+		btnText = text,
 		id = v4()
 	const closeMenu = createCloseMenu(inputCheckBox),
 		onClick = createOnClick({
@@ -44,11 +45,18 @@ function PullDownMenu ({
 				<ul className='pullDownMenuList'>
 					{listItems.map(item => {
 						const key = v4()
+						const {id = ''} = item
+
 						return (
-							<SimpleButton key={key} {...{
-								...item,
-								onClick,
-							}} />
+							<li
+								key={key}
+								data-id={id}
+							>
+								<SimpleButton {...{
+									...item,
+									onClick,
+								}} />
+							</li>
 						)
 					})}
 				</ul>
@@ -71,7 +79,7 @@ function createOnClick({
 		const clickedItem = event.target.nodeName === "LI" ?
 				event.target :
 				event.target.parentNode,
-			clickedItemId = clickedItem.id
+			clickedItemId = clickedItem.dataset.id
 
 		closeMenu()
 		pullDownMenuClick(clickedItemId)

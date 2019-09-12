@@ -9,7 +9,7 @@ const propTypesSimpleButton = {
 }
 
 function SimpleButton ({
-	name = '',
+	title = '',
 	selected = false,
 	onClick = f=>f,
 }) {
@@ -20,7 +20,7 @@ function SimpleButton ({
 			className={className}
 			onClick={onClick}
 		>
-			{name}
+			{title}
 		</button>
 	)
 }

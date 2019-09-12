@@ -1,24 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { withNamespaces } from 'react-i18next';
-import Home from './Home';
-import HeaderMenu from './MenuHeaderDesctopAndMobile/HeaderMenu';
+import Home from './components/templates/home/home';
+import HeaderMenu from './components/organisms/headerMenu/headerMenu';
 import Portfolio from "./PortfolioPage/Portfolio";
 import i18n from "./i18n";
 import changeLanguage from "./actions";
 import Contact from "./ContactPage/Contact";
 import Resume from "./ResumePage/Resume";
 
-const MultiLangHome = withNamespaces()(Home);
 export const  HomePage = (props, { store }) =>
-	<MultiLangHome hpSourse={store.getState().contentList[0]} />
+	<Home {...store.getState().contentList[0]} />
 HomePage.contextTypes = {
 	store: PropTypes.object
 }
 
-const MultiLangHeaderMenu = withNamespaces()(HeaderMenu);
 export const MainMenu = (props, { store }) =>
-	<MultiLangHeaderMenu contentList={store.getState().contentList}
+	<HeaderMenu contentList={store.getState().contentList}
 				pullDownMenuContent={store.getState().language}
 				pullDownMenuClick={lngId => {
 					let selectedLanguages = lngId.slice(0, 2),

@@ -6,6 +6,7 @@ const propTypesHyperlinkButton = {
 	href: PropTypes.string,
 	name: PropTypes.string,
 	selected: PropTypes.bool,
+	localHref: PropTypes.bool,
 	onClick: PropTypes.func,
 }
 
@@ -13,17 +14,19 @@ function HyperlinkButton ({
 	title = '',
 	selected = false,
 	href = '',
+	localHref = true,
 	onClick = f=>f,
 }) {
 	const className = 'menuItem' + (selected ? ' selected' : '');
-
+	const aHref = (localHref ? '#' : '') + href
+	
 	return (
 		<div
 			className={className}
 			onClick={onClick}
 		>
 			<a
-				href={href}
+				href={aHref}
 			   	onClick={onClick}
 			>
 				{title}

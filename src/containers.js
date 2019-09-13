@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import { withNamespaces } from 'react-i18next';
-import Home from './components/templates/home/home';
-import HeaderMenu from './components/organisms/headerMenu/headerMenu';
-import Portfolio from "./PortfolioPage/Portfolio";
-import i18n from "./i18n";
+import { withNamespaces } from 'react-i18next'
+import Home from './components/templates/home/home'
+import HeaderMenu from './components/organisms/headerMenu/headerMenu'
+import Portfolio from "./components/templates/portfolio/portfolio"
+import i18n from "./i18n"
 import changeLanguage from "./actions";
 import Contact from "./ContactPage/Contact";
 import Resume from "./components/templates/resume/resume"
@@ -37,9 +37,8 @@ ResumePage.contextTypes = {
 	store: PropTypes.object
 }
 
-const MultiLangPortfolio = withNamespaces()(Portfolio);
 export const PortfolioPage = (props, { store }) =>
-	<MultiLangPortfolio {...store.getState().contentList[2]} />
+	<Portfolio {...store.getState().contentList[2]} />
 PortfolioPage.contextTypes = {
 	store: PropTypes.object
 }

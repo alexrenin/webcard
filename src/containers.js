@@ -7,7 +7,7 @@ import Portfolio from "./PortfolioPage/Portfolio";
 import i18n from "./i18n";
 import changeLanguage from "./actions";
 import Contact from "./ContactPage/Contact";
-import Resume from "./ResumePage/Resume";
+import Resume from "./components/templates/resume/resume"
 
 export const  HomePage = (props, { store }) =>
 	<Home {...store.getState().contentList[0]} />
@@ -31,9 +31,8 @@ MainMenu.contextTypes = {
 	store: PropTypes.object
 }
 
-const MultiLangResume = withNamespaces()(Resume);
 export const ResumePage = (props, { store }) =>
-	<MultiLangResume {...store.getState().contentList[1]} />
+	<Resume {...store.getState().contentList[1]} />
 ResumePage.contextTypes = {
 	store: PropTypes.object
 }

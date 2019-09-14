@@ -5,8 +5,8 @@ import Home from './components/templates/home/home'
 import HeaderMenu from './components/organisms/headerMenu/headerMenu'
 import Portfolio from "./components/templates/portfolio/portfolio"
 import i18n from "./i18n"
-import changeLanguage from "./actions";
-import Contact from "./ContactPage/Contact";
+import changeLanguage from "./actions"
+import Contacts from "./components/templates/contacts/contacts"
 import Resume from "./components/templates/resume/resume"
 
 export const  HomePage = (props, { store }) =>
@@ -15,16 +15,18 @@ HomePage.contextTypes = {
 	store: PropTypes.object
 }
 
+//TODO убрать стрелочную функцию отсюда!!!!
 export const MainMenu = (props, { store }) =>
-	<HeaderMenu contentList={store.getState().contentList}
-				pullDownMenuContent={store.getState().language}
-				pullDownMenuClick={lngId => {
-					let selectedLanguages = lngId.slice(0, 2),
-						languagesCurrentItem = lngId.slice(2, 3)
+	<HeaderMenu
+		contentList={store.getState().contentList}
+		pullDownMenuContent={store.getState().language}
+		pullDownMenuClick={lngId => {
+			const selectedLanguages = lngId.slice(0, 2),
+				languagesCurrentItem = lngId.slice(2, 3)
 
-					store.dispatch(changeLanguage(languagesCurrentItem))
-					i18n.changeLanguage(selectedLanguages)
-				}}
+			store.dispatch(changeLanguage(languagesCurrentItem))
+			i18n.changeLanguage(selectedLanguages)
+		}}
 
 	/>
 MainMenu.contextTypes = {
@@ -43,9 +45,8 @@ PortfolioPage.contextTypes = {
 	store: PropTypes.object
 }
 
-const MultiLangContact = withNamespaces()(Contact);
 export const ContactPage = (props, { store }) =>
-	<MultiLangContact {...store.getState().contentList[3]} />
+	<Contacts {...store.getState().contentList[3]} />
 ContactPage.contextTypes = {
 	store: PropTypes.object
 }

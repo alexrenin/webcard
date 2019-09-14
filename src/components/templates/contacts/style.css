@@ -1,0 +1,57 @@
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 100%;
+    padding: 0 5vw;
+    border-bottom: 1.5px solid #808e9b;
+}
+.contactTitle {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 2em;
+    width: 100%;
+}
+.socialContainer {
+    display: flex;
+    margin: auto;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.socialLinkContainer {
+    display: block;
+    margin: 1em;
+    padding: 0;
+}
+.socialLinkContainer a {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    padding: 0.2em;
+
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+
+    color: #485460;
+
+    border: 1px solid #485460;
+    border-radius: 4px;
+}
+.socialLinkContainer a:hover {
+    color: #1e272e;
+    border-color: #1e272e;
+}
+.socialLinkContainer h3 {
+    display: none;
+    margin: 0;
+}
+.socialLinkContainer .socialLink i {
+
+}
+

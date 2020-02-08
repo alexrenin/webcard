@@ -1,16 +1,16 @@
 {
-  "version": "1.4.0",
+  "version": "2.0.0",
   "contentList": [
     {
-      "title": "homeTitle",
+      "title": "t#homeTitle",
       "href": "home",
       "key": "8658c1d0-9eda-4a90-95e1-8001e8eb6036",
       "logo": {
         "title": "AR",
         "subTitle": "develop"
       },
-      "name": "homeName",
-      "profession": "profession",
+      "name": "t#homeName",
+      "profession": "t#profession",
       "stackTehn": [
         "React",
         "Redux",
@@ -24,51 +24,51 @@
       ]
     },
     {
-      "title": "resume",
+      "title": "t#resume",
       "href": "resume",
       "key": "58d9caee-6ea6-4d7b-9984-65c145031000",
-      "subTitle": "resumeSubtitle",
+      "subTitle": "t#resumeSubtitle",
       "resumeList": [
         {
-          "title": "diploms",
+          "title": "t#diploms",
           "itemList": [
             {
-              "title": "resumeATPP",
-              "subTitle": "resumePNIPU",
+              "title": "t#resumeATPP",
+              "subTitle": "t#resumePNIPU",
               "sizeCSS": "big",
               "imageCSS": "diplom"
             },
             {
-              "title": "resumeCourses",
-              "subTitle": "resumeHtmlacademy",
+              "title": "t#resumeCourses",
+              "subTitle": "t#resumeHtmlacademy",
               "sizeCSS": "small",
               "imageCSS": "htmlacademy"
             }
           ]
         },
         {
-          "title": "works",
+          "title": "t#works",
           "itemList": [
             {
-              "title": "resumeUtipPosition",
-              "subTitle": "resumeUTIP",
+              "title": "t#resumeUtipPosition",
+              "subTitle": "t#resumeUTIP",
               "sizeCSS": "big",
               "imageCSS": "utip"
             }
           ]
         },
         {
-          "title": "science",
+          "title": "t#science",
           "itemList": [
             {
-              "title": "resumeNeft",
-              "subTitle": "resumeNeftJurn",
+              "title": "t#resumeNeft",
+              "subTitle": "t#resumeNeftJurn",
               "sizeCSS": "big",
               "imageCSS": "neft"
             },
             {
-              "title": "resumeMIP",
-              "subTitle": "resumeMIPJurn",
+              "title": "t#resumeMIP",
+              "subTitle": "t#resumeMIPJurn",
               "sizeCSS": "small",
               "imageCSS": "mip"
             }
@@ -103,15 +103,15 @@
       ]
     },
     {
-      "title": "portfolio",
+      "title": "t#portfolio",
       "href": "portfolio",
       "key": "58d9caee-6ea6-4d7b-9984-65b145031979",
-      "subTitle": "portfolioSubtitle",
+      "subTitle": "t#portfolioSubtitle",
       "portfolioList": [
         {
-          "classNamePI": "portfolioItemMip",
+          "classNamePI": "t#portfolioItemMip",
           "subHref": "mip",
-          "alt": "altMip",
+          "alt": "t#altMip",
           "stackTehn": [
             "HTML5",
             "JS2015+",
@@ -120,13 +120,13 @@
           ],
           "description": {
             "id": "mipDescID",
-            "innerHtml": "portfolioMipDescription"
+            "innerHtml": "t#portfolioMipDescription"
           }
         },
         {
           "classNamePI": "portfolioItemJrss",
           "subHref": "jrss",
-          "alt": "altJrss",
+          "alt": "t#altJrss",
           "stackTehn": [
             "HTML5",
             "JS2015+",
@@ -136,13 +136,13 @@
           ],
           "description": {
             "id": "jrssDescID",
-            "innerHtml": "portfolioJrssDescription"
+            "innerHtml": "t#portfolioJrssDescription"
           }
         },
         {
           "classNamePI": "portfolioMovieStatistic",
           "subHref": "moviestat",
-          "alt": "altMovieStat",
+          "alt": "t#altMovieStat",
           "stackTehn": [
             "D3.js",
             "JS ES6",
@@ -150,13 +150,13 @@
           ],
           "description": {
             "id": "movStDescID",
-            "innerHtml": "portfolioMovieStDescription"
+            "innerHtml": "t#portfolioMovieStDescription"
           }
         },
         {
           "classNamePI": "portfolioItemPchelyprosto",
           "subHref": "pchelyprosto",
-          "alt": "altPchelyprosto",
+          "alt": "t#altPchelyprosto",
           "stackTehn": [
             "WordPress",
             "HTML5",
@@ -166,13 +166,13 @@
           ],
           "description": {
             "id": "ppDescID",
-            "innerHtml": "portfolioPchelyprostoDescription"
+            "innerHtml": "t#portfolioPchelyprostoDescription"
           }
         },
         {
           "classNamePI": "portfolioItemIrlndMap",
           "subHref": "irlndMap",
-          "alt": "altIrlndMap",
+          "alt": "t#altIrlndMap",
           "stackTehn": [
             "D3.js",
             "HTML5",
@@ -182,13 +182,13 @@
           ],
           "description": {
             "id": "irlndMapDescID",
-            "innerHtml": "portfolioIrlndMapDescription"
+            "innerHtml": "t#portfolioIrlndMapDescription"
           }
         },
         {
           "classNamePI": "portfolioImageEditor",
           "subHref": "imageEditor",
-          "alt": "altImageEditor",
+          "alt": "t#altImageEditor",
           "stackTehn": [
             "React.js",
             "React-Konva.js",
@@ -198,21 +198,21 @@
           ],
           "description": {
             "id": "ImageEditorDescID",
-            "innerHtml": "portfolioImageEditorDescription"
+            "innerHtml": "t#portfolioImageEditorDescription"
           }
         }
       ]
     },
 
     {
-      "title": "contacts",
+      "title": "t#contacts",
       "href": "contacts",
       "key": "a5685c39-6bdc-4727-9188-6c9a00bf7f95",
       "contactList": [
         {
           "title": "mail",
           "classNameCI": "far fa-envelope",
-          "href": "mailto:sanya_renin@mail.ru"
+          "href": "mailto:alexrenin.info@gmail.com"
         },
         {
           "title": "github",

@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './css/index.css'
 import'./i18n'
 import i18n from "./i18n"
 import App from './App'

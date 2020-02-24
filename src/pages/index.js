@@ -79,8 +79,6 @@ function changeLngHandler(lngID) {
 }
 
 function getPullDownMenuContent(locales) {
-
-
     return {
         currentItem: 1,
         listItems: locales.map ( ({ langID, path, name }) => {

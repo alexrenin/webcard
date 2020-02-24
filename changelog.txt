@@ -1,6 +1,7 @@
 v3.0
-- портирование Create React App в Gatsby: https://www.gatsbyjs.org/docs/porting-from-create-react-app-to-gatsby/
--
+- porting Create React App в Gatsby: https://www.gatsbyjs.org/docs/porting-from-create-react-app-to-gatsby/
+- used new i18n organisation
+- unused packages were removed
 
 v2.0
 - иерархия файлов переделана под atomic подход

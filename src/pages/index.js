@@ -1,35 +1,33 @@
 import React from 'react'
-import { HashRouter } from 'react-router-dom'
 import { withNamespaces } from 'react-i18next'
+import { HashRouter } from 'react-router-dom'
 
 import './style.css'
 
-import i18n from "../../i18n"
-import storeFactory from '../../store/index'
-import Home from '../../components/templates/home/home'
-import HeaderMenu from '../../components/organisms/headerMenu/headerMenu'
-import Portfolio from "../../components/templates/portfolio/portfolio"
-import changeLanguage from "../../actions"
-import Contacts from "../../components/templates/contacts/contacts"
-import Resume from "../../components/templates/resume/resume"
+import i18n from "../i18n"
+import storeFactory from '../store/index'
+import Home from '../components/templates/home/home'
+import HeaderMenu from '../components/organisms/headerMenu/headerMenu'
+import Portfolio from "../components/templates/portfolio/portfolio"
+import changeLanguage from "../actions"
+import Contacts from "../components/templates/contacts/contacts"
+import Resume from "../components/templates/resume/resume"
 
-const store = storeFactory()
 
-i18n.changeLanguage(
-	store.getState().language
-		.listItems[store.getState().language.currentItem]
-			.text.toLowerCase()
-)
+
+// i18n.changeLanguage(
+// 	store.getState().language
+// 		.listItems[store.getState().language.currentItem]
+// 			.text.toLowerCase()
+// )
 
 function Index(
     t = f => f,
 ) {
+    const store = storeFactory()
     const storeState = store.getState()
 
-    const translatedStore = translateStore({
-        storeState,
-        t,
-    })
+    const translatedStore = storeState
 
     return (
         <HashRouter>
@@ -53,6 +51,7 @@ function Index(
                                   ...translatedStore.contentList[3]
                               }/>
                 </div>
+                <p>aaaaaa!</p>
             </div>
         </HashRouter>
     )
@@ -119,5 +118,5 @@ function createObjectUpdater(upd) {
     }
 }
 
-export default withNamespaces()(Index)
+export default Index
 

@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { contentList, language, version } from './reducers'
 import stateData from '../data/initialState'
-import C from '../Constant'
+import C from '../constant'
 
 const logger = store => next => action => {
 	let result

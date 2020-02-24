@@ -10,5 +10,5 @@ const constants = {
 	PP_DESC_ID: "ppDescID",
 }
 
-export default constants;
+export default constants
 

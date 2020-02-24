@@ -238,12 +238,12 @@
       {
         "title": "Русский",
         "text": "RU",
-        "id": "ru001"
+        "id": "ru"
       },
       {
         "title": "English",
         "text": "EN",
-        "id": "en101"
+        "id": "en"
       }
     ]
   }

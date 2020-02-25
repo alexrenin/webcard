@@ -20,12 +20,30 @@ function HeaderMenu ({
 				listItems={contentList}
 			/>
 			<PullDownMenu {... {
-				...pullDownMenuContent,
+				...getPullDownMenuContent(pullDownMenuContent),
 				pullDownMenuClick,
 			}} />
 		</div>
 	)
 }
 HeaderMenu.propTypes = propTypesHeaderMenu
+
+function getPullDownMenuContent({ locales, locale }) {
+
+    const currentItem = locales.indexOf(
+        locales.find( ({ contentfulID }) => locale === contentfulID )
+    )
+
+    return {
+        currentItem,
+        listItems: locales.map ( ({ langID, path, name }) => {
+            return {
+                title: name,
+                text: path,
+                id: langID,
+            }
+        })
+    }
+}
 
 export default HeaderMenu

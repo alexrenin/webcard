@@ -35,9 +35,14 @@ export const query = graphql`
 function Index(
     props
 ) {
-    const { allContentfulHomePage = {} } = props.data || {},
+    const { data = {}, pageContext = {} } = props
+
+    const { allContentfulHomePage = {} } = data,
         { edges = [] } = allContentfulHomePage,
         homePage = edges[0].node
+
+    const { locales } = C
+    const { locale = 'en-US' } = pageContext
 
     const store = storeFactory()
     const storeState = store.getState()
@@ -49,7 +54,10 @@ function Index(
             <div className="App">
                 <HeaderMenu
                     contentList={translatedStore.contentList}
-                    pullDownMenuContent={getPullDownMenuContent(C.locales)}
+                    pullDownMenuContent={{
+                        locales,
+                        locale,
+                    }}
                     pullDownMenuClick={changeLngHandler}
                 />
                 <div className="contentContainer">
@@ -100,19 +108,6 @@ function changeLngHandler(lngID) {
 
     const newURL = newURLarr.join('/')
     window.open(newURL, "_self")
-}
-
-function getPullDownMenuContent(locales) {
-    return {
-        currentItem: 1,
-        listItems: locales.map ( ({ langID, path, name }) => {
-            return {
-                title: name,
-                text: path,
-                id: langID,
-            }
-        })
-    }
 }
 
 export default Index

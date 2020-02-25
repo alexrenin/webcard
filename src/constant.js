@@ -14,12 +14,14 @@ const constants = {
             langID: 'ru',
             path: 'ru',
             name: 'Русский',
+            contentfulID: 'ru-RU',
         },
         {
             langID: 'en',
             path: 'en',
             name: 'English',
             isDefault: true,
+            contentfulID: 'en-US',
         }
     ]
 }

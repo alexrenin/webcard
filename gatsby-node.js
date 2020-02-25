@@ -13,7 +13,7 @@ module.exports.onCreatePage = ({ page, actions }) => {
         const localizedPath = isDefault
             ? page.path
             : `/${path}${page.path}`
-
+        
         return createPage({
             ...page,
             path: localizedPath,

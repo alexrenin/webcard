@@ -12,12 +12,9 @@ import Portfolio from "../components/templates/portfolio/portfolio"
 import Contacts from "../components/templates/contacts/contacts"
 import Resume from "../components/templates/resume/resume"
 
-function Index(
-    props
-) {
-    const data = useStaticQuery(graphql`
-        query  {
-          allContentfulHomePage {
+export const query = graphql`
+        query($locale: String)  {
+          allContentfulHomePage (filter: { node_locale: { eq: $locale } }) {
             edges {
               node {
                 title
@@ -33,13 +30,14 @@ function Index(
             }
           }
         }
-    `)
+    `
 
-    const { allContentfulHomePage = {} } = data,
+function Index(
+    props
+) {
+    const { allContentfulHomePage = {} } = props.data || {},
         { edges = [] } = allContentfulHomePage,
         homePage = edges[0].node
-
-    console.log(homePage)
 
     const store = storeFactory()
     const storeState = store.getState()

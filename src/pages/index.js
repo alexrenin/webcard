@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashRouter } from 'react-router-dom'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import './style.css'
 
@@ -14,6 +15,31 @@ import Resume from "../components/templates/resume/resume"
 function Index(
     props
 ) {
+    const data = useStaticQuery(graphql`
+        query  {
+          allContentfulHomePage {
+            edges {
+              node {
+                title
+                href
+                logoTitle
+                logoSubtitle
+                name
+                profession
+                technologyStack {
+                    stackTehn
+                }
+              }
+            }
+          }
+        }
+    `)
+
+    const { allContentfulHomePage = {} } = data,
+        { edges = [] } = allContentfulHomePage,
+        homePage = edges[0].node
+
+    console.log(homePage)
 
     const store = storeFactory()
     const storeState = store.getState()
@@ -30,7 +56,7 @@ function Index(
                 />
                 <div className="contentContainer">
                     <Home {
-                              ...translatedStore.contentList[0]
+                              ...homePage
                           } />
                     <Resume {
                                 ...translatedStore.contentList[1]

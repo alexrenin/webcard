@@ -1,6 +1,6 @@
 const C = require('./constants_node')
 
-module.exports.onCreatePage = ({ page, actions, dateFormat, langID }) => {
+module.exports.onCreatePage = ({ page, actions }) => {
     const { createPage, deletePage } = actions
 
     // First delete the incoming page that was automatically created by Gatsby
@@ -9,19 +9,18 @@ module.exports.onCreatePage = ({ page, actions, dateFormat, langID }) => {
 
     const { locales = [] } = C
 
-    locales.forEach( ({ path, isDefault }) => {
+    locales.forEach( ({ path, isDefault, contentfulID }) => {
         const localizedPath = isDefault
             ? page.path
             : `/${path}${page.path}`
 
-        console.log(page.path)
         return createPage({
             ...page,
             path: localizedPath,
             context: {
                 ...page.context,
-                locale: langID,
-                dateFormat: dateFormat,
+                locale: contentfulID,
+                // dateFormat: dateFormat,
             },
         })
     })

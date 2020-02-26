@@ -1,6 +1,6 @@
 import React from 'react'
 import {HashRouter} from 'react-router-dom'
-import {graphql, useStaticQuery} from 'gatsby'
+import {graphql} from 'gatsby'
 
 import './style.css'
 
@@ -11,6 +11,7 @@ import HeaderMenu from '../components/organisms/headerMenu/headerMenu'
 import Portfolio from "../components/templates/portfolio/portfolio"
 import Contacts from "../components/templates/contacts/contacts"
 import Resume from "../components/templates/resume/resume"
+import Layout from '../components/templates/layout/layout'
 
 export const query = graphql`        
     query($locale: String)  {
@@ -88,10 +89,9 @@ function Index(
             resumePage = {},
             portfolioPage = {}, } = indexPage
 
-    console.log(indexPage)
+    console.log(data)
     console.log()
-    const {locales} = C
-    const {locale = 'en-US'} = pageContext
+    const { locale = 'en-US' } = pageContext
 
     const store = storeFactory()
     const storeState = store.getState()
@@ -100,64 +100,46 @@ function Index(
 
     return (
         <HashRouter>
-            <div className="App">
-                <HeaderMenu
-                    contentList={translatedStore.contentList}
-                    pullDownMenuContent={{
-                        locales,
-                        locale,
-                    }}
-                    pullDownMenuClick={changeLngHandler}
-                />
-                <div className="contentContainer">
-                    <Home {
-                        ...homePage
-                    } />
-                    <Resume {
-                        ...reformatResumeData(resumePage)
-                    } />
-                    <Portfolio {
-                        ...portfolioPage
-                     } />
-                    <Contacts {
-                        ...translatedStore.contentList[3]
-                    }/>
-                </div>
-            </div>
+            <Layout {...{
+                contentList: prepareHeaderData(indexPage),
+                locale,
+            }} >
+                <Home {
+                    ...homePage
+                } />
+                <Resume {
+                    ...reformatResumeData(resumePage)
+                } />
+                <Portfolio {
+                    ...portfolioPage
+                 } />
+                <Contacts {
+                    ...translatedStore.contentList[3]
+                }/>
+            </Layout>
         </HashRouter>
     )
 }
 
 // -- Help functions --
 
-function changeLngHandler(lngID) {
-    const currentUrl = window.location.href,
-        arrSubURL = currentUrl.split('/')
+function prepareHeaderData(indexPage = {}) {
+    const {
+        homePage = {},
+        resumePage = {},
+        portfolioPage = {}, } = indexPage
 
-    const current = arrSubURL[3],
-        currentLocales = C.locales.find(({path}) => path === current)
-            || C.locales.find(({isDefault}) => isDefault)
+    const contentList = [homePage, resumePage, portfolioPage ].map(
+        ({ title, href }) => {
 
-    if (currentLocales.langID === lngID) {
-        return
-    }
-
-    const newLocales = C.locales.find(({langID}) => langID === lngID)
-
-    let newURLarr = [...arrSubURL]
-
-    if (currentLocales.isDefault) {
-        newURLarr.splice(3, 0, newLocales.path)
-    } else {
-        if (newLocales.isDefault) {
-            newURLarr.splice(3, 1)
-        } else {
-            newURLarr[3] = newLocales.path
+            return {
+                title,
+                href,
+            }
         }
-    }
+    )
 
-    const newURL = newURLarr.join('/')
-    window.open(newURL, "_self")
+    return contentList
 }
 
 function reformatResumeData(resumePage = {}) {

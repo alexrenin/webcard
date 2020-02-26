@@ -89,8 +89,6 @@ function Index(
             resumePage = {},
             portfolioPage = {}, } = indexPage
 
-    console.log(data)
-    console.log()
     const { locale = 'en-US' } = pageContext
 
     const store = storeFactory()
@@ -101,7 +99,6 @@ function Index(
     return (
         <HashRouter>
             <Layout {...{
-                contentList: prepareHeaderData(indexPage),
                 locale,
             }} >
                 <Home {
@@ -122,25 +119,6 @@ function Index(
 }
 
 // -- Help functions --
-
-function prepareHeaderData(indexPage = {}) {
-    const {
-        homePage = {},
-        resumePage = {},
-        portfolioPage = {}, } = indexPage
-
-    const contentList = [homePage, resumePage, portfolioPage ].map(
-        ({ title, href }) => {
-
-            return {
-                title,
-                href,
-            }
-        }
-    )
-
-    return contentList
-}
 
 function reformatResumeData(resumePage = {}) {
     const { resumeList = [] } = resumePage

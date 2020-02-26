@@ -18,7 +18,7 @@ function HyperlinkButton ({
 	onClick = f=>f,
 }) {
 	const className = 'menuItem' + (selected ? ' selected' : '');
-	const aHref = (localHref ? '#' : '') + href
+	const aHref = (localHref ? '/#' : '/') + href
 	
 	return (
 		<div

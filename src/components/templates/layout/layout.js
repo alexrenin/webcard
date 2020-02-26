@@ -4,11 +4,12 @@ import HeaderMenu from '../../organisms/headerMenu/headerMenu'
 import C from '../../../constant'
 
 const Layout = ({
-    contentList,
-    locale,
+    locale = 'en-US',
     children,
+    localHref = true,
 }) => {
-    const { locales } = C
+    const { locales, pages = {} } = C
+    const contentList = pages[locale]
 
     return (
         <div className="App">

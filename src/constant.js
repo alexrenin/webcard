@@ -23,7 +23,45 @@ const constants = {
             isDefault: true,
             contentfulID: 'en-US',
         }
-    ]
+    ],
+    pages: {
+        'ru-RU': [
+            {
+                title: 'Главная',
+                href: 'home',
+            },
+            {
+                title: 'Резюме',
+                href: 'resume',
+            },
+            {
+                title: 'Портфолио',
+                href: 'portfolio',
+            },
+            {
+                title: 'Контакты',
+                href: 'contacts',
+            }
+        ],
+        'en-US': [
+            {
+                title: 'Home',
+                href: 'home',
+            },
+            {
+                title: 'Resume',
+                href: 'resume',
+            },
+            {
+                title: 'Portfolio',
+                href: 'portfolio',
+            },
+            {
+                title: 'Contacts',
+                href: 'contacts',
+            }
+        ]
+    }
 }
 
 export default constants

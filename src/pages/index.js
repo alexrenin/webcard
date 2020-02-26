@@ -51,6 +51,23 @@ export const query = graphql`
                 technologyStack {
                     stackTehn
                 }
+            }
+            portfolioPage {
+                title
+                subtitle
+                portfolioList {
+                    title
+                    slug
+                    stack
+                    description {
+                        json
+                    }
+                    image {
+                        file {
+                            url
+                        }
+                    }
+                }
             }                                                                           
            }
          }
@@ -66,7 +83,10 @@ function Index(
     const {allContentfulIndexPage = {}} = data,
         {edges = []} = allContentfulIndexPage,
         indexPage = (edges[0] || {}).node || {},
-        { homePage = {}, resumePage = {} } = indexPage
+        {
+            homePage = {},
+            resumePage = {},
+            portfolioPage = {}, } = indexPage
 
     console.log(indexPage)
     console.log()
@@ -97,7 +117,7 @@ function Index(
                         ...reformatResumeData(resumePage)
                     } />
                     <Portfolio {
-                        ...translatedStore.contentList[2]
+                        ...portfolioPage
                      } />
                     <Contacts {
                         ...translatedStore.contentList[3]
@@ -167,5 +187,6 @@ function reformatResumeData(resumePage = {}) {
     }
 
 }
+
 export default Index
 

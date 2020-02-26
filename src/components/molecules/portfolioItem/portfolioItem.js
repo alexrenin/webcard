@@ -1,61 +1,75 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import InnerHtml from '../../atoms/innerHtml/innerHtml'
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
 const propTypesPortfolioItem = {
-	classNamePI: PropTypes.string,
-	alt: PropTypes.string,
-	stackTehn: PropTypes.array,
+    title: PropTypes.string,
+    slug: PropTypes.string,
+	stack: PropTypes.array,
 	description: PropTypes.object,
+    image: PropTypes.object,
+    historySetSlug: PropTypes.func,
 }
 
 function PortfolioItem ({
-	classNamePI="",
-	alt="",
-	subHref="",
-	stackTehn=[],
+	title="",
+	slug="",
+	stack=[],
+    image = {},
 	description={},
-	portfolioName="",
-	historySetSubHref = f => f,
+    historySetSlug = f => f,
 }) {
-	const expandClass = (portfolioName === subHref) ? " expand" : "",
-		portItemContClass = "portfolioItemContainer" + expandClass;
 
 	const onClick = (event) => {
 			event.preventDefault()
-			historySetSubHref(subHref)
+            historySetSlug(slug)
 		},
 		onClickButtonClose = (event) => {
 			event.preventDefault()
-			historySetSubHref("")
+            historySetSlug("")
 		}
 
+    const { file } = image || {},
+        imageURL = (file || {}).url
+
+
+    const options = {
+        renderNode: {
+            "embedded-asset-block": (node) => {
+                console.log(node)
+                const alt = node.data.target.fields.title['en-US']
+                const url = node.data.target.fields.file['en-US'].url
+                return <img alt={alt} src={url} />
+            }
+        }
+    }
+
 	return (
-		<figure className={portItemContClass} >
+		<figure className="portfolioItemContainer" >
 			<button
 				className="closeButton"
 				onClick={onClickButtonClose}
 			/>
-			<div className={"portfolioItemImage " + classNamePI}>
+			<div className={"portfolioItemImage"}>
+                <img
+                    alt={title}
+                    src={imageURL}
+                />
+                <div className={"desktopBackground"} />
 			</div>
 			<figcaption
 				className="portfolioItemFigcaption"
 				onClick={onClick}
 			>
 				<h3 className="portfolioFigcaptionTitle">
-					{alt}
+					{title}
 				</h3>
 				<p	className="portfolioItemStackTehn">
-					{ (stackTehn.length === 0) ?
-						"" :
-						stackTehn.reduce((sum, current, i, arr) =>
-							sum += (" / " + current)
-						)
-					}
+					{ stack.join('/') }
 				</p>
 			</figcaption>
 			<div className="portfolioItemDescription">
-				<InnerHtml {...description} />
+                {documentToReactComponents(description.json, options)}
 			</div>
 		</figure>
 	)

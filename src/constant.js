@@ -61,6 +61,14 @@ const constants = {
                 href: 'contacts',
             }
         ]
+    },
+    defaultStrings: {
+        'ru-RU': {
+            backBtn: 'Назад',
+        },
+        'en-US': {
+            backBtn: 'Back',
+        },
     }
 }
 

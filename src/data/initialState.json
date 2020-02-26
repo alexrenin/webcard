@@ -2,105 +2,10 @@
   "version": "2.0.0",
   "contentList": [
     {
-      "title": "t#homeTitle",
-      "href": "home",
-      "key": "8658c1d0-9eda-4a90-95e1-8001e8eb6036",
-      "logo": {
-        "title": "AR",
-        "subTitle": "develop"
-      },
-      "name": "t#homeName",
-      "profession": "t#profession",
-      "stackTehn": [
-        "React",
-        "Redux",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "HTML5",
-        "JS2015+",
-        "CSS3.1",
-        "Git"
-      ]
+
     },
     {
-      "title": "t#resume",
-      "href": "resume",
-      "key": "58d9caee-6ea6-4d7b-9984-65c145031000",
-      "subTitle": "t#resumeSubtitle",
-      "resumeList": [
-        {
-          "title": "t#diploms",
-          "itemList": [
-            {
-              "title": "t#resumeATPP",
-              "subTitle": "t#resumePNIPU",
-              "sizeCSS": "big",
-              "imageCSS": "diplom"
-            },
-            {
-              "title": "t#resumeCourses",
-              "subTitle": "t#resumeHtmlacademy",
-              "sizeCSS": "small",
-              "imageCSS": "htmlacademy"
-            }
-          ]
-        },
-        {
-          "title": "t#works",
-          "itemList": [
-            {
-              "title": "t#resumeUtipPosition",
-              "subTitle": "t#resumeUTIP",
-              "sizeCSS": "big",
-              "imageCSS": "utip"
-            }
-          ]
-        },
-        {
-          "title": "t#science",
-          "itemList": [
-            {
-              "title": "t#resumeNeft",
-              "subTitle": "t#resumeNeftJurn",
-              "sizeCSS": "big",
-              "imageCSS": "neft"
-            },
-            {
-              "title": "t#resumeMIP",
-              "subTitle": "t#resumeMIPJurn",
-              "sizeCSS": "small",
-              "imageCSS": "mip"
-            }
-          ]
-        }
-      ],
-      "skillList": [
-        {
-          "title": "React",
-          "level": "91"
-        },
-        {
-          "title": "Node.js",
-          "level": "27"
-        },
-        {
-          "title": "JS ES6+",
-          "level": "97"
-        },
-        {
-          "title": "HTML5",
-          "level": "98"
-        },
-        {
-          "title": "CSS3",
-          "level": "95"
-        },
-        {
-          "title": "Php",
-          "level": "23"
-        }
-      ]
+      
     },
     {
       "title": "t#portfolio",

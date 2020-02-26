@@ -15,17 +15,19 @@ const propTypesResume = {
 
 function Resume ({
 	href="",
-	subTitle="",
+	subtitle="",
 	resumeList=[],
-	skillList=[],
+	skills={},
 }) {
+    const { skillList = [] } = skills
+
 	return (
 		<div
 			className="resumePage"
 			id={href}
 		>
 			<h1 className="resumeTitle">
-				{subTitle}
+				{subtitle}
 			</h1>
 			<div className="resumeContainer">
 				<div className="resumeSubContainer1">

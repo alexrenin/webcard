@@ -9,21 +9,31 @@ const propTypesResumeItem = {
 }
 
 function ResumeItem ({
-	title="",
-	imageCSS="",
-	subTitle="",
-	sizeCSS="",
+	title='',
+	imageURL='',
+	subtitle='',
+	size='',
 }) {
-	const resumeItemClass = "resumeItem " + sizeCSS + " " + imageCSS
+	const resumeItemClass = "resumeItem " + size
 
 	return (
 		<div className={resumeItemClass}>
-			<h3>
+            <div
+                className="resumeItemBackImgCont"
+            >
+                <img
+                    className="resumeItemImg"
+                    alt={title}
+                    src={imageURL}
+                />
+            </div>
+            <h3>
 				{title}
 			</h3>
 			<h4>
-				{subTitle}
+				{subtitle}
 			</h4>
+
 		</div>
 	)
 }

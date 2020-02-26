@@ -10,12 +10,12 @@ const propTypesResumeItemContainer = {
 
 function ResumeItemContainer ({
 	title="",
-	itemList=[],
+    achievements=[],
 }) {
 
 	return (
 		<div className="resumeItemContainer">
-			{itemList.map(
+			{achievements.map(
 				item => {
 					const key = v4()
 					return (

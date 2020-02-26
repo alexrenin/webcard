@@ -6,7 +6,8 @@ body {
 
 html,
 body,
-#root,
+#___gatsby,
+#gatsby-focus-wrapper,
 .App,
 .contentContainer {
     height: 100%;

@@ -1,12 +1,13 @@
 import React from 'react'
 
 import HeaderMenu from '../../organisms/headerMenu/headerMenu'
+import { getLocaleByContenfulID } from '../../atoms/helper'
 import C from '../../../constant'
 
 const Layout = ({
     locale = 'en-US',
+    isHeaderLocal = true,
     children,
-    localHref = true,
 }) => {
     const { locales, pages = {} } = C
     const contentList = pages[locale]
@@ -14,11 +15,15 @@ const Layout = ({
     return (
         <div className="App">
             <HeaderMenu
-                contentList={contentList}
-                pullDownMenuContent={{
+                contentList={getHeaderContentList({
+                    isHeaderLocal,
+                    contentList,
+                    locale
+                })}
+                pullDownMenuContent={getPullDownMenuContent({
                     locales,
-                    locale,
-                }}
+                    locale
+                })}
                 pullDownMenuClick={changeLngHandler}
             />
             <div className="contentContainer">
@@ -26,6 +31,45 @@ const Layout = ({
             </div>
         </div>
     )
+}
+
+function getHeaderContentList({ isHeaderLocal, contentList, locale }) {
+    if (isHeaderLocal)
+        return contentList
+
+    const currentLocale = getLocaleByContenfulID(locale),
+        { path, isDefault = false } = currentLocale
+
+    return contentList.map( item => {
+        const { href } = item,
+            newHref = isDefault ?
+                `#/${href}` :
+                `${path}/#/${href}`
+
+        return {
+            ...item,
+            href: newHref,
+            localHref: false
+        }
+    } )
+}
+
+function getPullDownMenuContent({ locales, locale }) {
+
+    const currentItem = locales.indexOf(
+        locales.find( ({ contentfulID }) => locale === contentfulID )
+    )
+
+    return {
+        currentItem,
+        listItems: locales.map ( ({ langID, path, name }) => {
+            return {
+                title: name,
+                text: path,
+                id: langID,
+            }
+        })
+    }
 }
 
 function changeLngHandler(lngID) {
@@ -57,5 +101,7 @@ function changeLngHandler(lngID) {
     const newURL = newURLarr.join('/')
     window.open(newURL, "_self")
 }
+
+
 
 export default Layout

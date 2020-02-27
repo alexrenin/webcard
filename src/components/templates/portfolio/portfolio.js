@@ -9,16 +9,15 @@ const propTypesPortfolio = {
 	href: PropTypes.string,
 	subtitle: PropTypes.string,
 	portfolioList: PropTypes.array,
+    locale: PropTypes.string,
 }
 
 function Portfolio ({
 	href="",
     subtitle="",
 	portfolioList=[],
-    history,
+    locale,
 }) {
-
-    const historySetSlug = createHistorySetter(history, href)
 
 	return (
 		<div
@@ -35,8 +34,8 @@ function Portfolio ({
 						return (
 							<PortfolioItem {...{
 								...item,
+                                locale,
 								key,
-                                historySetSlug,
 							}} />
 						)
 
@@ -47,13 +46,6 @@ function Portfolio ({
 	)
 }
 Portfolio.propTypes = propTypesPortfolio
-
-/* Help functions */
-function createHistorySetter(history, href) {
-    return function historySetSlug (slugString)  {
-        history.push("/" + href + "/" + slugString)
-    }
-}
 
 
 export default withRouter(Portfolio)

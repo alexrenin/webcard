@@ -5,6 +5,7 @@ import {documentToReactComponents} from "@contentful/rich-text-react-renderer"
 import './style.css'
 
 import Layout from "../layout/layout"
+import { getLinkWithLocale } from '../../atoms/helper'
 import C from '../../../constant'
 
 export const query = graphql`
@@ -49,17 +50,21 @@ const PortfolioItem = ({
 
     const { defaultStrings = {} } = C,
         { backBtn } = defaultStrings[locale] || {}
+    const backLink = getLinkWithLocale({
+        link: '/#portfolio',
+        locale,
+    })
 
     return (
         <Layout
             locale={locale}
-            localHref={false}
+            isHeaderLocal={false}
         >
             <div
                 className="portfolioItemSubMenu"
             >
                 <Link
-                    to={"/#portfolio"}
+                    to={backLink}
                 >
                     {backBtn}
                 </Link>

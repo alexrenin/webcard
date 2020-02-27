@@ -107,9 +107,10 @@ function Index(
                 <Resume {
                     ...reformatResumeData(resumePage)
                 } />
-                <Portfolio {
-                    ...portfolioPage
-                 } />
+                <Portfolio {...{
+                    ...portfolioPage,
+                    locale,
+                }} />
                 <Contacts {
                     ...translatedStore.contentList[3]
                 }/>

@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
+import {getLinkWithLocale} from '../../atoms/helper'
 
 const propTypesPortfolioItem = {
     title: PropTypes.string,
     slug: PropTypes.string,
 	stack: PropTypes.array,
-	description: PropTypes.object,
     image: PropTypes.object,
-    historySetSlug: PropTypes.func,
+    locale: PropTypes.string,
 }
 
 function PortfolioItem ({
@@ -16,10 +16,16 @@ function PortfolioItem ({
 	slug="",
 	stack=[],
     image = {},
+    locale,
 }) {
 
     const { file } = image || {},
         imageURL = (file || {}).url
+
+    const portfolioItemLink = getLinkWithLocale({
+        link: `/portfolio/${slug}`,
+        locale,
+    })
 
 	return (
 		<figure className="portfolioItemContainer" >
@@ -31,7 +37,7 @@ function PortfolioItem ({
                 <div className={"desktopBackground"} />
 			</div>
             <Link
-                to={`/portfolio/${slug}`}
+                to={portfolioItemLink}
                 className="gatsbyLink"
             >
                 <figcaption

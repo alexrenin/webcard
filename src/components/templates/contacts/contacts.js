@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
-import '../../atoms/fonts/fontawesome-free-5.6.3-web/css/all.css'
 import { v4 } from 'uuid'
 import ContactUrlBtn from '../../atoms/contactUrlBtn/contactUrlBtn'
 

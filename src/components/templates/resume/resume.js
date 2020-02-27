@@ -1,16 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './style.css'
-// import '../css/fonts/fontawesome-free-5.6.3-web/css/all.css'
 import { v4 } from 'uuid'
 import ResumeItemContainer from '../../molecules/resumeItemContainer/resumeItemContainer'
 import ResumeSkill from '../../molecules/resumeSkill/resumeSkill'
 
 const propTypesResume = {
 	href: PropTypes.string,
-	subTitle: PropTypes.string,
+	subtitle: PropTypes.string,
 	resumeList: PropTypes.array,
-	t: PropTypes.func,
+    skills: PropTypes.object,
 }
 
 function Resume ({

@@ -51,7 +51,7 @@ function getHeaderContentList({ isHeaderLocal, contentList, locale }) {
         return {
             ...item,
             href: newHref,
-            localHref: false
+            isLocalHref: false
         }
     } )
 }

@@ -4,10 +4,7 @@ import {graphql} from 'gatsby'
 
 import './style.css'
 
-import C from '../constant'
-import storeFactory from '../store/index'
 import Home from '../components/templates/home/home'
-import HeaderMenu from '../components/organisms/headerMenu/headerMenu'
 import Portfolio from "../components/templates/portfolio/portfolio"
 import Contacts from "../components/templates/contacts/contacts"
 import Resume from "../components/templates/resume/resume"
@@ -69,6 +66,15 @@ export const query = graphql`
                         }
                     }
                 }
+            }
+            contactsPage {
+                title
+                href
+                contactList {
+                    title
+                    iconId
+                    link
+                }
             }                                                                           
            }
          }
@@ -87,14 +93,10 @@ function Index(
         {
             homePage = {},
             resumePage = {},
-            portfolioPage = {}, } = indexPage
+            portfolioPage = {},
+            contactsPage = {} } = indexPage
 
     const { locale = 'en-US' } = pageContext
-
-    const store = storeFactory()
-    const storeState = store.getState()
-
-    const translatedStore = storeState
 
     return (
         <HashRouter>
@@ -112,7 +114,7 @@ function Index(
                     locale,
                 }} />
                 <Contacts {
-                    ...translatedStore.contentList[3]
+                    ...contactsPage
                 }/>
             </Layout>
         </HashRouter>

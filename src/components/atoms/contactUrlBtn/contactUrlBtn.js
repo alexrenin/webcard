@@ -1,26 +1,28 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { getIconById } from '../../atoms/icons/icons'
+
 const propTypesContactUrlBtn = {
-	href: PropTypes.string,
-	classNameCI: PropTypes.string,
+	link: PropTypes.string,
+	iconId: PropTypes.string,
 	title:PropTypes.string,
 }
 
 function ContactUrlBtn ({
-	href="",
-	classNameCI="",
+	link="",
+	iconId="",
 	title="",
 }) {
 	return (
 		<li className="socialLinkContainer">
 			<a
-				href={href}
+				href={link}
 				className="socialLink"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<i className={classNameCI}/>
+                {getIconById(iconId)}
 				<h3 className="portfolioFigcaptionTitle">
 					{title}
 				</h3>

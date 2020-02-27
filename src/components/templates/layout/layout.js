@@ -1,6 +1,7 @@
 import React from 'react'
 
 import HeaderMenu from '../../organisms/headerMenu/headerMenu'
+import Head from '../../atoms/head/head'
 import { getLocaleByContenfulID } from '../../atoms/helper'
 import C from '../../../constant'
 
@@ -14,6 +15,7 @@ const Layout = ({
 
     return (
         <div className="App">
+            <Head/>
             <HeaderMenu
                 contentList={getHeaderContentList({
                     isHeaderLocal,

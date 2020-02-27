@@ -1,5 +1,4 @@
 import React from 'react'
-import {HashRouter} from 'react-router-dom'
 import {graphql} from 'gatsby'
 
 import './style.css'
@@ -53,6 +52,7 @@ export const query = graphql`
             portfolioPage {
                 title
                 subtitle
+                href
                 portfolioList {
                     title
                     slug
@@ -99,25 +99,23 @@ function Index(
     const { locale = 'en-US' } = pageContext
 
     return (
-        <HashRouter>
-            <Layout {...{
+        <Layout {...{
+            locale,
+        }} >
+            <Home {
+                ...homePage
+            } />
+            <Resume {
+                ...reformatResumeData(resumePage)
+            } />
+            <Portfolio {...{
+                ...portfolioPage,
                 locale,
-            }} >
-                <Home {
-                    ...homePage
-                } />
-                <Resume {
-                    ...reformatResumeData(resumePage)
-                } />
-                <Portfolio {...{
-                    ...portfolioPage,
-                    locale,
-                }} />
-                <Contacts {
-                    ...contactsPage
-                }/>
-            </Layout>
-        </HashRouter>
+            }} />
+            <Contacts {
+                ...contactsPage
+            }/>
+        </Layout>
     )
 }
 

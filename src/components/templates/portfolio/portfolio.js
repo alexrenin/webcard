@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { v4 } from 'uuid'
-import { withRouter } from 'react-router'
 import PortfolioItem from '../../molecules/portfolioItem/portfolioItem'
 import './style.css'
 
@@ -48,5 +47,5 @@ function Portfolio ({
 Portfolio.propTypes = propTypesPortfolio
 
 
-export default withRouter(Portfolio)
+export default Portfolio
 

@@ -12,7 +12,7 @@
     border: 1px solid #1e272e;
 }
 
-a {
+.menuItem a {
     display: flex;
     justify-content: center;
     align-items: center;

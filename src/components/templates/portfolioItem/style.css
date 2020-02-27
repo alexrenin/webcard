@@ -1,0 +1,12 @@
+.descriptionContainer {
+    width: calc(100% - 4rem);
+    height: calc(90% - 4rem);
+    padding: 2rem;
+}
+
+.portfolioItemSubMenu {
+    width: calc(100% - 0rem);
+    height: calc(10% - 0rem);
+    padding-top: 5px;
+    margin-left: 8vw;
+}

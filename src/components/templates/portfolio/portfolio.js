@@ -7,30 +7,25 @@ import './style.css'
 
 const propTypesPortfolio = {
 	href: PropTypes.string,
-	subTitle: PropTypes.string,
+	subtitle: PropTypes.string,
 	portfolioList: PropTypes.array,
+    locale: PropTypes.string,
 }
 
 function Portfolio ({
 	href="",
-	subTitle="",
+    subtitle="",
 	portfolioList=[],
-	history,
-	location,
+    locale,
 }) {
-	const pathname = location.pathname || "",
-		pathArray = pathname.split("/"),
-		pathHref = pathArray[1],
-		portfolioName = (pathHref === href) ? pathArray[2] : ""
-
-	const historySetSubHref = subHrefString => {
-		history.push("/" + href + "/" + subHrefString)
-	}
 
 	return (
-		<div className="portfolioPage" id={href}>
+		<div
+            className="portfolioPage"
+            id={href}
+        >
 			<h1 className="portfolioTitle">
-				{subTitle}
+				{subtitle}
 			</h1>
 			<div className="portfolioContainer">
 				{portfolioList.map(
@@ -39,9 +34,8 @@ function Portfolio ({
 						return (
 							<PortfolioItem {...{
 								...item,
+                                locale,
 								key,
-								portfolioName,
-								historySetSubHref,
 							}} />
 						)
 
@@ -52,6 +46,7 @@ function Portfolio ({
 	)
 }
 Portfolio.propTypes = propTypesPortfolio
+
 
 export default withRouter(Portfolio)
 

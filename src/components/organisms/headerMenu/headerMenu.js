@@ -11,7 +11,7 @@ const propTypesHeaderMenu = {
 }
 function HeaderMenu ({
 	contentList,
-	pullDownMenuContent,
+    pullDownMenuContent,
 	pullDownMenuClick = f => f,
 }) {
 	return (
@@ -27,5 +27,6 @@ function HeaderMenu ({
 	)
 }
 HeaderMenu.propTypes = propTypesHeaderMenu
+
 
 export default HeaderMenu

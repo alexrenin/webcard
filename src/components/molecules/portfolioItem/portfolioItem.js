@@ -1,62 +1,56 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import InnerHtml from '../../atoms/innerHtml/innerHtml'
+import { Link } from 'gatsby'
+import {getLinkWithLocale} from '../../atoms/helper'
 
 const propTypesPortfolioItem = {
-	classNamePI: PropTypes.string,
-	alt: PropTypes.string,
-	stackTehn: PropTypes.array,
-	description: PropTypes.object,
+    title: PropTypes.string,
+    slug: PropTypes.string,
+	stack: PropTypes.array,
+    image: PropTypes.object,
+    locale: PropTypes.string,
 }
 
 function PortfolioItem ({
-	classNamePI="",
-	alt="",
-	subHref="",
-	stackTehn=[],
-	description={},
-	portfolioName="",
-	historySetSubHref = f => f,
+	title="",
+	slug="",
+	stack=[],
+    image = {},
+    locale,
 }) {
-	const expandClass = (portfolioName === subHref) ? " expand" : "",
-		portItemContClass = "portfolioItemContainer" + expandClass;
 
-	const onClick = (event) => {
-			event.preventDefault()
-			historySetSubHref(subHref)
-		},
-		onClickButtonClose = (event) => {
-			event.preventDefault()
-			historySetSubHref("")
-		}
+    const { file } = image || {},
+        imageURL = (file || {}).url
+
+    const portfolioItemLink = getLinkWithLocale({
+        link: `/portfolio/${slug}`,
+        locale,
+    })
 
 	return (
-		<figure className={portItemContClass} >
-			<button
-				className="closeButton"
-				onClick={onClickButtonClose}
-			/>
-			<div className={"portfolioItemImage " + classNamePI}>
+		<figure className="portfolioItemContainer" >
+			<div className={"portfolioItemImage"}>
+                <img
+                    alt={title}
+                    src={imageURL}
+                />
+                <div className={"desktopBackground"} />
 			</div>
-			<figcaption
-				className="portfolioItemFigcaption"
-				onClick={onClick}
-			>
-				<h3 className="portfolioFigcaptionTitle">
-					{alt}
-				</h3>
-				<p	className="portfolioItemStackTehn">
-					{ (stackTehn.length === 0) ?
-						"" :
-						stackTehn.reduce((sum, current, i, arr) =>
-							sum += (" / " + current)
-						)
-					}
-				</p>
-			</figcaption>
-			<div className="portfolioItemDescription">
-				<InnerHtml {...description} />
-			</div>
+            <Link
+                to={portfolioItemLink}
+                className="gatsbyLink pfolioItemAdditionalInfo"
+            >
+                <figcaption
+                    className="portfolioItemFigcaption"
+                >
+                    <h3 className="portfolioFigcaptionTitle">
+                        {title}
+                    </h3>
+                    <p	className="portfolioItemStackTehn">
+                        { stack.join('/') }
+                    </p>
+                </figcaption>
+            </Link>
 		</figure>
 	)
 }

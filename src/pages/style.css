@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper,
+.App,
+.contentContainer {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    background-color: #ffdd59;
+
+    color: #1e272e;
+}
+body {
+    height: calc(100% - 4em + 1px);
+}
+.contentContainer {
+    margin-top: calc(4em - 1px);
+}
+@media screen and (max-width: 600px) {
+    html,
+    body,
+    #root,
+    .App,
+    .contentContainer {
+        font-size: 3.2vw;
+    }
+
+}
+

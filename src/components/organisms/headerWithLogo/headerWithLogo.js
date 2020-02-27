@@ -12,12 +12,10 @@ const propTylesHeaderWithLogo = {
 function HeaderWithLogo ({
 	name = 'name',
 	profession = 'profession',
-	stackTehn = [],
+    technologyStack = {},
 }) {
-
-	const stackStr = stackTehn.reduce(((sum, current) =>
-		sum + " / " + current
-	),'').slice(3)
+    const { stackTehn = [] } = technologyStack
+	const stackStr = stackTehn.join(' / ')
 
 	return (
 		<div className="header">

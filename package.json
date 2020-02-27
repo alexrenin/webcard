@@ -3,25 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "i18next": "^13.1.5",
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "gatsby": "^2.19.19",
+    "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-source-contentful": "^2.1.87",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-i18next": "^9.0.10",
+    "react-helmet": "^5.2.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^3.3.1",
-    "redux": "^4.0.5",
     "uuid": "^3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "gatsby build",
+    "develop": "env-cmd -f .env gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
 }

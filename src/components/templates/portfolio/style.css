@@ -78,14 +78,19 @@
 
 /*----- ---- -----*/
 
+.pfolioItemAdditionalInfo {
+    position: relative;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+}
+
 .portfolioItemFigcaption {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    position: relative;
-    top: -100%;
-    left: 0;
     width: 100%;
     height: 80%;
 

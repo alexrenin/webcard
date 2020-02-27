@@ -38,7 +38,7 @@ function PortfolioItem ({
 			</div>
             <Link
                 to={portfolioItemLink}
-                className="gatsbyLink"
+                className="gatsbyLink pfolioItemAdditionalInfo"
             >
                 <figcaption
                     className="portfolioItemFigcaption"

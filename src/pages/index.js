@@ -1,6 +1,8 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 
+import 'fontsource-roboto';
+
 import './style.css'
 
 import Home from '../components/templates/home/home'

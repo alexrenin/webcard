@@ -1,21 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Logo from '../../atoms/logo/logo'
-import './style.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Logo from '../../atoms/logo/logo';
+import './style.css';
 
 const propTylesHeaderWithLogo = {
   name: PropTypes.string,
   profession: PropTypes.string,
   stackTehn: PropTypes.array,
-}
+};
 
-function HeaderWithLogo ({
+function HeaderWithLogo({
   name = 'name',
   profession = 'profession',
   technologyStack = {},
 }) {
-  const { stackTehn = [] } = technologyStack
-  const stackStr = stackTehn.join(' / ')
+  const { stackTehn = [] } = technologyStack;
+  const stackStr = stackTehn.join(' / ');
 
   return (
     <div className="header">
@@ -37,9 +37,9 @@ function HeaderWithLogo ({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-HeaderWithLogo.propTypes = propTylesHeaderWithLogo
+HeaderWithLogo.propTypes = propTylesHeaderWithLogo;
 
-export default HeaderWithLogo
+export default HeaderWithLogo;

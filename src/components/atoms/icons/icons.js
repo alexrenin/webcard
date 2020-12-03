@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export function TelegramIcon() {
   return (
@@ -15,14 +15,17 @@ export function TelegramIcon() {
                 1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z"
       />
     </svg>
-  )
+  );
 }
 
 export function VkIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      version="1.1" id="Capa_1" x="0px" y="0px"
+      version="1.1"
+      id="Capa_1"
+      x="0px"
+      y="0px"
       viewBox="0 0 511.962 511.962"
       style="enable-background:new 0 0 511.962 511.962;"
     >
@@ -45,7 +48,7 @@ export function VkIcon() {
         </g>
       </g>
     </svg>
-  )
+  );
 }
 
 export function GitHubIcon() {
@@ -69,7 +72,7 @@ export function GitHubIcon() {
                 .309.21.678.825.56 4.801-1.548 8.236-5.97 8.236-11.173 0-6.512-5.373-11.792-12-11.792z"
       />
     </svg>
-  )
+  );
 }
 
 export function EmailIcon() {
@@ -83,12 +86,12 @@ export function EmailIcon() {
     >
       <g>
         <g>
-          <polygon points="339.392,258.624 512,367.744 512,144.896   "/>
+          <polygon points="339.392,258.624 512,367.744 512,144.896   " />
         </g>
       </g>
       <g>
         <g>
-          <polygon points="0,144.896 0,367.744 172.608,258.624   "/>
+          <polygon points="0,144.896 0,367.744 172.608,258.624   " />
         </g>
       </g>
       <g>
@@ -108,28 +111,28 @@ export function EmailIcon() {
         </g>
       </g>
     </svg>
-  )
+  );
 }
 
 export function getIconById(id) {
   switch (id) {
   case 'telegramIcon':
-    return <TelegramIcon/>
-    break
+    return <TelegramIcon />;
+    break;
 
   case 'vkIcon':
-    return <VkIcon/>
-    break
+    return <VkIcon />;
+    break;
 
   case 'gitHubIcon':
-    return <GitHubIcon />
-    break
+    return <GitHubIcon />;
+    break;
 
   case 'emailIcon':
-    return <EmailIcon/>
-    break
+    return <EmailIcon />;
+    break;
 
   default:
-    return null
+    return null;
   }
 }

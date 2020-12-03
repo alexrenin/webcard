@@ -1,51 +1,49 @@
-import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
-import { v4 } from 'uuid'
-import SimpleButton from '../../atoms/simpleButton/simpleButton'
-import './style.css'
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
+import SimpleButton from '../../atoms/simpleButton/simpleButton';
+import './style.css';
 
 const propTypesPullDownMenu = {
   currentItem: PropTypes.number,
   listItems: PropTypes.array,
   pullDownMenuClick: PropTypes.func,
   t: PropTypes.func,
-}
-function PullDownMenu ({
+};
+function PullDownMenu({
   currentItem = 0,
   listItems = [],
-  pullDownMenuClick = f => f,
+  pullDownMenuClick = (f) => f,
 }) {
-  const inputCheckBox = useRef()
-  const { text = '' } = listItems[currentItem] || {},
-    btnText = text,
-    id = v4()
-  const closeMenu = createCloseMenu(inputCheckBox),
-    onClick = createOnClick({
-      closeMenu,
-      pullDownMenuClick,
-    })
-
+  const inputCheckBox = useRef();
+  const { text = '' } = listItems[currentItem] || {};
+  const btnText = text;
+  const id = v4();
+  const closeMenu = createCloseMenu(inputCheckBox);
+  const onClick = createOnClick({
+    closeMenu,
+    pullDownMenuClick,
+  });
 
   return (
-    <div className='pullDownMenu'>
+    <div className="pullDownMenu">
       <div className="menuButton">
         <input
           type="checkbox"
           ref={inputCheckBox}
           id={id}
           className="menuInput"
-        >
-        </input>
+        />
         <label
           htmlFor={id}
           className="menuLabel"
         >
           {btnText}
         </label>
-        <ul className='pullDownMenuList'>
-          {listItems.map(item => {
-            const key = v4()
-            const {id = ''} = item
+        <ul className="pullDownMenuList">
+          {listItems.map((item) => {
+            const key = v4();
+            const { id = '' } = item;
 
             return (
               <li
@@ -55,42 +53,43 @@ function PullDownMenu ({
                 <SimpleButton {...{
                   ...item,
                   onClick,
-                }} />
+                }}
+                />
               </li>
-            )
+            );
           })}
         </ul>
         <div
-          className='backgroundMenu'
+          className="backgroundMenu"
           onClick={closeMenu}
         />
       </div>
     </div>
-  )
+  );
 }
-PullDownMenu.propTypes = propTypesPullDownMenu
+PullDownMenu.propTypes = propTypesPullDownMenu;
 
 function createOnClick({
-  closeMenu = f=>f,
-  pullDownMenuClick = f => f,
+  closeMenu = (f) => f,
+  pullDownMenuClick = (f) => f,
 }) {
   return function onClick(event) {
-    event.preventDefault()
-    const clickedItem = event.target.nodeName === "LI" ?
-        event.target :
-        event.target.parentNode,
-      clickedItemId = clickedItem.dataset.id
+    event.preventDefault();
+    const clickedItem = event.target.nodeName === 'LI'
+      ? event.target
+      : event.target.parentNode;
+    const clickedItemId = clickedItem.dataset.id;
 
-    closeMenu()
-    pullDownMenuClick(clickedItemId)
-  }
+    closeMenu();
+    pullDownMenuClick(clickedItemId);
+  };
 }
 
 function createCloseMenu(inputCheckBox) {
   return function closeMenu() {
-    const inputNode = inputCheckBox.current
-    inputNode.checked = false
-  }
+    const inputNode = inputCheckBox.current;
+    inputNode.checked = false;
+  };
 }
 
-export default PullDownMenu
+export default PullDownMenu;

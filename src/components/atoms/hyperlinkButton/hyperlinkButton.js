@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
-import './style.css'
+import './style.css';
 
 const propTypesHyperlinkButton = {
   href: PropTypes.string,
@@ -10,18 +10,18 @@ const propTypesHyperlinkButton = {
   selected: PropTypes.bool,
   isLocalHref: PropTypes.bool,
   onClick: PropTypes.func,
-}
+};
 
-function HyperlinkButton ({
+function HyperlinkButton({
   title = '',
   selected = false,
   href = '',
   isLocalHref = true,
-  onClick = f=>f,
+  onClick = (f) => f,
 }) {
-  const className = 'menuItem' + (selected ? ' selected' : '');
-  const aHref = (isLocalHref ? '#' : '/') + href
-	
+  const className = `menuItem${selected ? ' selected' : ''}`;
+  const aHref = (isLocalHref ? '#' : '/') + href;
+
   return (
     <div
       className={className}
@@ -44,8 +44,8 @@ function HyperlinkButton ({
         </Link>
       )}
     </div>
-  )
+  );
 }
-HyperlinkButton.propTypes = propTypesHyperlinkButton
+HyperlinkButton.propTypes = propTypesHyperlinkButton;
 
-export default HyperlinkButton
+export default HyperlinkButton;

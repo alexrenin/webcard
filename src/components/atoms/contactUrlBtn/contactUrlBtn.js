@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { getIconById } from '../../atoms/icons/icons'
+import { getIconById } from '../icons/icons';
 
 const propTypesContactUrlBtn = {
   link: PropTypes.string,
   iconId: PropTypes.string,
-  title:PropTypes.string,
-}
+  title: PropTypes.string,
+};
 
-function ContactUrlBtn ({
-  link="",
-  iconId="",
-  title="",
+function ContactUrlBtn({
+  link = '',
+  iconId = '',
+  title = '',
 }) {
   return (
     <li className="socialLinkContainer">
@@ -28,8 +28,8 @@ function ContactUrlBtn ({
         </h3>
       </a>
     </li>
-  )
+  );
 }
-ContactUrlBtn.propTypes = propTypesContactUrlBtn
+ContactUrlBtn.propTypes = propTypesContactUrlBtn;
 
-export default ContactUrlBtn
+export default ContactUrlBtn;

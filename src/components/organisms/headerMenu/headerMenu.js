@@ -1,18 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import MenuList from '../../molecules/menuList/menuList'
-import PullDownMenu from '../../molecules/pullDownMenu/pullDownMenu'
-import './style.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import MenuList from '../../molecules/menuList/menuList';
+import PullDownMenu from '../../molecules/pullDownMenu/pullDownMenu';
+import './style.css';
 
 const propTypesHeaderMenu = {
   onClick: PropTypes.func,
   listItems: PropTypes.array,
   t: PropTypes.func,
-}
-function HeaderMenu ({
+};
+function HeaderMenu({
   contentList,
   pullDownMenuContent,
-  pullDownMenuClick = f => f,
+  pullDownMenuClick = (f) => f,
 }) {
   return (
     <div className="headerMenu">
@@ -22,11 +22,11 @@ function HeaderMenu ({
       <PullDownMenu {... {
         ...pullDownMenuContent,
         pullDownMenuClick,
-      }} />
+      }}
+      />
     </div>
-  )
+  );
 }
-HeaderMenu.propTypes = propTypesHeaderMenu
+HeaderMenu.propTypes = propTypesHeaderMenu;
 
-
-export default HeaderMenu
+export default HeaderMenu;

@@ -15,7 +15,7 @@ const constants = {
       name: 'English',
       isDefault: true,
       contentfulID: 'en-US',
-    }
+    },
   ],
   pages: {
     'ru-RU': [
@@ -34,7 +34,7 @@ const constants = {
       {
         title: 'Контакты',
         href: 'contacts',
-      }
+      },
     ],
     'en-US': [
       {
@@ -52,8 +52,8 @@ const constants = {
       {
         title: 'Contacts',
         href: 'contacts',
-      }
-    ]
+      },
+    ],
   },
   defaultStrings: {
     'ru-RU': {
@@ -62,8 +62,7 @@ const constants = {
     'en-US': {
       backBtn: 'Back',
     },
-  }
-}
+  },
+};
 
-export default constants
-
+export default constants;

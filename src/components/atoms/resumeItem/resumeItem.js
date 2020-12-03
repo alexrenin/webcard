@@ -1,20 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const propTypesResumeItem = {
   title: PropTypes.string,
   imageCSS: PropTypes.string,
   subTitle: PropTypes.string,
   sizeCSS: PropTypes.string,
-}
+};
 
-function ResumeItem ({
-  title='',
-  imageURL='',
-  subtitle='',
-  size='',
+function ResumeItem({
+  title = '',
+  imageURL = '',
+  subtitle = '',
+  size = '',
 }) {
-  const resumeItemClass = "resumeItem " + size
+  const resumeItemClass = `resumeItem ${size}`;
 
   return (
     <div className={resumeItemClass}>
@@ -35,8 +35,8 @@ function ResumeItem ({
       </h4>
 
     </div>
-  )
+  );
 }
-ResumeItem.propTypes = propTypesResumeItem
+ResumeItem.propTypes = propTypesResumeItem;
 
-export default ResumeItem
+export default ResumeItem;

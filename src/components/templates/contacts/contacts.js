@@ -1,20 +1,19 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './style.css'
-import { v4 } from 'uuid'
-import ContactUrlBtn from '../../atoms/contactUrlBtn/contactUrlBtn'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './style.css';
+import { v4 } from 'uuid';
+import ContactUrlBtn from '../../atoms/contactUrlBtn/contactUrlBtn';
 
 const propTypesContacts = {
   href: PropTypes.string,
   title: PropTypes.string,
-  contactList:PropTypes.array,
-}
-function Contacts ({
-  title="",
-  href="",
-  contactList=[],
+  contactList: PropTypes.array,
+};
+function Contacts({
+  title = '',
+  href = '',
+  contactList = [],
 }) {
-
   return (
     <div
       className="contactPage"
@@ -25,21 +24,22 @@ function Contacts ({
       </h1>
       <ul className="socialContainer">
         {contactList.map(
-          item => {
-            const key = v4()
+          (item) => {
+            const key = v4();
             return (
               <ContactUrlBtn {...{
                 ...item,
                 key,
-              }} />
-            )
-          }
+              }}
+              />
+            );
+          },
         )}
       </ul>
     </div>
-  )
+  );
 }
 
-Contacts.propTypes = propTypesContacts
+Contacts.propTypes = propTypesContacts;
 
-export default Contacts
+export default Contacts;

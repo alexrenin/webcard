@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import HeaderWithLogo from '../../organisms/headerWithLogo/headerWithLogo'
-import './style.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import HeaderWithLogo from '../../organisms/headerWithLogo/headerWithLogo';
+import './style.css';
 
 const propTypesHome = {
   href: PropTypes.string,
-}
+};
 
 function Home({
   href = '',
@@ -18,10 +18,11 @@ function Home({
     >
       <HeaderWithLogo {
         ...props
-      } />
+      }
+      />
     </div>
-  )
+  );
 }
-Home.propTypes = propTypesHome
+Home.propTypes = propTypesHome;
 
-export default Home
+export default Home;

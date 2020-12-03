@@ -1,24 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './style.css'
-import { v4 } from 'uuid'
-import ResumeItemContainer from '../../molecules/resumeItemContainer/resumeItemContainer'
-import ResumeSkill from '../../molecules/resumeSkill/resumeSkill'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './style.css';
+import { v4 } from 'uuid';
+import ResumeItemContainer from '../../molecules/resumeItemContainer/resumeItemContainer';
+import ResumeSkill from '../../molecules/resumeSkill/resumeSkill';
 
 const propTypesResume = {
   href: PropTypes.string,
   subtitle: PropTypes.string,
   resumeList: PropTypes.array,
   skills: PropTypes.object,
-}
+};
 
-function Resume ({
-  href="",
-  subtitle="",
-  resumeList=[],
-  skills={},
+function Resume({
+  href = '',
+  subtitle = '',
+  resumeList = [],
+  skills = {},
 }) {
-  const { skillList = [] } = skills
+  const { skillList = [] } = skills;
 
   return (
     <div
@@ -31,36 +31,38 @@ function Resume ({
       <div className="resumeContainer">
         <div className="resumeSubContainer1">
           {resumeList.map(
-            item => {
-              const key = v4()
+            (item) => {
+              const key = v4();
               return (
                 <ResumeItemContainer {...{
                   ...item,
                   key,
-                }} />
-              )
-            }
+                }}
+                />
+              );
+            },
           )}
         </div>
         <div className="resumeSubContainer2">
           {skillList.map(
-            item => {
-              const key = v4(),
-                level = +item.level
+            (item) => {
+              const key = v4();
+              const level = +item.level;
               return (
                 <ResumeSkill {...{
                   ...item,
                   level,
                   key,
-                }}/>
-              )
-            }
+                }}
+                />
+              );
+            },
           )}
         </div>
       </div>
     </div>
-  )
+  );
 }
-Resume.propTypes = propTypesResume
+Resume.propTypes = propTypesResume;
 
-export default Resume
+export default Resume;

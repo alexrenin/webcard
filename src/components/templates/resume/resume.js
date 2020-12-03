@@ -6,60 +6,60 @@ import ResumeItemContainer from '../../molecules/resumeItemContainer/resumeItemC
 import ResumeSkill from '../../molecules/resumeSkill/resumeSkill'
 
 const propTypesResume = {
-	href: PropTypes.string,
-	subtitle: PropTypes.string,
-	resumeList: PropTypes.array,
-    skills: PropTypes.object,
+  href: PropTypes.string,
+  subtitle: PropTypes.string,
+  resumeList: PropTypes.array,
+  skills: PropTypes.object,
 }
 
 function Resume ({
-	href="",
-	subtitle="",
-	resumeList=[],
-	skills={},
+  href="",
+  subtitle="",
+  resumeList=[],
+  skills={},
 }) {
-    const { skillList = [] } = skills
+  const { skillList = [] } = skills
 
-	return (
-		<div
-			className="resumePage"
-			id={href}
-		>
-			<h1 className="resumeTitle">
-				{subtitle}
-			</h1>
-			<div className="resumeContainer">
-				<div className="resumeSubContainer1">
-					{resumeList.map(
-						item => {
-							const key = v4()
-							return (
-								<ResumeItemContainer {...{
-									...item,
-									key,
-								}} />
-							)
-						}
-					)}
-				</div>
-				<div className="resumeSubContainer2">
-					{skillList.map(
-						item => {
-							const key = v4(),
-								level = +item.level
-							return (
-								<ResumeSkill {...{
-									...item,
-									level,
-									key,
-								}}/>
-							)
-						}
-					)}
-				</div>
-			</div>
-		</div>
-	)
+  return (
+    <div
+      className="resumePage"
+      id={href}
+    >
+      <h1 className="resumeTitle">
+        {subtitle}
+      </h1>
+      <div className="resumeContainer">
+        <div className="resumeSubContainer1">
+          {resumeList.map(
+            item => {
+              const key = v4()
+              return (
+                <ResumeItemContainer {...{
+                  ...item,
+                  key,
+                }} />
+              )
+            }
+          )}
+        </div>
+        <div className="resumeSubContainer2">
+          {skillList.map(
+            item => {
+              const key = v4(),
+                level = +item.level
+              return (
+                <ResumeSkill {...{
+                  ...item,
+                  level,
+                  key,
+                }}/>
+              )
+            }
+          )}
+        </div>
+      </div>
+    </div>
+  )
 }
 Resume.propTypes = propTypesResume
 

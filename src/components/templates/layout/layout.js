@@ -6,102 +6,102 @@ import { getLocaleByContenfulID } from '../../atoms/helper'
 import C from '../../../constant'
 
 const Layout = ({
-    locale = 'en-US',
-    isHeaderLocal = true,
-    children,
+  locale = 'en-US',
+  isHeaderLocal = true,
+  children,
 }) => {
-    const { locales, pages = {} } = C
-    const contentList = pages[locale]
+  const { locales, pages = {} } = C
+  const contentList = pages[locale]
 
-    return (
-        <div className="App">
-            <Head/>
-            <HeaderMenu
-                contentList={getHeaderContentList({
-                    isHeaderLocal,
-                    contentList,
-                    locale
-                })}
-                pullDownMenuContent={getPullDownMenuContent({
-                    locales,
-                    locale
-                })}
-                pullDownMenuClick={changeLngHandler}
-            />
-            <div className="contentContainer">
-                {children}
-            </div>
-        </div>
-    )
+  return (
+    <div className="App">
+      <Head/>
+      <HeaderMenu
+        contentList={getHeaderContentList({
+          isHeaderLocal,
+          contentList,
+          locale
+        })}
+        pullDownMenuContent={getPullDownMenuContent({
+          locales,
+          locale
+        })}
+        pullDownMenuClick={changeLngHandler}
+      />
+      <div className="contentContainer">
+        {children}
+      </div>
+    </div>
+  )
 }
 
 function getHeaderContentList({ isHeaderLocal, contentList, locale }) {
-    if (isHeaderLocal)
-        return contentList
+  if (isHeaderLocal)
+    return contentList
 
-    const currentLocale = getLocaleByContenfulID(locale),
-        { path, isDefault = false } = currentLocale
+  const currentLocale = getLocaleByContenfulID(locale),
+    { path, isDefault = false } = currentLocale
 
-    return contentList.map( item => {
-        const { href } = item,
-            newHref = isDefault ?
-                `#/${href}` :
-                `${path}/#/${href}`
+  return contentList.map( item => {
+    const { href } = item,
+      newHref = isDefault ?
+        `#/${href}` :
+        `${path}/#/${href}`
 
-        return {
-            ...item,
-            href: newHref,
-            isLocalHref: false
-        }
-    } )
+    return {
+      ...item,
+      href: newHref,
+      isLocalHref: false
+    }
+  } )
 }
 
 function getPullDownMenuContent({ locales, locale }) {
 
-    const currentItem = locales.indexOf(
-        locales.find( ({ contentfulID }) => locale === contentfulID )
-    )
+  const currentItem = locales.indexOf(
+    locales.find( ({ contentfulID }) => locale === contentfulID )
+  )
 
-    return {
-        currentItem,
-        listItems: locales.map ( ({ langID, path, name }) => {
-            return {
-                title: name,
-                text: path,
-                id: langID,
-            }
-        })
-    }
+  return {
+    currentItem,
+    listItems: locales.map ( ({ langID, path, name }) => {
+      return {
+        title: name,
+        text: path,
+        id: langID,
+      }
+    })
+  }
 }
 
 function changeLngHandler(lngID) {
-    const currentUrl = window.location.href,
-        arrSubURL = currentUrl.split('/')
+  const currentUrl = window.location.href,
+    arrSubURL = currentUrl.split('/')
 
-    const current = arrSubURL[3],
-        currentLocales = C.locales.find(({path}) => path === current)
+  const current = arrSubURL[3],
+    currentLocales = C.locales.find(({path}) => path === current)
             || C.locales.find(({isDefault}) => isDefault)
 
-    if (currentLocales.langID === lngID) {
-        return
-    }
+  if (currentLocales.langID === lngID) {
+    return
+  }
 
-    const newLocales = C.locales.find(({langID}) => langID === lngID)
+  const newLocales = C.locales.find(({langID}) => langID === lngID)
 
-    let newURLarr = [...arrSubURL]
+  let newURLarr = [...arrSubURL]
 
-    if (currentLocales.isDefault) {
-        newURLarr.splice(3, 0, newLocales.path)
+  if (currentLocales.isDefault) {
+    newURLarr.splice(3, 0, newLocales.path)
+  } else {
+    if (newLocales.isDefault) {
+      newURLarr.splice(3, 1)
     } else {
-        if (newLocales.isDefault) {
-            newURLarr.splice(3, 1)
-        } else {
-            newURLarr[3] = newLocales.path
-        }
+      newURLarr[3] = newLocales.path
     }
+  }
 
-    const newURL = newURLarr.join('/')
-    window.open(newURL, "_self")
+  const newURL = newURLarr.join('/')
+  window.open(newURL, "_self")
 }
 
 

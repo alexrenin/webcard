@@ -2,15 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const propTypesInnerHtml = {
-	innerHtml: PropTypes.string,
+  innerHtml: PropTypes.string,
 }
 
 function InnerHtml({
-	innerHtml = "",
+  innerHtml = "",
 }) {
-	return (
-		<div dangerouslySetInnerHTML = {{__html: innerHtml}} />
-	)
+  return (
+    <div dangerouslySetInnerHTML = {{__html: innerHtml}} />
+  )
 }
 InnerHtml.propTypes = propTypesInnerHtml
 

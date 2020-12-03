@@ -5,26 +5,26 @@ import PullDownMenu from '../../molecules/pullDownMenu/pullDownMenu'
 import './style.css'
 
 const propTypesHeaderMenu = {
-	onClick: PropTypes.func,
-	listItems: PropTypes.array,
-	t: PropTypes.func,
+  onClick: PropTypes.func,
+  listItems: PropTypes.array,
+  t: PropTypes.func,
 }
 function HeaderMenu ({
-	contentList,
-    pullDownMenuContent,
-	pullDownMenuClick = f => f,
+  contentList,
+  pullDownMenuContent,
+  pullDownMenuClick = f => f,
 }) {
-	return (
-		<div className="headerMenu">
-			<MenuList
-				listItems={contentList}
-			/>
-			<PullDownMenu {... {
-				...pullDownMenuContent,
-				pullDownMenuClick,
-			}} />
-		</div>
-	)
+  return (
+    <div className="headerMenu">
+      <MenuList
+        listItems={contentList}
+      />
+      <PullDownMenu {... {
+        ...pullDownMenuContent,
+        pullDownMenuClick,
+      }} />
+    </div>
+  )
 }
 HeaderMenu.propTypes = propTypesHeaderMenu
 

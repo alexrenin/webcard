@@ -85,69 +85,69 @@ export const query = graphql`
 `
 
 function Index(
-    props,
+  props,
 ) {
-    const {data = {}, pageContext = {}} = props
+  const {data = {}, pageContext = {}} = props
 
-    const {allContentfulIndexPage = {}} = data,
-        {edges = []} = allContentfulIndexPage,
-        indexPage = (edges[0] || {}).node || {},
-        {
-            homePage = {},
-            resumePage = {},
-            portfolioPage = {},
-            contactsPage = {} } = indexPage
+  const {allContentfulIndexPage = {}} = data,
+    {edges = []} = allContentfulIndexPage,
+    indexPage = (edges[0] || {}).node || {},
+    {
+      homePage = {},
+      resumePage = {},
+      portfolioPage = {},
+      contactsPage = {} } = indexPage
 
-    const { locale = 'en-US' } = pageContext
+  const { locale = 'en-US' } = pageContext
 
-    return (
-        <Layout {...{
-            locale,
-        }} >
-            <Home {
-                ...homePage
-            } />
-            <Resume {
-                ...reformatResumeData(resumePage)
-            } />
-            <Portfolio {...{
-                ...portfolioPage,
-                locale,
-            }} />
-            <Contacts {
-                ...contactsPage
-            }/>
-        </Layout>
-    )
+  return (
+    <Layout {...{
+      locale,
+    }} >
+      <Home {
+        ...homePage
+      } />
+      <Resume {
+        ...reformatResumeData(resumePage)
+      } />
+      <Portfolio {...{
+        ...portfolioPage,
+        locale,
+      }} />
+      <Contacts {
+        ...contactsPage
+      }/>
+    </Layout>
+  )
 }
 
 // -- Help functions --
 
 function reformatResumeData(resumePage = {}) {
-    const { resumeList = [] } = resumePage
+  const { resumeList = [] } = resumePage
 
-    const newResumeList = resumeList.map( resumeItem => {
-        const { achievements } = resumeItem
-        const newAchievements = achievements.map( achievItem => {
-            const { image } = achievItem,
-                { file } = image || {},
-                { url } = file || {}
+  const newResumeList = resumeList.map( resumeItem => {
+    const { achievements } = resumeItem
+    const newAchievements = achievements.map( achievItem => {
+      const { image } = achievItem,
+        { file } = image || {},
+        { url } = file || {}
 
-            return {
-                ...achievItem,
-                imageURL: url,
-            }
-        })
-        return {
-            ...resumeItem,
-            achievements: newAchievements
-        }
+      return {
+        ...achievItem,
+        imageURL: url,
+      }
     })
-
     return {
-        ...resumePage,
-        resumeList: newResumeList
+      ...resumeItem,
+      achievements: newAchievements
     }
+  })
+
+  return {
+    ...resumePage,
+    resumeList: newResumeList
+  }
 
 }
 

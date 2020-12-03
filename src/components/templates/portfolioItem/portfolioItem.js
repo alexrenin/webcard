@@ -23,60 +23,60 @@ export const query = graphql`
 `
 
 const PortfolioItem = ({
-    data = {},
-    pageContext = {},
+  data = {},
+  pageContext = {},
 }) => {
-    const options = {
-        renderNode: {
-            "embedded-asset-block": (node) => {
-                const alt = node.data.target.fields.title['en-US']
-                const url = node.data.target.fields.file['en-US'].url
-                return (
-                    <img
-                        alt={alt}
-                        src={url}
-                        style={{
-                            maxWidth: '50%',
-                        }}
-                    />
-                )
-            }
-        }
+  const options = {
+    renderNode: {
+      "embedded-asset-block": (node) => {
+        const alt = node.data.target.fields.title['en-US']
+        const url = node.data.target.fields.file['en-US'].url
+        return (
+          <img
+            alt={alt}
+            src={url}
+            style={{
+              maxWidth: '50%',
+            }}
+          />
+        )
+      }
     }
+  }
 
-    const {  contentfulPortfolioItem = {} } = data,
-        { description } = contentfulPortfolioItem
+  const {  contentfulPortfolioItem = {} } = data,
+    { description } = contentfulPortfolioItem
 
-    const { locale = 'en-US' } = pageContext
+  const { locale = 'en-US' } = pageContext
 
-    const { defaultStrings = {} } = C,
-        { backBtn } = defaultStrings[locale] || {}
-    const backLink = getLinkWithLocale({
-        link: '/#portfolio',
-        locale,
-    })
+  const { defaultStrings = {} } = C,
+    { backBtn } = defaultStrings[locale] || {}
+  const backLink = getLinkWithLocale({
+    link: '/#portfolio',
+    locale,
+  })
 
-    return (
-        <Layout
-            locale={locale}
-            isHeaderLocal={false}
-        >
-            <div
-                className="portfolioItemSubMenu"
-            >
-                <HyperlinkButton
-                    title={backBtn}
-                    href={backLink}
-                    isLocalHref={false}
-                />
-            </div>
-            <div
-                className="descriptionContainer"
-            >
-                {documentToReactComponents(description.json, options)}
-            </div>
-        </Layout>
-    )
+  return (
+    <Layout
+      locale={locale}
+      isHeaderLocal={false}
+    >
+      <div
+        className="portfolioItemSubMenu"
+      >
+        <HyperlinkButton
+          title={backBtn}
+          href={backLink}
+          isLocalHref={false}
+        />
+      </div>
+      <div
+        className="descriptionContainer"
+      >
+        {documentToReactComponents(description.json, options)}
+      </div>
+    </Layout>
+  )
 }
 
 export default PortfolioItem

@@ -5,46 +5,46 @@ import { Link } from 'gatsby'
 import './style.css'
 
 const propTypesHyperlinkButton = {
-	href: PropTypes.string,
-	name: PropTypes.string,
-	selected: PropTypes.bool,
-	isLocalHref: PropTypes.bool,
-	onClick: PropTypes.func,
+  href: PropTypes.string,
+  name: PropTypes.string,
+  selected: PropTypes.bool,
+  isLocalHref: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 function HyperlinkButton ({
-	title = '',
-	selected = false,
-	href = '',
-	isLocalHref = true,
-	onClick = f=>f,
+  title = '',
+  selected = false,
+  href = '',
+  isLocalHref = true,
+  onClick = f=>f,
 }) {
-	const className = 'menuItem' + (selected ? ' selected' : '');
-	const aHref = (isLocalHref ? '#' : '/') + href
+  const className = 'menuItem' + (selected ? ' selected' : '');
+  const aHref = (isLocalHref ? '#' : '/') + href
 	
-	return (
-		<div
-			className={className}
-			onClick={onClick}
-		>
-            {isLocalHref && (
-                <a
-                    href={aHref}
-                    onClick={onClick}
-                >
-                    {title}
-                </a>
-            )}
-            {!isLocalHref && (
-                <Link
-                    to={aHref}
-                    onClick={onClick}
-                >
-                    {title}
-                </Link>
-            )}
-		</div>
-	)
+  return (
+    <div
+      className={className}
+      onClick={onClick}
+    >
+      {isLocalHref && (
+        <a
+          href={aHref}
+          onClick={onClick}
+        >
+          {title}
+        </a>
+      )}
+      {!isLocalHref && (
+        <Link
+          to={aHref}
+          onClick={onClick}
+        >
+          {title}
+        </Link>
+      )}
+    </div>
+  )
 }
 HyperlinkButton.propTypes = propTypesHyperlinkButton
 

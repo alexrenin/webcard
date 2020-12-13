@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import favicon from 'images/favicon.ico';
+import favicon from 'assets/img/favicon.ico';
 
 const Head = ({ title = '' }) => {
   const data = useStaticQuery(graphql`

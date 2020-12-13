@@ -1,11 +1,70 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from "@material-ui/core/Grid";
+import Parallax from 'components/molecules/Parallax';
 
+import Header from 'components/organisms/Header';
+import Footer from 'components/organisms/Footer';
+
+import ParallaxImg from 'assets/img/bg4.jpg';
 import HeaderMenu from '../../organisms/headerMenu/headerMenu';
 import Head from '../../atoms/head/head';
 import { getLocaleByContenfulID } from '../../atoms/helper';
 import C from '../../../constant';
 
-const Layout = ({
+import styles from './styles';
+
+const useStyles = makeStyles(styles);
+
+function Layout({
+  mainTitle = '',
+  subTitle = '',
+  headerRightPart = null,
+  children,
+}) {
+  const classes = useStyles();
+
+  return (
+    <div>
+      <Head />
+      <Header
+        brand={`${mainTitle} | ${subTitle}`}
+        rightLinks={headerRightPart}
+        /* rightLinks={<HeaderLinks />} */
+        fixed
+        color="transparent"
+        changeColorOnScroll={{
+          height: 400,
+          color: 'white',
+        }}
+      />
+
+      <Parallax image={ParallaxImg}>
+        <div className={classes.container}>
+          <Grid container className={classes.gridContainer}>
+            <Grid item className={classes.gridItem}>
+              <div className={classes.brand}>
+                <h1 className={classes.title}>
+                  {mainTitle}
+                </h1>
+                <h3 className={classes.subtitle}>
+                  {subTitle}
+                </h3>
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+      </Parallax>
+
+      <div className={[classes.main, classes.mainRaised].join(' ')}>
+        {children}
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+const LayoutOld = ({
   locale = 'en-US',
   isHeaderLocal = true,
   children,

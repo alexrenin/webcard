@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getIconById } from '../icons/icons';
+//import { getIconById } from '../icons/icons';
 
 const propTypesContactUrlBtn = {
   link: PropTypes.string,
@@ -22,7 +22,7 @@ function ContactUrlBtn({
         target="_blank"
         rel="noopener noreferrer"
       >
-        {getIconById(iconId)}
+        {/*{getIconById(iconId)}*/}
         <h3 className="portfolioFigcaptionTitle">
           {title}
         </h3>

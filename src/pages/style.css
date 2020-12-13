@@ -13,9 +13,8 @@ body,
     height: 100%;
     width: 100%;
     font-size: 16px;
-    background-color: #ffdd59;
-
-    color: #1e272e;
+    background-color: #e5e5e5;
+    color: #3c4858;
 }
 body {
     height: calc(100% - 4em + 1px);

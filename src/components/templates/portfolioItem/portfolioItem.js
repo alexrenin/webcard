@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import './style.css';
 
-import Layout from '../layout/layout';
+import Layout from '../Layout/layout';
 import HyperlinkButton from '../../atoms/hyperlinkButton/hyperlinkButton';
 import { getLinkWithLocale } from '../../atoms/helper';
 import C from '../../../constant';

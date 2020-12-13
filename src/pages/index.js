@@ -5,11 +5,15 @@ import 'fontsource-roboto';
 
 import './style.css';
 
+import Layout from 'components/templates/Layout';
+import HeaderLinks from 'components/molecules/HeaderLinks';
+
 import Home from '../components/templates/home/home';
 import Portfolio from '../components/templates/portfolio/portfolio';
 import Contacts from '../components/templates/contacts/contacts';
 import Resume from '../components/templates/resume/resume';
-import Layout from '../components/templates/layout/layout';
+
+
 
 export const query = graphql`        
     query($locale: String)  {
@@ -84,11 +88,88 @@ export const query = graphql`
     }
 `;
 
-function Index(
-  props,
-) {
-  const { data = {}, pageContext = {} } = props;
+// -- Help functions --
 
+function reformatResumeData(resumePage = {}) {
+  const { resumeList = [] } = resumePage;
+
+  const newResumeList = resumeList.map((resumeItem) => {
+    const { achievements } = resumeItem;
+    const newAchievements = achievements.map((achievItem) => {
+      const { image } = achievItem;
+      const { file } = image || {};
+      const { url } = file || {};
+
+      return {
+        ...achievItem,
+        imageURL: url,
+      };
+    });
+    return {
+      ...resumeItem,
+      achievements: newAchievements,
+    };
+  });
+
+  return {
+    ...resumePage,
+    resumeList: newResumeList,
+  };
+}
+
+/* Main component */
+
+function Index({
+  data = {},
+  pageContext = {},
+}) {
+  const { allContentfulIndexPage = {} } = data;
+  const { edges = [] } = allContentfulIndexPage;
+  const indexPage = (edges[0] || {}).node || {};
+  const {
+    homePage = {},
+    resumePage = {},
+    portfolioPage = {},
+    contactsPage = {},
+  } = indexPage;
+
+  const { locale = 'en-US' } = pageContext;
+
+  const headerRightPart = (
+    <HeaderLinks />
+  );
+
+  return (
+    <Layout
+      mainTitle={"Alex Renin"}
+      subTitle={"Frontend Developer"}
+      headerRightPart={headerRightPart}
+    >
+      <Home {
+        ...homePage
+      }
+      />
+      <Resume {
+        ...reformatResumeData(resumePage)
+      }
+      />
+      <Portfolio {...{
+        ...portfolioPage,
+        locale,
+      }}
+      />
+      <Contacts {
+        ...contactsPage
+      }
+      />
+    </Layout>
+  );
+}
+
+function IndexOld({
+  data = {},
+  pageContext = {},
+}) {
   const { allContentfulIndexPage = {} } = data;
   const { edges = [] } = allContentfulIndexPage;
   const indexPage = (edges[0] || {}).node || {};
@@ -125,35 +206,6 @@ function Index(
       />
     </Layout>
   );
-}
-
-// -- Help functions --
-
-function reformatResumeData(resumePage = {}) {
-  const { resumeList = [] } = resumePage;
-
-  const newResumeList = resumeList.map((resumeItem) => {
-    const { achievements } = resumeItem;
-    const newAchievements = achievements.map((achievItem) => {
-      const { image } = achievItem;
-      const { file } = image || {};
-      const { url } = file || {};
-
-      return {
-        ...achievItem,
-        imageURL: url,
-      };
-    });
-    return {
-      ...resumeItem,
-      achievements: newAchievements,
-    };
-  });
-
-  return {
-    ...resumePage,
-    resumeList: newResumeList,
-  };
 }
 
 export default Index;

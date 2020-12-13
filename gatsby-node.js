@@ -9,7 +9,7 @@ module.exports.onCreateWebpackConfig = ({ actions }) => {
         components: path.resolve(__dirname, 'src/components'),
         pages: path.resolve(__dirname, 'src/pages'),
         config: path.resolve(__dirname, 'src/config'),
-        images: path.resolve(__dirname, 'src/images'),
+        assets: path.resolve(__dirname, 'src/assets'),
       },
     },
   });

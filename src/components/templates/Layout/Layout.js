@@ -1,8 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
-import Parallax from 'components/molecules/Parallax';
+import Grid from '@material-ui/core/Grid';
 
+import Parallax from 'components/molecules/Parallax';
 import Header from 'components/organisms/Header';
 import Footer from 'components/organisms/Footer';
 

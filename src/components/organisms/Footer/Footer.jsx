@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { List, ListItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Favorite from '@material-ui/icons/Favorite';
 
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-function Footer() {
+const propTypes = {
+  name: PropTypes.string,
+};
+
+function Footer({
+  name = 'Alex Renin',
+}) {
   const classes = useStyles();
 
   const footerClasses = [classes.footer, classes.footerWhiteFont].join(' ');
@@ -28,7 +32,7 @@ function Footer() {
             className={aClasses}
             target="_blank"
           >
-            Alex Renin
+            {name}
           </a>
         </div>
       </div>
@@ -36,8 +40,6 @@ function Footer() {
   );
 }
 
-Footer.propTypes = {
-  whiteFont: PropTypes.bool,
-};
+Footer.propTypes = propTypes;
 
 export default Footer;

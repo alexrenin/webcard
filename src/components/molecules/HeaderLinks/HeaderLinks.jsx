@@ -17,59 +17,50 @@ const useStyles = makeStyles(styles);
 
 export default function HeaderLinks(props) {
   const classes = useStyles();
+
+  const linkList = [
+    {
+      icon: <EmailIcon />,
+      tooltipTitle: 'Email',
+      link: 'mailto:alexrenin.info@gmail.com',
+    },
+    {
+      icon: <GitHubIcon />,
+      tooltipTitle: 'GitHub',
+      link: 'https://github.com/alexrenin',
+    },
+    {
+      icon: <TelegramIcon />,
+      tooltipTitle: 'Telegram',
+      link: 'https://t.me/AlexRenin',
+    },
+  ];
+
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-twitter"
-          title="Follow us on twitter"
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            href="/"
-            target="_blank"
-            color="transparent"
-            className={classes.navLink}
+      {linkList.map(({
+        icon,
+        tooltipTitle,
+        link,
+      }) => (
+        <ListItem className={classes.listItem}>
+          <Tooltip
+            id={tooltipTitle}
+            title={tooltipTitle}
+            placement={window.innerWidth > 959 ? 'top' : 'left'}
+            classes={{ tooltip: classes.tooltip }}
           >
-            <EmailIcon />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="/"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <GitHubIcon />
-          </Button>
-        </Tooltip>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
-          id="instagram-tooltip"
-          title="Follow us on instagram"
-          placement={window.innerWidth > 959 ? 'top' : 'left'}
-          classes={{ tooltip: classes.tooltip }}
-        >
-          <Button
-            color="transparent"
-            href="/"
-            target="_blank"
-            className={classes.navLink}
-          >
-            <TelegramIcon />
-          </Button>
-        </Tooltip>
-      </ListItem>
+            <Button
+              href={link}
+              target="_blank"
+              color="transparent"
+              className={classes.navLink}
+            >
+              {icon}
+            </Button>
+          </Tooltip>
+        </ListItem>
+      ))}
     </List>
   );
 }

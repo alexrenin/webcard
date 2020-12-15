@@ -1,6 +1,5 @@
 const constants = {
-  VER: '3.0.0',
-  // SITE_URL: "http://localhost:3000",
+  VER: '4.0.0',
   DEVELOP_FLAG: false,
   locales: [
     {

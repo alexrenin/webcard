@@ -64,15 +64,14 @@ class CustomDropdown extends React.Component {
       noLiPadding ? classes.noLiPadding : '',
       rtlActive ? classes.dropdownItemRTL : '',
     ].join(' ');
+
     let icon = null;
     switch (typeof buttonIcon) {
       case "function":
         icon = <this.props.buttonIcon className={classes.buttonIcon} />;
         break;
       case "object":
-        if (buttonIcon.type.muiName === "Icon") {
-          icon = this.props.buttonIcon;
-        }
+        icon = <this.props.buttonIcon className={classes.buttonIcon} />;
         break;
       case "string":
         icon = (

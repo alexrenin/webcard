@@ -84,6 +84,8 @@ function LngSelect({
     };
   });
 
+
+
   return (
     <CustomDropdown
       noLiPadding
@@ -92,7 +94,7 @@ function LngSelect({
         className: classes.navLink,
         color: 'transparent',
       }}
-      buttonIcon={Apps}
+      buttonIcon={TranslateOutlinedIcon}
       dropdownList={transformedLocales
         .map(({ src, name }) => (
           <Link href={src} className={classes.dropdownLink} color="inherit">

@@ -48,7 +48,7 @@ export default function HeaderLinks(props) {
         tooltipTitle,
         link,
       }) => (
-        <ListItem className={classes.listItem}>
+        <ListItem key={link} className={classes.listItem}>
           <Tooltip
             id={tooltipTitle}
             title={tooltipTitle}

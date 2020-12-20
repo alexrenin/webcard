@@ -15,7 +15,7 @@ const CustomNextBackIconBtn = withStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     '& :hover svg circle': {
-      fill: theme.palette.greyC.lightGrey,
+      //fill: theme.palette.greyC.lightGrey,
     },
   },
 }))(IconButton);

@@ -5,7 +5,6 @@ import NextBackIconBtn from 'components/molecules/NextBackIconBtn';
 
 import { useStyles } from './styles';
 
-
 function ImgMultipleCarousel({
   imgList = [],
   imgHeight = 96,

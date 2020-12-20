@@ -12,6 +12,7 @@ export const useStyles = makeStyles(() => ({
     alignItems: 'center',
     width: '100%',
     overflow: 'hidden',
+    overflowX: 'auto',
   },
   image: {
     borderRadius: 6,

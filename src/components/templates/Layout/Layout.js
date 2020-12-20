@@ -30,7 +30,6 @@ function Layout({
       <Header
         brand={`${mainTitle} | ${subTitle}`}
         rightLinks={headerRightPart}
-        /* rightLinks={<HeaderLinks />} */
         fixed
         color="transparent"
         changeColorOnScroll={{

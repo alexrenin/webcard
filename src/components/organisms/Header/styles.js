@@ -144,7 +144,10 @@ const headerStyle = {
     paddingTop: '25px',
     color: '#FFFFFF',
     '& svg': {
-      fill: 'white',
+      fill: '#FFFFFF',
+    },
+    '& .MuiInputBase-input': {
+      color: '#FFFFFF',
     },
   },
   dark: {

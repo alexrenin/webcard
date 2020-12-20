@@ -13,8 +13,6 @@ import Portfolio from '../components/templates/portfolio/portfolio';
 import Contacts from '../components/templates/contacts/contacts';
 import Resume from '../components/templates/resume/resume';
 
-
-
 export const query = graphql`        
     query($locale: String)  {
       allContentfulIndexPage (filter: { node_locale: { eq: $locale } }) {
@@ -141,8 +139,8 @@ function Index({
 
   return (
     <Layout
-      mainTitle={"Alex Renin"}
-      subTitle={"Frontend Developer"}
+      mainTitle="Alex Renin"
+      subTitle="Frontend Developer"
       headerRightPart={headerRightPart}
     >
       <Home {

@@ -5,6 +5,8 @@ import ListItem from '@material-ui/core/ListItem';
 import Tooltip from '@material-ui/core/Tooltip';
 
 import Button from 'components/atoms/CustomButton';
+import LngSelect from 'components/organisms/LngSelect';
+
 import {
   EmailIcon,
   GitHubIcon,
@@ -38,6 +40,9 @@ export default function HeaderLinks(props) {
 
   return (
     <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <LngSelect />
+      </ListItem>
       {linkList.map(({
         icon,
         tooltipTitle,
@@ -47,6 +52,7 @@ export default function HeaderLinks(props) {
           <Tooltip
             id={tooltipTitle}
             title={tooltipTitle}
+            /* eslint-disable-next-line no-undef */
             placement={window.innerWidth > 959 ? 'top' : 'left'}
             classes={{ tooltip: classes.tooltip }}
           >

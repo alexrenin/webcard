@@ -19,6 +19,19 @@ export const useStyles = makeStyles((theme) => ({
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
   },
+  imgListContainer: {
+    marginTop: 10,
+  },
+  MuiTimelineContent: {
+    [theme.breakpoints.only('xs')]: {
+      padding: '6px 8px',
+    },
+  },
+  MuiTimelineOppositeContent: {
+    [theme.breakpoints.only('xs')]: {
+      padding: '6px 8px',
+    },
+  },
 }));
 
 export default {

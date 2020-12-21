@@ -14,6 +14,9 @@ export const useStyles = makeStyles(() => ({
     overflow: 'hidden',
     overflowX: 'auto',
   },
+  scrollCntReverse: {
+    flexDirection: 'row-reverse',
+  },
   image: {
     borderRadius: 6,
     marginRight: 8,

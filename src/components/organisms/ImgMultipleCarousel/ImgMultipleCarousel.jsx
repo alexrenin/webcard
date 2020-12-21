@@ -8,6 +8,7 @@ import { useStyles } from './styles';
 function ImgMultipleCarousel({
   imgList = [],
   imgHeight = 96,
+  isReverse = false,
 }) {
   const classes = useStyles();
   const containerRef = useRef();
@@ -93,7 +94,10 @@ function ImgMultipleCarousel({
       <div
         ref={containerRef}
         onScroll={updateWidth}
-        className={classes.scrollContainer}
+        className={[
+          classes.scrollContainer,
+          isReverse ? classes.scrollCntReverse : '',
+        ].join(' ')}
       >
         {imgList.map((imgItem) => {
           const { image, title } = imgItem;

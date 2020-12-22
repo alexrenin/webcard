@@ -40,38 +40,3 @@ module.exports.onCreatePage = ({ page, actions }) => {
     });
   });
 };
-
-module.exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const portfolioItemTemplate = path.resolve('./src/components/templates/portfolioItem/portfolioItem.js');
-
-  const res = await graphql(`
-        query  {
-          allContentfulPortfolioItem {
-            edges {
-              node {
-                slug
-              }
-            }
-          }
-        }
-    `);
-
-  const { locales = [] } = C;
-  locales.forEach(({ path, isDefault, contentfulID }) => {
-    const localizedPath = isDefault
-      ? ''
-      : `/${path}`;
-
-    res.data.allContentfulPortfolioItem.edges.forEach((edge) => {
-      createPage({
-        component: portfolioItemTemplate,
-        path: `${localizedPath}/portfolio/${edge.node.slug}`,
-        context: {
-          slug: edge.node.slug,
-          locale: contentfulID,
-        },
-      });
-    });
-  });
-};

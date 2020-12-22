@@ -16,11 +16,20 @@ function ImgMultipleCarousel({
     isLeft: false,
     isRight: false,
   });
+  const [modalOption, setModalOption] = useState({
+    isModalOpen: false,
+    index: 0,
+  });
 
   const {
     isLeft,
     isRight,
   } = btnShow || {};
+
+  const {
+    isModalOpen,
+    index: startIndex,
+  } = modalOption;
 
   function updateWidth() {
     const { current } = containerRef || {};
@@ -119,6 +128,20 @@ function ImgMultipleCarousel({
     });
   }
 
+  function openModal(index) {
+    setModalOption((prevState) => ({
+      ...prevState,
+      index,
+      isModalOpen: true,
+    }));
+  }
+  function closeModal() {
+    setModalOption((prevState) => ({
+      ...prevState,
+      isModalOpen: false,
+    }));
+  }
+
   return (
     <div
       className={classes.container}
@@ -142,12 +165,13 @@ function ImgMultipleCarousel({
           isReverse ? classes.scrollCntReverse : '',
         ].join(' ')}
       >
-        {imgList.map((imgItem) => {
+        {imgList.map((imgItem, index) => {
           const { image, title } = imgItem;
 
           return (
             <img
               key={image}
+              onClick={() => openModal(index)}
               className={[
                 classes.image,
                 classes.imageReverse,

@@ -18,6 +18,7 @@ export const useStyles = makeStyles(() => ({
     flexDirection: 'row-reverse',
   },
   image: {
+    cursor: 'pointer',
     borderRadius: 6,
     marginRight: 8,
   },

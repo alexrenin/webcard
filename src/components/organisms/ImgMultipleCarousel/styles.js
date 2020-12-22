@@ -21,6 +21,10 @@ export const useStyles = makeStyles(() => ({
     borderRadius: 6,
     marginRight: 8,
   },
+  imageReverse: {
+    marginRight: 0,
+    marginLeft: 8,
+  },
   nextBackBtnContainerForward: {
     position: 'absolute',
     right: 0,

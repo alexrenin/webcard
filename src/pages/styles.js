@@ -21,6 +21,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   imgListContainer: {
     marginTop: 10,
+    display: 'inline-block',
   },
   MuiTimelineContent: {
     [theme.breakpoints.only('xs')]: {

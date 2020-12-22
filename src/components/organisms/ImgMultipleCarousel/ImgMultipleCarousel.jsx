@@ -30,15 +30,29 @@ function ImgMultipleCarousel({
       scrollLeft = 0,
     } = current || {};
 
-    const isLeftShow = scrollLeft > 0;
-    const isRightShow = Math.floor(scrollWidth - scrollLeft) > clientWidth;
+    const {
+      isLeftShow,
+      isRightShow,
+    } = (() => {
+      if (isReverse) {
+        return {
+          isLeftShow: Math.floor(scrollWidth - Math.abs(scrollLeft)) > clientWidth,
+          isRightShow: scrollLeft < 0,
+        };
+      }
+
+      return {
+        isLeftShow: scrollLeft > 0,
+        isRightShow: Math.floor(scrollWidth - scrollLeft) > clientWidth,
+      };
+    })();
 
     setBtnShow({
       isLeft: isLeftShow,
       isRight: isRightShow,
     });
   }
-  function onNextClick() {
+  function onRightClick() {
     const { current } = containerRef || {};
     const {
       scrollWidth = 0,
@@ -46,10 +60,24 @@ function ImgMultipleCarousel({
       scrollLeft = 0,
     } = current || {};
 
-    const rowPosX = scrollLeft + clientWidth;
-    const posX = rowPosX < (scrollWidth - clientWidth)
-      ? rowPosX
-      : scrollWidth - clientWidth;
+    const posX = (() => {
+      if (isReverse) {
+        const rowPosXRev = scrollLeft + clientWidth;
+
+        if (rowPosXRev > 0) {
+          return 0;
+        }
+
+        return rowPosXRev;
+      }
+
+      const rowPosX = scrollLeft + clientWidth;
+      if (rowPosX < (scrollWidth - clientWidth)) {
+        return rowPosX;
+      }
+
+      return scrollWidth - clientWidth;
+    })();
 
     containerRef.current.scrollTo({
       top: 0,
@@ -57,17 +85,32 @@ function ImgMultipleCarousel({
       behavior: 'smooth',
     });
   }
-  function onBackClick() {
+  function onLeftClick() {
     const { current } = containerRef || {};
     const {
       scrollLeft = 0,
       clientWidth = 0,
+      scrollWidth = 0,
     } = current || {};
 
-    const rowPosX = scrollLeft - clientWidth;
-    const posX = rowPosX > 0
-      ? rowPosX
-      : 0;
+    const posX = (() => {
+      if (isReverse) {
+        const rowPosXRev = scrollLeft - clientWidth;
+
+        if (rowPosXRev < (scrollWidth - clientWidth)) {
+          return rowPosXRev;
+        }
+
+        return clientWidth - scrollWidth;
+      }
+
+      const rowPosX = scrollLeft - clientWidth;
+      if (rowPosX > 0) {
+        return rowPosX;
+      }
+
+      return 0;
+    })();
 
     containerRef.current.scrollTo({
       top: 0,
@@ -86,7 +129,7 @@ function ImgMultipleCarousel({
         >
           <NextBackIconBtn
             className={classes.backBtn}
-            onClick={onBackClick}
+            onClick={onLeftClick}
             isBack
           />
         </div>
@@ -105,7 +148,10 @@ function ImgMultipleCarousel({
           return (
             <img
               key={image}
-              className={classes.image}
+              className={[
+                classes.image,
+                classes.imageReverse,
+              ].join(' ')}
               style={{
                 height: imgHeight,
               }}
@@ -122,7 +168,7 @@ function ImgMultipleCarousel({
         >
           <NextBackIconBtn
             className={classes.forwardBtn}
-            onClick={onNextClick}
+            onClick={onRightClick}
           />
         </div>
       )}

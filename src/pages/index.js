@@ -221,6 +221,7 @@ function Index({
 
   const timelineData = [
     {
+      id: 0,
       oppositeTitle: '2020 : NOW',
       title: 'React / React Native developer | Parkly',
       subTitle: 'React, Next.js, React Native, Php',
@@ -228,6 +229,7 @@ function Index({
       imgList: workListSchool.slice(0, 1),
     },
     {
+      id: 1,
       oppositeTitle: '2018 : 2020',
       title: 'Freelanc | Freelancer / Upwork',
       subTitle: 'React, Next.js, Gatsby.js, d3.js, Node.js (Express.js)',
@@ -235,6 +237,7 @@ function Index({
       imgList: workListSchool.slice(0, 1),
     },
     {
+      id: 2,
       oppositeTitle: '2017 : 2018',
       title: 'Frontend Developer | UTIP',
       subTitle: 'JS native',
@@ -242,6 +245,7 @@ function Index({
       imgList: workListSchool,
     },
     {
+      id: 3,
       oppositeTitle: '2013 : 2017',
       title: 'University',
       subTitle: 'C++ Arduino, Java, JS, d3.js',
@@ -249,6 +253,7 @@ function Index({
       imgList: workListSchool,
     },
     {
+      id: 4,
       oppositeTitle: '2011 : 2012',
       title: 'School',
       subTitle: 'HTML + CSS site',
@@ -272,9 +277,9 @@ function Index({
         <Timeline align="alternate">
           {timelineData.map(
             ({
-              oppositeTitle, title, subTitle, icon, imgList,
+              oppositeTitle, title, subTitle, icon, imgList, id,
             }, index) => (
-              <TimelineItem>
+              <TimelineItem key={id}>
                 <TimelineOppositeContent
                   className={classes.MuiTimelineOppositeContent}
                 >

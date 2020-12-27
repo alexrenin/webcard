@@ -1,9 +1,12 @@
 // eslint-disable jsx-a11y/no-static-element-interactions
 import React, { useRef, useState } from 'react';
+import ImageGallery from 'react-image-gallery';
+import Typography from '@material-ui/core/Typography';
 
 import NextBackIconBtn from 'components/molecules/NextBackIconBtn';
 
 import { useStyles } from './styles';
+import './styles.css';
 
 function ImgMultipleCarousel({
   imgList = [],
@@ -12,6 +15,7 @@ function ImgMultipleCarousel({
 }) {
   const classes = useStyles();
   const containerRef = useRef();
+  const fullScreenRef = useRef();
   const [btnShow, setBtnShow] = useState({
     isLeft: false,
     isRight: false,
@@ -146,56 +150,14 @@ function ImgMultipleCarousel({
     <div
       className={classes.container}
     >
-      {isLeft && (
-        <div
-          className={classes.nextBackBtnContainerBack}
-        >
-          <NextBackIconBtn
-            className={classes.backBtn}
-            onClick={onLeftClick}
-            isBack
-          />
-        </div>
-      )}
-      <div
-        ref={containerRef}
-        onScroll={updateWidth}
-        className={[
-          classes.scrollContainer,
-          isReverse ? classes.scrollCntReverse : '',
-        ].join(' ')}
-      >
-        {imgList.map((imgItem, index) => {
-          const { image, title } = imgItem;
-
-          return (
-            <img
-              key={image}
-              onClick={() => openModal(index)}
-              className={[
-                classes.image,
-                classes.imageReverse,
-              ].join(' ')}
-              style={{
-                height: imgHeight,
-              }}
-              src={image}
-              alt={title}
-              onLoad={updateWidth}
-            />
-          );
-        })}
-      </div>
-      {isRight && (
-        <div
-          className={classes.nextBackBtnContainerForward}
-        >
-          <NextBackIconBtn
-            className={classes.forwardBtn}
-            onClick={onRightClick}
-          />
-        </div>
-      )}
+      <ImageGallery
+        items={imgList.map(({ image, ...props }) => ({
+          ...props,
+          original: image,
+          thumbnail: image,
+        }))}
+        showPlayButton={false}
+      />
     </div>
   );
 }

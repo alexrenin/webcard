@@ -1,6 +1,6 @@
 v4.0
 - new design
-- material-ui 
+- material-ui
 
 v3.0
 - porting Create React App to Gatsby: https://www.gatsbyjs.org/docs/porting-from-create-react-app-to-gatsby/

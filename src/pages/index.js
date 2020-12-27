@@ -303,7 +303,7 @@ function Index({
                     </Typography>
                     <div
                       className={classes.imgListContainer}
-                      style={{ maxWidth: carouselWidth }}
+                      style={{ width: carouselWidth }}
                     >
                       <ImgMultipleCarousel
                         imgList={imgList}

@@ -9,7 +9,6 @@ const CustomNextBackIconBtn = withStyles((theme) => ({
   root: {
     height: 32,
     width: 32,
-    marginRight: 8,
     padding: 0,
     display: 'flex',
     justifyContent: 'center',

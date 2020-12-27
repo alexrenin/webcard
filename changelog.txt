@@ -1,3 +1,7 @@
+v4.0
+- new design
+- material-ui 
+
 v3.0
 - porting Create React App to Gatsby: https://www.gatsbyjs.org/docs/porting-from-create-react-app-to-gatsby/
 - used new i18n organisation
@@ -60,7 +64,7 @@ v0.1
 - добавлено новое меню сверху страницы
 - интегрирован redux с котейнеризацией
 
-2018-02-10: 
+2018-02-10:
 	- Убрано лишнее из шаблона react
 	- Свертано лого
 

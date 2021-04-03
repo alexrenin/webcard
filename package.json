@@ -19,7 +19,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint ./src",
-    "export": "next export"
+    "export": "next build && next export"
   },
   "browserslist": [
     ">0.2%",

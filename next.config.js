@@ -11,5 +11,5 @@ module.exports = {
     }
     return config;
   },
-  targets: "serverless"
+  targets: 'serverless',
 };

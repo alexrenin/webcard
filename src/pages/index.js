@@ -21,7 +21,7 @@ import ImgMultipleCarousel from 'components/organisms/ImgMultipleCarousel';
 
 import { useWindowSize } from 'helpers';
 
-import { useStyles } from './styles';
+import { useStyles } from 'config/styles/styles';
 
 // -- Help functions --
 

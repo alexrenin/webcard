@@ -6,7 +6,7 @@ import { useTheme } from '@material-ui/core/styles';
 import NextBackIconBtn from 'components/molecules/NextBackIconBtn';
 
 import { useStyles } from './styles';
-import './styles.css';
+import './imgMultipleCarousel.module.scss';
 
 function ImgMultipleCarousel({
   imgList = [],

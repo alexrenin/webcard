@@ -1,8 +1,6 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import 'fontsource-roboto';
 
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Typography from '@material-ui/core/Typography';
 import Timeline from '@material-ui/lab/Timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
@@ -21,88 +19,17 @@ import Layout from 'components/templates/Layout';
 import HeaderLinks from 'components/molecules/HeaderLinks';
 import ImgMultipleCarousel from 'components/organisms/ImgMultipleCarousel';
 
-import './style.css';
-import Img from 'assets/img/beekeping.png';
-import { useStyles } from './styles';
+import { useWindowSize } from 'helpers';
 
-export const query = graphql`        
-    query($locale: String)  {
-      allContentfulIndexPage (filter: { node_locale: { eq: $locale } }) {
-         edges {
-           node {
-            resumePage {
-                title
-                subtitle
-                href
-                skills {
-                    skillList {
-                        level
-                        title
-                    }
-                }
-                resumeList {
-                    title
-                    achievements {
-                        title
-                        subtitle
-                        size
-                        image {
-                            file {
-                                url
-                            }
-                        }
-                    }
-                }                
-            }
-            homePage {
-                title
-                href
-                logoTitle
-                logoSubtitle
-                name
-                profession
-                technologyStack {
-                    stackTehn
-                }
-            }
-            portfolioPage {
-                title
-                subtitle
-                href
-                portfolioList {
-                    title
-                    slug
-                    stack
-                    description {
-                        json
-                    }
-                    image {
-                        file {
-                            url
-                        }
-                    }
-                }
-            }
-            contactsPage {
-                title
-                href
-                contactList {
-                    title
-                    iconId
-                    link
-                }
-            }                                                                           
-           }
-         }
-      }
-    }
-`;
+import { useStyles } from './styles';
 
 // -- Help functions --
 
 function getData() {
   const skillList = ['JS ES6+', 'TS', 'React', 'React Native', 'Next.js',
     'Material-UI', 'GraphQL', 'd3.js', 'Gatsby.js', 'Php', 'Node.js'];
+
+  const Img = '/images/beekeping.png';
 
   const workListSchool = [
     {
@@ -160,29 +87,7 @@ function Index({
   pageContext = {},
 }) {
   const classes = useStyles();
-  const [dimensions, setDimensions] = React.useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-    isMobile: window.innerWidth < 580,
-  });
-
-  React.useEffect(() => {
-    function handleResize() {
-      const newWidth = Math.min(window.innerWidth, window.outerWidth);
-
-      setDimensions({
-        height: window.innerHeight,
-        width: newWidth,
-        isMobile: newWidth < 580,
-      });
-    }
-
-    window.addEventListener('resize', handleResize);
-
-    return (_) => {
-      window.removeEventListener('resize', handleResize);
-    };
-  });
+  const dimensions = useWindowSize();
 
   const { allContentfulIndexPage = {} } = data;
   const { edges = [] } = allContentfulIndexPage;
@@ -201,14 +106,14 @@ function Index({
     workListSchool,
   } = getData();
 
-  const headerRightPart = (
-    <HeaderLinks />
-  );
-
   const {
     width: windowWidth,
-    isMobile,
   } = dimensions;
+  const isMobile = windowWidth < 580;
+
+  const headerRightPart = (
+    <HeaderLinks windowWidth={windowWidth} />
+  );
 
   // depend on padding, margin, font size
   const carouselWidth = isMobile

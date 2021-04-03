@@ -52,7 +52,7 @@ function LngSelect({
 }) {
   const classes = useStyles();
 
-  const currentUrl = window.location.href;
+  const currentUrl = typeof window === 'undefined' ? '/' : window.location.href;
   const arrSubURL = currentUrl.split('/');
   const current = arrSubURL[3];
   const currentLocales = lngList.find(({ path }) => path === current)

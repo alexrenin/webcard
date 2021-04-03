@@ -17,7 +17,9 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+export default function HeaderLinks({
+  windowWidth,
+}) {
   const classes = useStyles();
 
   const linkList = [
@@ -53,7 +55,7 @@ export default function HeaderLinks(props) {
             id={tooltipTitle}
             title={tooltipTitle}
             /* eslint-disable-next-line no-undef */
-            placement={window.innerWidth > 959 ? 'top' : 'left'}
+            placement={windowWidth > 959 ? 'top' : 'left'}
             classes={{ tooltip: classes.tooltip }}
           >
             <Button

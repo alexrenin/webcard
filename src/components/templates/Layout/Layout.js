@@ -6,13 +6,11 @@ import Grid from '@material-ui/core/Grid';
 import Parallax from 'components/molecules/Parallax';
 import Header from 'components/organisms/Header';
 import Footer from 'components/organisms/Footer';
-import Head from 'components/atoms/Head';
-
-import ParallaxImg from 'assets/img/bg4.jpg';
 
 import styles from './styles';
 
 const useStyles = makeStyles(styles);
+const ParallaxImg = '/bg4.jpg';
 
 function Layout({
   mainTitle = '',
@@ -24,7 +22,6 @@ function Layout({
 
   return (
     <div>
-      <Head />
       <Header
         brand={`${mainTitle} | ${subTitle}`}
         rightLinks={headerRightPart}

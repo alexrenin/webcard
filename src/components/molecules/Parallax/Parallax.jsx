@@ -8,9 +8,20 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
+function checkIsServer() {
+  const isServer = typeof window === 'undefined';
+
+  return isServer;
+}
+
 export default function Parallax(props) {
   let windowScrollTop;
-  if (window.innerWidth >= 768) {
+
+  const flag = !checkIsServer()
+    ? window.innerWidth >= 768
+    : false;
+
+  if (flag) {
     windowScrollTop = window.pageYOffset / 3;
   } else {
     windowScrollTop = 0;

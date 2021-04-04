@@ -1,8 +1,10 @@
 v4.0
-- new design
+- migration from JS to TS
+- migration from Gatsby to Next.js
 - material-ui
+- new design
 
-v3.0
+v3.0 | 02.2020
 - porting Create React App to Gatsby: https://www.gatsbyjs.org/docs/porting-from-create-react-app-to-gatsby/
 - used new i18n organisation
 - unused packages were removed
@@ -10,7 +12,7 @@ v3.0
 - used Contentful
 - Portfolio Item opens in a new tab
 
-v2.0
+v2.0 | 09.2019
 - иерархия файлов переделана под atomic подход
 - изменен способо взаимодествия i18n
 - обновлены версии зависимостей
@@ -44,7 +46,7 @@ v1.1.0
 - реализован раздел навыки резюме
 - заполнен контент
 
-v1.0
+v1.0 | 01.2019
 - исправлено неработающее меню
 - расширен функционал портфолио: раскрывается при клике
 - обновление локально хранящегося storage при обновлении версии приложения

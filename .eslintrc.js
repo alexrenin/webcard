@@ -1,15 +1,15 @@
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'plugin:jsx-a11y/recommended',
-    'plugin:react-hooks/recommended',
-    'airbnb',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-typescript',
   ],
+  plugins: ['react', '@typescript-eslint'],
   env: {
     browser: true,
     commonjs: true,
@@ -19,9 +19,6 @@ module.exports = {
   rules: {
     'react/require-default-props': [1, { forbidDefaultForRequired: true, ignoreFunctionalComponents: true }],
     indent: ['error', 2],
-    // 'react/jsx-indent': ['error', 2],
-    // 'react/jsx-indent-props': ['error', 2],
-    // 'no-console': ['error', { allow: ['warn', 'error'] }],
   },
   parserOptions: {
     ecmaVersion: 2018,
@@ -29,6 +26,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    project: './tsconfig.json',
   },
   settings: {
     react: {

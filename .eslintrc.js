@@ -27,6 +27,7 @@ module.exports = {
       jsx: true,
     },
     project: './tsconfig.json',
+    createDefaultProgram: true,
   },
   settings: {
     react: {

@@ -1,22 +1,20 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Button, ButtonProps } from '@material-ui/core';
 
 import { useStyles, ICustomButtonStyleProps, PropsClasses } from './styles';
 
-export interface ICustomButtonProps {
+export interface ICustomButtonProps extends Omit<ButtonProps, 'color'> {
   color: 'primary' | 'transparent',
-  children: React.ReactNode | React.ReactNodeArray,
-  className: boolean,
 }
 
 export type Ref = HTMLButtonElement;
 
-const CustomButton: React.FC = React.forwardRef<Ref, ICustomButtonProps>(({
+const CustomButton = React.forwardRef<Ref, ICustomButtonProps>(({
   color,
   className,
   children,
   ...rest
-}: ICustomButtonProps, ref) => {
+}: ICustomButtonProps, ref): JSX.Element => {
   const classes: PropsClasses = useStyles({} as ICustomButtonStyleProps);
 
   const btnClasses = [

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function EmailIcon(props: React.HTMLAttributes<HTMLOrSVGElement>): React.ReactNode {
+export function EmailIcon(props: React.HTMLAttributes<HTMLOrSVGElement>): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

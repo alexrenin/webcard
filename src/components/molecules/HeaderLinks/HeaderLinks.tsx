@@ -12,30 +12,42 @@ import {
   TelegramIcon,
 } from 'components/atoms/icons';
 
-import { useStyles } from './styles';
+import { useStyles, IHeaderLinksStyle, PropsClasses } from './styles';
+
+export interface ILinkListItem {
+  icon: JSX.Element,
+  tooltipTitle: string,
+  link: string,
+}
+
+export interface IHeaderLinks {
+  windowWidth: number,
+  linkList?: Array<ILinkListItem>,
+}
+
+const defaultLinks: Array<ILinkListItem> = [
+  {
+    icon: <EmailIcon />,
+    tooltipTitle: 'Email',
+    link: 'mailto:alexrenin.info@gmail.com',
+  },
+  {
+    icon: <GitHubIcon />,
+    tooltipTitle: 'GitHub',
+    link: 'https://github.com/alexrenin',
+  },
+  {
+    icon: <TelegramIcon />,
+    tooltipTitle: 'Telegram',
+    link: 'https://t.me/AlexRenin',
+  },
+];
 
 export default function HeaderLinks({
   windowWidth,
-}) {
-  const classes = useStyles();
-
-  const linkList = [
-    {
-      icon: <EmailIcon />,
-      tooltipTitle: 'Email',
-      link: 'mailto:alexrenin.info@gmail.com',
-    },
-    {
-      icon: <GitHubIcon />,
-      tooltipTitle: 'GitHub',
-      link: 'https://github.com/alexrenin',
-    },
-    {
-      icon: <TelegramIcon />,
-      tooltipTitle: 'Telegram',
-      link: 'https://t.me/AlexRenin',
-    },
-  ];
+  linkList = defaultLinks,
+}: IHeaderLinks): JSX.Element {
+  const classes: PropsClasses = useStyles({} as IHeaderLinksStyle);
 
   return (
     <List className={classes.list}>
@@ -56,10 +68,12 @@ export default function HeaderLinks({
             classes={{ tooltip: classes.tooltip }}
           >
             <Button
+              className={classes.navLink}
               href={link}
+              /* eslint-disable-next-line @typescript-eslint/ban-ts-comment */
+              /* @ts-ignore */
               target="_blank"
               color="transparent"
-              className={classes.navLink}
             >
               {icon}
             </Button>

@@ -5,9 +5,7 @@ const primaryColor = '#9c27b0';
 const grayColor = '#999999';
 
 export interface ICustomButtonStyleProps {
-  button: BaseCSSProperties,
-  primary: BaseCSSProperties,
-  transparent: BaseCSSProperties,
+  [key: string]: BaseCSSProperties,
 }
 
 export type PropsClasses = Record<keyof ICustomButtonStyleProps, string>;

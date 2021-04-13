@@ -1,4 +1,14 @@
-const tooltip = {
+import { Theme, makeStyles } from '@material-ui/core';
+import { BaseCSSProperties } from '@material-ui/core/styles/withStyles';
+
+interface IBaseStyle {
+  [key: string]: BaseCSSProperties,
+}
+export interface IHeaderLinksStyle {
+  [key: string]: BaseCSSProperties,
+}
+
+const tooltip: IBaseStyle = {
   tooltip: {
     padding: '10px 15px',
     minWidth: '130px',
@@ -14,7 +24,7 @@ const tooltip = {
     fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
     fontSize: '0.875em',
     fontStyle: 'normal',
-    fontWeight: '400',
+    fontWeight: 400,
     textShadow: 'none',
     textTransform: 'none',
     letterSpacing: 'normal',
@@ -26,13 +36,13 @@ const tooltip = {
   },
 };
 
-const defaultFont = {
+const defaultFont: BaseCSSProperties = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  fontWeight: '300',
+  fontWeight: 300,
   lineHeight: '1.5em',
 };
 
-const headerLinksStyle = (theme) => ({
+const headerLinksStyle = (theme: Theme) => ({
   list: {
     ...defaultFont,
     fontSize: '14px',
@@ -70,7 +80,7 @@ const headerLinksStyle = (theme) => ({
     color: 'inherit',
     position: 'relative',
     padding: '0.9375rem',
-    fontWeight: '400',
+    fontWeight: 400,
     fontSize: '12px',
     textTransform: 'uppercase',
     borderRadius: '3px',
@@ -96,7 +106,7 @@ const headerLinksStyle = (theme) => ({
   notificationNavLink: {
     color: 'inherit',
     padding: '0.9375rem',
-    fontWeight: '400',
+    fontWeight: 400,
     fontSize: '12px',
     textTransform: 'uppercase',
     lineHeight: '20px',
@@ -108,7 +118,7 @@ const headerLinksStyle = (theme) => ({
   registerNavLink: {
     top: '3px',
     position: 'relative',
-    fontWeight: '400',
+    fontWeight: 400,
     fontSize: '12px',
     textTransform: 'uppercase',
     lineHeight: '20px',
@@ -136,4 +146,8 @@ const headerLinksStyle = (theme) => ({
   },
 });
 
-export default headerLinksStyle;
+export type PropsClasses = Record<keyof IHeaderLinksStyle, string>;
+
+export const useStyles = makeStyles<Theme, IHeaderLinksStyle>(headerLinksStyle as any);
+
+export default useStyles;

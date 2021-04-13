@@ -1,5 +1,4 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Tooltip from '@material-ui/core/Tooltip';
@@ -13,9 +12,7 @@ import {
   TelegramIcon,
 } from 'components/atoms/icons';
 
-import styles from './styles';
-
-const useStyles = makeStyles(styles);
+import { useStyles } from './styles';
 
 export default function HeaderLinks({
   windowWidth,
